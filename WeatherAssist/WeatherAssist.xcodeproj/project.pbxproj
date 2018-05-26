@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		50B2A39520B9A0D2007E7207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A39420B9A0D2007E7207 /* AppDelegate.swift */; };
-		50B2A39720B9A0D3007E7207 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A39620B9A0D3007E7207 /* ViewController.swift */; };
 		50B2A39A20B9A0D3007E7207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39820B9A0D3007E7207 /* Main.storyboard */; };
 		50B2A39C20B9A0D3007E7207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39B20B9A0D3007E7207 /* Assets.xcassets */; };
 		50B2A39F20B9A0D3007E7207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39D20B9A0D3007E7207 /* LaunchScreen.storyboard */; };
 		50B2A3AA20B9A0D3007E7207 /* WeatherAssistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3A920B9A0D3007E7207 /* WeatherAssistTests.swift */; };
 		50B2A3B520B9A0D3007E7207 /* WeatherAssistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3B420B9A0D3007E7207 /* WeatherAssistUITests.swift */; };
+		50B2A3C620B9A5B5007E7207 /* AssistantInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3C520B9A5B5007E7207 /* AssistantInteractor.swift */; };
+		50B2A3C820B9A5F3007E7207 /* AssistantViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3C720B9A5F3007E7207 /* AssistantViewModels.swift */; };
+		50B2A3CA20B9A5FB007E7207 /* AssistantPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3C920B9A5FB007E7207 /* AssistantPresenter.swift */; };
+		50B2A3CC20B9A615007E7207 /* AssistantConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3CB20B9A615007E7207 /* AssistantConfigurator.swift */; };
+		50B2A3D420B9A8FF007E7207 /* AssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3D320B9A8FF007E7207 /* AssistantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		50B2A39120B9A0D2007E7207 /* WeatherAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B2A39420B9A0D2007E7207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50B2A39620B9A0D3007E7207 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50B2A39920B9A0D3007E7207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50B2A39B20B9A0D3007E7207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B2A39E20B9A0D3007E7207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,11 @@
 		50B2A3B020B9A0D3007E7207 /* WeatherAssistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAssistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B2A3B420B9A0D3007E7207 /* WeatherAssistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAssistUITests.swift; sourceTree = "<group>"; };
 		50B2A3B620B9A0D3007E7207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50B2A3C520B9A5B5007E7207 /* AssistantInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantInteractor.swift; sourceTree = "<group>"; };
+		50B2A3C720B9A5F3007E7207 /* AssistantViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantViewModels.swift; sourceTree = "<group>"; };
+		50B2A3C920B9A5FB007E7207 /* AssistantPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantPresenter.swift; sourceTree = "<group>"; };
+		50B2A3CB20B9A615007E7207 /* AssistantConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantConfigurator.swift; sourceTree = "<group>"; };
+		50B2A3D320B9A8FF007E7207 /* AssistantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +106,14 @@
 			isa = PBXGroup;
 			children = (
 				50B2A3A020B9A0D3007E7207 /* Info.plist */,
-				50B2A39B20B9A0D3007E7207 /* Assets.xcassets */,
-				50B2A39D20B9A0D3007E7207 /* LaunchScreen.storyboard */,
-				50B2A39820B9A0D3007E7207 /* Main.storyboard */,
 				50B2A39420B9A0D2007E7207 /* AppDelegate.swift */,
-				50B2A39620B9A0D3007E7207 /* ViewController.swift */,
+				50B2A3D220B9A8C0007E7207 /* Utilities */,
+				50B2A3CF20B9A7B2007E7207 /* DataModels */,
+				50B2A3D020B9A832007E7207 /* Services */,
+				50B2A3D120B9A837007E7207 /* Workers */,
+				50B2A3CD20B9A63F007E7207 /* Views */,
+				50B2A3C220B9A54B007E7207 /* Assistant */,
+				50B2A3CE20B9A6C6007E7207 /* Resources */,
 			);
 			path = WeatherAssist;
 			sourceTree = "<group>";
@@ -110,8 +121,8 @@
 		50B2A3A820B9A0D3007E7207 /* WeatherAssistTests */ = {
 			isa = PBXGroup;
 			children = (
-				50B2A3A920B9A0D3007E7207 /* WeatherAssistTests.swift */,
 				50B2A3AB20B9A0D3007E7207 /* Info.plist */,
+				50B2A3A920B9A0D3007E7207 /* WeatherAssistTests.swift */,
 			);
 			path = WeatherAssistTests;
 			sourceTree = "<group>";
@@ -119,10 +130,67 @@
 		50B2A3B320B9A0D3007E7207 /* WeatherAssistUITests */ = {
 			isa = PBXGroup;
 			children = (
-				50B2A3B420B9A0D3007E7207 /* WeatherAssistUITests.swift */,
 				50B2A3B620B9A0D3007E7207 /* Info.plist */,
+				50B2A3B420B9A0D3007E7207 /* WeatherAssistUITests.swift */,
 			);
 			path = WeatherAssistUITests;
+			sourceTree = "<group>";
+		};
+		50B2A3C220B9A54B007E7207 /* Assistant */ = {
+			isa = PBXGroup;
+			children = (
+				50B2A3CB20B9A615007E7207 /* AssistantConfigurator.swift */,
+				50B2A3C720B9A5F3007E7207 /* AssistantViewModels.swift */,
+				50B2A3D320B9A8FF007E7207 /* AssistantViewController.swift */,
+				50B2A3C520B9A5B5007E7207 /* AssistantInteractor.swift */,
+				50B2A3C920B9A5FB007E7207 /* AssistantPresenter.swift */,
+			);
+			path = Assistant;
+			sourceTree = "<group>";
+		};
+		50B2A3CD20B9A63F007E7207 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50B2A39D20B9A0D3007E7207 /* LaunchScreen.storyboard */,
+				50B2A39820B9A0D3007E7207 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50B2A3CE20B9A6C6007E7207 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50B2A39B20B9A0D3007E7207 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		50B2A3CF20B9A7B2007E7207 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		50B2A3D020B9A832007E7207 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		50B2A3D120B9A837007E7207 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		50B2A3D220B9A8C0007E7207 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50B2A39720B9A0D3007E7207 /* ViewController.swift in Sources */,
+				50B2A3C620B9A5B5007E7207 /* AssistantInteractor.swift in Sources */,
+				50B2A3CC20B9A615007E7207 /* AssistantConfigurator.swift in Sources */,
+				50B2A3CA20B9A5FB007E7207 /* AssistantPresenter.swift in Sources */,
+				50B2A3D420B9A8FF007E7207 /* AssistantViewController.swift in Sources */,
 				50B2A39520B9A0D2007E7207 /* AppDelegate.swift in Sources */,
+				50B2A3C820B9A5F3007E7207 /* AssistantViewModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
