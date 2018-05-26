@@ -19,10 +19,17 @@ class AssistantInteractor {
     
     // MARK: - Properties
     var presenter: AssistantInteractorOut?
+    var speaker = Speaker()
+    
+    // MARK: - Methods
+    func playWelcomeMessage() {
+        speaker.speak(message: "Hello, please express your demand")
+    }
 }
 
 // MARK: - AssistantInteractorIn
 extension AssistantInteractor: AssistantInteractorIn {
     func executeTasksWaitingViewToLoad() {
+        playWelcomeMessage()
     }
 }

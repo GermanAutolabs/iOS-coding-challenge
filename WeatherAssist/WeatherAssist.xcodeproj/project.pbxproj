@@ -11,13 +11,16 @@
 		50B2A39A20B9A0D3007E7207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39820B9A0D3007E7207 /* Main.storyboard */; };
 		50B2A39C20B9A0D3007E7207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39B20B9A0D3007E7207 /* Assets.xcassets */; };
 		50B2A39F20B9A0D3007E7207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39D20B9A0D3007E7207 /* LaunchScreen.storyboard */; };
-		50B2A3AA20B9A0D3007E7207 /* WeatherAssistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3A920B9A0D3007E7207 /* WeatherAssistTests.swift */; };
+		50B2A3AA20B9A0D3007E7207 /* AssistantViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3A920B9A0D3007E7207 /* AssistantViewControllerTests.swift */; };
 		50B2A3B520B9A0D3007E7207 /* WeatherAssistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3B420B9A0D3007E7207 /* WeatherAssistUITests.swift */; };
 		50B2A3C620B9A5B5007E7207 /* AssistantInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3C520B9A5B5007E7207 /* AssistantInteractor.swift */; };
 		50B2A3C820B9A5F3007E7207 /* AssistantViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3C720B9A5F3007E7207 /* AssistantViewModels.swift */; };
 		50B2A3CA20B9A5FB007E7207 /* AssistantPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3C920B9A5FB007E7207 /* AssistantPresenter.swift */; };
 		50B2A3CC20B9A615007E7207 /* AssistantConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3CB20B9A615007E7207 /* AssistantConfigurator.swift */; };
 		50B2A3D420B9A8FF007E7207 /* AssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3D320B9A8FF007E7207 /* AssistantViewController.swift */; };
+		50B2A3DA20B9BA7C007E7207 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3D920B9BA7C007E7207 /* Speaker.swift */; };
+		50B2A3DE20B9BB46007E7207 /* AssistantInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3DD20B9BB46007E7207 /* AssistantInteractorTests.swift */; };
+		50B2A3E120B9C037007E7207 /* SpeakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3E020B9C037007E7207 /* SpeakerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +48,7 @@
 		50B2A39E20B9A0D3007E7207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50B2A3A020B9A0D3007E7207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B2A3A520B9A0D3007E7207 /* WeatherAssistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAssistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50B2A3A920B9A0D3007E7207 /* WeatherAssistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAssistTests.swift; sourceTree = "<group>"; };
+		50B2A3A920B9A0D3007E7207 /* AssistantViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantViewControllerTests.swift; sourceTree = "<group>"; };
 		50B2A3AB20B9A0D3007E7207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50B2A3B020B9A0D3007E7207 /* WeatherAssistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAssistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B2A3B420B9A0D3007E7207 /* WeatherAssistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAssistUITests.swift; sourceTree = "<group>"; };
@@ -55,6 +58,9 @@
 		50B2A3C920B9A5FB007E7207 /* AssistantPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantPresenter.swift; sourceTree = "<group>"; };
 		50B2A3CB20B9A615007E7207 /* AssistantConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantConfigurator.swift; sourceTree = "<group>"; };
 		50B2A3D320B9A8FF007E7207 /* AssistantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantViewController.swift; sourceTree = "<group>"; };
+		50B2A3D920B9BA7C007E7207 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		50B2A3DD20B9BB46007E7207 /* AssistantInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantInteractorTests.swift; sourceTree = "<group>"; };
+		50B2A3E020B9C037007E7207 /* SpeakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				50B2A3AB20B9A0D3007E7207 /* Info.plist */,
-				50B2A3A920B9A0D3007E7207 /* WeatherAssistTests.swift */,
+				50B2A3DF20B9C027007E7207 /* Utilities */,
+				50B2A3DB20B9BAF8007E7207 /* Assistant */,
 			);
 			path = WeatherAssistTests;
 			sourceTree = "<group>";
@@ -189,6 +196,24 @@
 		50B2A3D220B9A8C0007E7207 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				50B2A3D920B9BA7C007E7207 /* Speaker.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		50B2A3DB20B9BAF8007E7207 /* Assistant */ = {
+			isa = PBXGroup;
+			children = (
+				50B2A3A920B9A0D3007E7207 /* AssistantViewControllerTests.swift */,
+				50B2A3DD20B9BB46007E7207 /* AssistantInteractorTests.swift */,
+			);
+			path = Assistant;
+			sourceTree = "<group>";
+		};
+		50B2A3DF20B9C027007E7207 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				50B2A3E020B9C037007E7207 /* SpeakerTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -328,6 +353,7 @@
 				50B2A3CC20B9A615007E7207 /* AssistantConfigurator.swift in Sources */,
 				50B2A3CA20B9A5FB007E7207 /* AssistantPresenter.swift in Sources */,
 				50B2A3D420B9A8FF007E7207 /* AssistantViewController.swift in Sources */,
+				50B2A3DA20B9BA7C007E7207 /* Speaker.swift in Sources */,
 				50B2A39520B9A0D2007E7207 /* AppDelegate.swift in Sources */,
 				50B2A3C820B9A5F3007E7207 /* AssistantViewModels.swift in Sources */,
 			);
@@ -337,7 +363,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50B2A3AA20B9A0D3007E7207 /* WeatherAssistTests.swift in Sources */,
+				50B2A3AA20B9A0D3007E7207 /* AssistantViewControllerTests.swift in Sources */,
+				50B2A3DE20B9BB46007E7207 /* AssistantInteractorTests.swift in Sources */,
+				50B2A3E120B9C037007E7207 /* SpeakerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

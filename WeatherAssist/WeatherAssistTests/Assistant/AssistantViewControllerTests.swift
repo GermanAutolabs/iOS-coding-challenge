@@ -1,5 +1,5 @@
 //
-//  WeatherAssistTests.swift
+//  AssistantViewControllerTests.swift
 //  WeatherAssistTests
 //
 //  Created by Bassel Ezzeddine on 26/05/2018.
@@ -9,7 +9,7 @@
 @testable import WeatherAssist
 import XCTest
 
-class WeatherAssistTests: XCTestCase {
+class AssistantViewControllerTests: XCTestCase {
     
     // MARK: - Properties
     var window: UIWindow!
