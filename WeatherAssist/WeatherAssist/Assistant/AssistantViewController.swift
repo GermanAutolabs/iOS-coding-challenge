@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol AssistantViewControllerIn {
+}
+
+protocol AssistantViewControllerOut {
+}
+
 class AssistantViewController: UIViewController {
 
     // MARK: - UIViewController
@@ -18,4 +24,8 @@ class AssistantViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+}
+
+// MARK: - ManageInternetServicesViewControllerIn
+extension AssistantViewController: AssistantViewControllerIn {
 }

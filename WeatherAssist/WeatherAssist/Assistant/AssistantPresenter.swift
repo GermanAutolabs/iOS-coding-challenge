@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+protocol AssistantPresenterIn {
+}
+
+protocol AssistantPresenterOut {
+}
+
+class AssistantPresenter {
+    
+    // MARK: - Properties
+    var viewController: AssistantPresenterOut?
+}
+
+// MARK: - AssistantPresenterIn
+extension AssistantPresenter: AssistantPresenterIn {
+}

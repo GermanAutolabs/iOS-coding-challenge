@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+protocol AssistantInteractorIn {
+}
+
+protocol AssistantInteractorOut {
+}
+
+class AssistantInteractor {
+    
+    // MARK: - Properties
+    var presenter: AssistantInteractorOut?
+}
+
+// MARK: - AssistantInteractorIn
+extension AssistantInteractor: AssistantInteractorIn {
+}
