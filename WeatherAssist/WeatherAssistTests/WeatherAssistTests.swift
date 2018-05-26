@@ -51,7 +51,7 @@ class WeatherAssistTests: XCTestCase {
     }
     
     // MARK: - Tests
-    func testWhenViewLoads_PlaysWelcomeMessage() {
+    func testWhenViewLoads_CallsExecuteTasksWaitingViewToLoadInInteractor() {
         // Given
         let interactorMock = AssistantInteractorMock()
         sut.interactor = interactorMock
