@@ -21,6 +21,7 @@
 		50B2A3DA20B9BA7C007E7207 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3D920B9BA7C007E7207 /* Speaker.swift */; };
 		50B2A3DE20B9BB46007E7207 /* AssistantInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3DD20B9BB46007E7207 /* AssistantInteractorTests.swift */; };
 		50B2A3E120B9C037007E7207 /* SpeakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3E020B9C037007E7207 /* SpeakerTests.swift */; };
+		50B2A3E520B9C99B007E7207 /* AssistantPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3E420B9C99B007E7207 /* AssistantPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		50B2A3D920B9BA7C007E7207 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		50B2A3DD20B9BB46007E7207 /* AssistantInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantInteractorTests.swift; sourceTree = "<group>"; };
 		50B2A3E020B9C037007E7207 /* SpeakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerTests.swift; sourceTree = "<group>"; };
+		50B2A3E420B9C99B007E7207 /* AssistantPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			children = (
 				50B2A3A920B9A0D3007E7207 /* AssistantViewControllerTests.swift */,
 				50B2A3DD20B9BB46007E7207 /* AssistantInteractorTests.swift */,
+				50B2A3E420B9C99B007E7207 /* AssistantPresenterTests.swift */,
 			);
 			path = Assistant;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B2A3AA20B9A0D3007E7207 /* AssistantViewControllerTests.swift in Sources */,
+				50B2A3E520B9C99B007E7207 /* AssistantPresenterTests.swift in Sources */,
 				50B2A3DE20B9BB46007E7207 /* AssistantInteractorTests.swift in Sources */,
 				50B2A3E120B9C037007E7207 /* SpeakerTests.swift in Sources */,
 			);

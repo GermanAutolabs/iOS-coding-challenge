@@ -16,22 +16,9 @@ class AssistantInteractorTests: XCTestCase {
     
     // MARK: - Mocks
     class AssistantPresenterMock: AssistantInteractorOut {
-    }
-    
-    class SpeakerMock: Speaker {
-        var speakCalled = false
-        var messagePassed = ""
-        
-        override func speak(message: String) {
-            speakCalled = true
-            messagePassed = message
-        }
-    }
-    
-    class InteractorMock: AssistantInteractor {
         var playWelcomeMessageCalled = false
         
-        override func playWelcomeMessage() {
+        func playWelcomeMessage() {
             playWelcomeMessageCalled = true
         }
     }
@@ -53,28 +40,15 @@ class AssistantInteractorTests: XCTestCase {
     }
     
     // MARK: - Tests
-    func testCallingExecuteTasksWaitingViewToLoad_CallsPlayWelcomeMessage() {
+    func testCallingExecuteTasksWaitingViewToLoad_CallsPlayWelcomeMessageInPresenter() {
         // Given
-        let interactorMock = InteractorMock()
-        sut = interactorMock
+        let presenterMock = AssistantPresenterMock()
+        sut.presenter = presenterMock
         
         // When
         sut.executeTasksWaitingViewToLoad()
         
         // Then
-        XCTAssertTrue(interactorMock.playWelcomeMessageCalled)
-    }
-    
-    func testCallingPlayWelcomeMessage_CallsSpeakInSpeaker_WithCorrectData() {
-        // Given
-        let speakerMock = SpeakerMock()
-        sut.speaker = speakerMock
-        
-        // When
-        sut.playWelcomeMessage()
-        
-        // Then
-        XCTAssertTrue(speakerMock.speakCalled)
-        XCTAssertEqual(speakerMock.messagePassed, "Hello, please express your demand")
+        XCTAssertTrue(presenterMock.playWelcomeMessageCalled)
     }
 }

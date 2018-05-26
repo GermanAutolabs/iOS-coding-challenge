@@ -9,6 +9,7 @@
 import Foundation
 
 protocol AssistantPresenterIn {
+    func playWelcomeMessage()
 }
 
 protocol AssistantPresenterOut {
@@ -18,8 +19,12 @@ class AssistantPresenter {
     
     // MARK: - Properties
     var viewController: AssistantPresenterOut?
+    var speaker = Speaker()
 }
 
 // MARK: - AssistantPresenterIn
 extension AssistantPresenter: AssistantPresenterIn {
+    func playWelcomeMessage() {
+        speaker.speak(message: "Hello, please express your demand")
+    }
 }
