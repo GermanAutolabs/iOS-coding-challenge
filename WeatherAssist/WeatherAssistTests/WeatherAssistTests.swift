@@ -6,18 +6,60 @@
 //  Copyright © 2018 Bassel Ezzeddine. All rights reserved.
 //
 
-import XCTest
 @testable import WeatherAssist
+import XCTest
 
 class WeatherAssistTests: XCTestCase {
     
+    // MARK: - Properties
+    var window: UIWindow!
+    var sut: AssistantViewController!
+    
+    // MARK: - Mocks
+    class AssistantInteractorMock: AssistantViewControllerOut {
+        var executeTasksWaitingViewToLoadCalled = false
+        
+        func executeTasksWaitingViewToLoad() {
+            executeTasksWaitingViewToLoadCalled = true
+        }
+    }
+    
+    // MARK: - XCTestCase
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        window = UIWindow()
+        setupSUT()
+        loadView()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        window = nil
         super.tearDown()
+    }
+    
+    // MARK: - Setup
+    func setupSUT() {
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        sut = storyboard.instantiateViewController(withIdentifier: "AssistantViewController") as! AssistantViewController
+    }
+    
+    // MARK: - Methods
+    func loadView() {
+        window.addSubview(sut.view)
+    }
+    
+    // MARK: - Tests
+    func testWhenViewLoads_PlaysWelcomeMessage() {
+        // Given
+        let interactorMock = AssistantInteractorMock()
+        sut.interactor = interactorMock
+        
+        // When
+        sut.viewDidLoad()
+        
+        // Then
+        XCTAssertTrue(interactorMock.executeTasksWaitingViewToLoadCalled)
     }
 }

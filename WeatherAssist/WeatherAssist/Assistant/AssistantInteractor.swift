@@ -9,6 +9,7 @@
 import Foundation
 
 protocol AssistantInteractorIn {
+    func executeTasksWaitingViewToLoad()
 }
 
 protocol AssistantInteractorOut {
@@ -22,4 +23,6 @@ class AssistantInteractor {
 
 // MARK: - AssistantInteractorIn
 extension AssistantInteractor: AssistantInteractorIn {
+    func executeTasksWaitingViewToLoad() {
+    }
 }
