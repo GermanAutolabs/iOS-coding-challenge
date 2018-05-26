@@ -22,6 +22,7 @@
 		50B2A3DE20B9BB46007E7207 /* AssistantInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3DD20B9BB46007E7207 /* AssistantInteractorTests.swift */; };
 		50B2A3E120B9C037007E7207 /* SpeakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3E020B9C037007E7207 /* SpeakerTests.swift */; };
 		50B2A3E520B9C99B007E7207 /* AssistantPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3E420B9C99B007E7207 /* AssistantPresenterTests.swift */; };
+		50B2A3E720B9CAD4007E7207 /* VoiceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3E620B9CAD4007E7207 /* VoiceListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		50B2A3DD20B9BB46007E7207 /* AssistantInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantInteractorTests.swift; sourceTree = "<group>"; };
 		50B2A3E020B9C037007E7207 /* SpeakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerTests.swift; sourceTree = "<group>"; };
 		50B2A3E420B9C99B007E7207 /* AssistantPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantPresenterTests.swift; sourceTree = "<group>"; };
+		50B2A3E620B9CAD4007E7207 /* VoiceListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				50B2A3D920B9BA7C007E7207 /* Speaker.swift */,
+				50B2A3E620B9CAD4007E7207 /* VoiceListener.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			files = (
 				50B2A3C620B9A5B5007E7207 /* AssistantInteractor.swift in Sources */,
 				50B2A3CC20B9A615007E7207 /* AssistantConfigurator.swift in Sources */,
+				50B2A3E720B9CAD4007E7207 /* VoiceListener.swift in Sources */,
 				50B2A3CA20B9A5FB007E7207 /* AssistantPresenter.swift in Sources */,
 				50B2A3D420B9A8FF007E7207 /* AssistantViewController.swift in Sources */,
 				50B2A3DA20B9BA7C007E7207 /* Speaker.swift in Sources */,

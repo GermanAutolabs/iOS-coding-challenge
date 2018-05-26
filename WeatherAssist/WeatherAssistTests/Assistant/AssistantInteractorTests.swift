@@ -23,6 +23,14 @@ class AssistantInteractorTests: XCTestCase {
         }
     }
     
+    class VoiceListenerMock: VoiceListener {
+        var setupVoiceListeningCalled = false
+        
+        override func setupVoiceListening() {
+            setupVoiceListeningCalled = true
+        }
+    }
+    
     // MARK: - XCTestCase
     override func setUp() {
         super.setUp()
@@ -50,5 +58,17 @@ class AssistantInteractorTests: XCTestCase {
         
         // Then
         XCTAssertTrue(presenterMock.playWelcomeMessageCalled)
+    }
+    
+    func testCallingExecuteTasksWaitingViewToLoad_CallsSetupVoiceListeningInVoiceListener() {
+        // Given
+        let voiceListenerMock = VoiceListenerMock()
+        sut.voiceListener = voiceListenerMock
+        
+        // When
+        sut.executeTasksWaitingViewToLoad()
+        
+        // Then
+        XCTAssertTrue(voiceListenerMock.setupVoiceListeningCalled)
     }
 }

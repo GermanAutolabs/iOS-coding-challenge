@@ -20,11 +20,13 @@ class AssistantInteractor {
     
     // MARK: - Properties
     var presenter: AssistantInteractorOut?
+    var voiceListener = VoiceListener()
 }
 
 // MARK: - AssistantInteractorIn
 extension AssistantInteractor: AssistantInteractorIn {
     func executeTasksWaitingViewToLoad() {
         presenter?.playWelcomeMessage()
+        voiceListener.setupVoiceListening()
     }
 }
