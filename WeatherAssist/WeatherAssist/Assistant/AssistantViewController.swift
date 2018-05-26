@@ -21,6 +21,11 @@ class AssistantViewController: UIViewController {
     var interactor: AssistantViewControllerOut?
     
     // MARK: - UIViewController
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        AssistantConfigurator.sharedInstance.configure(viewController: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.executeTasksWaitingViewToLoad()

@@ -8,5 +8,30 @@
 
 import Foundation
 
+extension AssistantViewController: AssistantPresenterOut {
+}
+
+extension AssistantInteractor: AssistantViewControllerOut {
+}
+
+extension AssistantPresenter: AssistantInteractorOut {
+}
+
 class AssistantConfigurator {
+    
+    // MARK: - Properties
+    static let sharedInstance = AssistantConfigurator()
+    
+    private init() {}
+    
+    // MARK: - Methods
+    func configure(viewController: AssistantViewController) {
+        let presenter = AssistantPresenter()
+        presenter.viewController = viewController
+        
+        let interactor = AssistantInteractor()
+        interactor.presenter = presenter
+        
+        viewController.interactor = interactor
+    }
 }
