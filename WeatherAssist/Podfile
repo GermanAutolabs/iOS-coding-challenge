@@ -1,0 +1,20 @@
+platform :ios, '10.0'
+
+target 'WeatherAssist' do
+  use_frameworks!
+
+  # Pods for WeatherAssist
+  pod 'Alamofire', '~> 4.6.0'  
+
+  target 'WeatherAssistTests' do
+    inherit! :search_paths
+    pod 'Alamofire', '~> 4.6.0'
+    pod 'GCDWebServer', '~> 3.4.2'
+  end
+
+  target 'WeatherAssistUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
