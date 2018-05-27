@@ -1,5 +1,4 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'WeatherAssist' do
   use_frameworks!
@@ -9,7 +8,7 @@ target 'WeatherAssist' do
 
   target 'WeatherAssistTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'GCDWebServer', '~> 3.4.2'
   end
 
   target 'WeatherAssistUITests' do

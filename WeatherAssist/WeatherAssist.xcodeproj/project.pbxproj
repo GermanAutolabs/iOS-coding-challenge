@@ -11,6 +11,7 @@
 		5044CE0F20BAB7F100664B08 /* WeatherWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044CE0E20BAB7F100664B08 /* WeatherWorker.swift */; };
 		5044CE1120BAB7FC00664B08 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044CE1020BAB7FC00664B08 /* WeatherService.swift */; };
 		504975A120BAD205008EE634 /* WeatherWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504975A020BAD205008EE634 /* WeatherWorkerTests.swift */; };
+		504975A320BAD3FA008EE634 /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504975A220BAD3FA008EE634 /* WeatherServiceTests.swift */; };
 		50B2A39520B9A0D2007E7207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A39420B9A0D2007E7207 /* AppDelegate.swift */; };
 		50B2A39A20B9A0D3007E7207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39820B9A0D3007E7207 /* Main.storyboard */; };
 		50B2A39C20B9A0D3007E7207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39B20B9A0D3007E7207 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		5044CE0E20BAB7F100664B08 /* WeatherWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWorker.swift; sourceTree = "<group>"; };
 		5044CE1020BAB7FC00664B08 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		504975A020BAD205008EE634 /* WeatherWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWorkerTests.swift; sourceTree = "<group>"; };
+		504975A220BAD3FA008EE634 /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
 		50B2A39120B9A0D2007E7207 /* WeatherAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B2A39420B9A0D2007E7207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50B2A39920B9A0D3007E7207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		5044CE1320BABB2100664B08 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				504975A220BAD3FA008EE634 /* WeatherServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				50B2A3A120B9A0D3007E7207 /* Sources */,
 				50B2A3A220B9A0D3007E7207 /* Frameworks */,
 				50B2A3A320B9A0D3007E7207 /* Resources */,
+				3B85E7C254137487167F010F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -439,6 +443,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherAssist/Pods-WeatherAssist-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3B85E7C254137487167F010F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeatherAssistTests/Pods-WeatherAssistTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherAssistTests/Pods-WeatherAssistTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8BBBA5D46334E88EA3FDE114 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,6 +541,7 @@
 			files = (
 				50B2A3AA20B9A0D3007E7207 /* AssistantViewControllerTests.swift in Sources */,
 				50B2A3E520B9C99B007E7207 /* AssistantPresenterTests.swift in Sources */,
+				504975A320BAD3FA008EE634 /* WeatherServiceTests.swift in Sources */,
 				50B2A3DE20B9BB46007E7207 /* AssistantInteractorTests.swift in Sources */,
 				504975A120BAD205008EE634 /* WeatherWorkerTests.swift in Sources */,
 				50B2A3E120B9C037007E7207 /* SpeakerTests.swift in Sources */,
