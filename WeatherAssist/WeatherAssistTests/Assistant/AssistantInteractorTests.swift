@@ -25,9 +25,15 @@ class AssistantInteractorTests: XCTestCase {
     
     class VoiceListenerMock: VoiceListener {
         var setupVoiceListeningCalled = false
+        var startListeningCalled = false
+        var isReady = false
         
         override func setupVoiceListening(completionHandler: @escaping(_ isReady: Bool) -> Void) {
             setupVoiceListeningCalled = true
+            completionHandler(isReady)
+        }
+        override func startListening(completionHandler: @escaping (_ recognizedWord: String) -> Void) {
+            startListeningCalled = true
         }
     }
     
@@ -70,5 +76,18 @@ class AssistantInteractorTests: XCTestCase {
         
         // Then
         XCTAssertTrue(voiceListenerMock.setupVoiceListeningCalled)
+    }
+    
+    func testCallingExecuteTasksWaitingViewToLoad_CallsStartListeningInVoiceListener_WhenSetupVoiceListeningIsReady() {
+        // Given
+        let voiceListenerMock = VoiceListenerMock()
+        sut.voiceListener = voiceListenerMock
+        
+        // When
+        voiceListenerMock.isReady = true
+        sut.executeTasksWaitingViewToLoad()
+        
+        // Then
+        XCTAssertTrue(voiceListenerMock.startListeningCalled)
     }
 }

@@ -21,6 +21,14 @@ class AssistantInteractor {
     // MARK: - Properties
     var presenter: AssistantInteractorOut?
     var voiceListener = VoiceListener()
+    
+    // MARK: - Methods
+    func startListeningToUserAndRecognizingWords() {
+        self.voiceListener.startListening(completionHandler: {
+            (recognizedWord: String) in
+            print(recognizedWord)
+        })
+    }
 }
 
 // MARK: - AssistantInteractorIn
@@ -29,7 +37,9 @@ extension AssistantInteractor: AssistantInteractorIn {
         presenter?.playWelcomeMessage()
         voiceListener.setupVoiceListening(completionHandler: {
             (isReady: Bool) in
-            
+            if isReady {
+                self.startListeningToUserAndRecognizingWords()
+            }
         })
     }
 }
