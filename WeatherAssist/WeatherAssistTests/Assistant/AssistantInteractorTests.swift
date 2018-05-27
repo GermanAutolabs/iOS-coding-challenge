@@ -26,7 +26,7 @@ class AssistantInteractorTests: XCTestCase {
     class VoiceListenerMock: VoiceListener {
         var setupVoiceListeningCalled = false
         
-        override func setupVoiceListening() {
+        override func setupVoiceListening(completionHandler: @escaping(_ isReady: Bool) -> Void) {
             setupVoiceListeningCalled = true
         }
     }

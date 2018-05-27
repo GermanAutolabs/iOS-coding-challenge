@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5044CE0D20BAA65A00664B08 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3D920B9BA7C007E7207 /* Speaker.swift */; };
 		50B2A39520B9A0D2007E7207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A39420B9A0D2007E7207 /* AppDelegate.swift */; };
 		50B2A39A20B9A0D3007E7207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39820B9A0D3007E7207 /* Main.storyboard */; };
 		50B2A39C20B9A0D3007E7207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39B20B9A0D3007E7207 /* Assets.xcassets */; };
@@ -382,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B2A3B520B9A0D3007E7207 /* WeatherAssistUITests.swift in Sources */,
+				5044CE0D20BAA65A00664B08 /* Speaker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

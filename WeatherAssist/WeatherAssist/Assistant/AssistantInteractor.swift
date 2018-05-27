@@ -27,6 +27,9 @@ class AssistantInteractor {
 extension AssistantInteractor: AssistantInteractorIn {
     func executeTasksWaitingViewToLoad() {
         presenter?.playWelcomeMessage()
-        voiceListener.setupVoiceListening()
+        voiceListener.setupVoiceListening(completionHandler: {
+            (isReady: Bool) in
+            
+        })
     }
 }

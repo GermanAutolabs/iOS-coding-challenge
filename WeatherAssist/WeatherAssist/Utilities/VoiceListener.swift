@@ -18,42 +18,49 @@ class VoiceListener {
     var recognitionTask: SFSpeechRecognitionTask?
     
     // MARK: - Methods
-    func setupVoiceListening() {
+    func setupVoiceListening(completionHandler: @escaping(_ isReady: Bool) -> Void) {
         SFSpeechRecognizer.requestAuthorization {
             [unowned self] (authStatus) in
             switch authStatus {
             case .authorized:
-                self.configureListenerAndStartListening()
+                self.configureListener()
+                completionHandler(true)
             case .denied:
                 print("SFSpeechRecognizer authorization denied")
+                completionHandler(false)
             case .restricted:
                 print("SFSpeechRecognizer authorization restricted")
+                completionHandler(false)
             case .notDetermined:
                 print("SFSpeechRecognizer authorization not determined")
+                completionHandler(false)
             }
         }
     }
     
-    func configureListenerAndStartListening() {
+    func configureListener() {
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
-        
         node.installTap(onBus: 0, bufferSize: 1024,
                         format: recordingFormat) { [unowned self]
                             (buffer, _) in
                             self.request.append(buffer)
         }
-        
+    }
+    
+    func startListening(completionHandler: @escaping(_ recognizedWord: String) -> Void) {
         do {
             audioEngine.prepare()
             try audioEngine.start()
             recognitionTask = speechRecognizer?.recognitionTask(with: request) {
                 (result, _) in
-                if let transcription = result?.bestTranscription {
-                    print(transcription.formattedString)
+                if let transcription = result?.bestTranscription, let lastSegment = transcription.segments.last {
+                    completionHandler(lastSegment.substring)
                 }
             }
         }
-        catch _ {}
+        catch _ {
+            print("AudioEngine unable to start")
+        }
     }
 }
