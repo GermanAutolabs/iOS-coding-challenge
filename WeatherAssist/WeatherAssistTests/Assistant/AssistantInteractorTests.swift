@@ -16,10 +16,18 @@ class AssistantInteractorTests: XCTestCase {
     
     // MARK: - Mocks
     class AssistantPresenterMock: AssistantInteractorOut {
-        var playWelcomeMessageCalled = false
+        var presentWelcomeMessageCalled = false
         
-        func playWelcomeMessage() {
-            playWelcomeMessageCalled = true
+        var presentWeatherMessageCalled = false
+        var presentWeatherMessageResponse: AssistantViewModels.Response?
+        
+        func presentWelcomeMessage() {
+            presentWelcomeMessageCalled = true
+        }
+        
+        func presentWeatherMessage(response: AssistantViewModels.Response) {
+            presentWeatherMessageCalled = true
+            presentWeatherMessageResponse = response
         }
     }
     
@@ -43,9 +51,12 @@ class AssistantInteractorTests: XCTestCase {
     
     class WeatherWorkerMock: WeatherWorker {
         var fetchCurrentWeatherCalled = false
+        var getWeatherResponseToBeReturned: GetWeatherResponse?
+        var successToBeReturned = false
         
         override func fetchCurrentWeather(completionHandler: @escaping(_ getWeatherResponse: GetWeatherResponse?, _ success: Bool) -> Void) {
             fetchCurrentWeatherCalled = true
+            completionHandler(getWeatherResponseToBeReturned, successToBeReturned)
         }
     }
     
@@ -66,7 +77,7 @@ class AssistantInteractorTests: XCTestCase {
     }
     
     // MARK: - Tests
-    func testCallingExecuteTasksWaitingViewToLoad_CallsPlayWelcomeMessageInPresenter() {
+    func testCallingExecuteTasksWaitingViewToLoad_CallsPresentWelcomeMessageInPresenter() {
         // Given
         let presenterMock = AssistantPresenterMock()
         sut.presenter = presenterMock
@@ -75,7 +86,7 @@ class AssistantInteractorTests: XCTestCase {
         sut.executeTasksWaitingViewToLoad()
         
         // Then
-        XCTAssertTrue(presenterMock.playWelcomeMessageCalled)
+        XCTAssertTrue(presenterMock.presentWelcomeMessageCalled)
     }
     
     func testCallingExecuteTasksWaitingViewToLoad_CallsSetupVoiceListeningInVoiceListener() {
@@ -117,5 +128,31 @@ class AssistantInteractorTests: XCTestCase {
         
         // Then
         XCTAssertTrue(workerMock.fetchCurrentWeatherCalled)
+    }
+    
+    func testCallingStartListeningToUserAndRecognizingWords_CallsPresentWeatherMessageInPresenterWithCorrectData_WhenResponseFromWorkerIsSuccessAndIsNotNil() {
+        // Given
+        let voiceListenerMock = VoiceListenerMock()
+        sut.voiceListener = voiceListenerMock
+        
+        let workerMock = WeatherWorkerMock()
+        sut.worker = workerMock
+        
+        let presenterMock = AssistantPresenterMock()
+        sut.presenter = presenterMock
+        
+        // When
+        let main = GetWeatherResponse.Main(temp: 350, pressure: 1000, humidity: 50)
+        workerMock.getWeatherResponseToBeReturned = GetWeatherResponse(main: main)
+        workerMock.successToBeReturned = true
+        
+        voiceListenerMock.recognizedWordToBeReturned = "Weather"
+        sut.startListeningToUserAndRecognizingWords()
+        
+        // Then
+        XCTAssertTrue(presenterMock.presentWeatherMessageCalled)
+        XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.temperature, 350)
+        XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.pressure, 1000)
+        XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.humidity, 50)
     }
 }

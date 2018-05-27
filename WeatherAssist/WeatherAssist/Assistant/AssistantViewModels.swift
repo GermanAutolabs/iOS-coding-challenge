@@ -9,4 +9,10 @@
 import Foundation
 
 enum AssistantViewModels {
+    
+    struct Response {
+        var temperature: Float
+        var pressure: Float
+        var humidity: Float
+    }
 }

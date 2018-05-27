@@ -13,7 +13,8 @@ protocol AssistantInteractorIn {
 }
 
 protocol AssistantInteractorOut {
-    func playWelcomeMessage()
+    func presentWelcomeMessage()
+    func presentWeatherMessage(response: AssistantViewModels.Response)
 }
 
 class AssistantInteractor {
@@ -31,17 +32,28 @@ class AssistantInteractor {
             if recognizedWord.lowercased() == "weather" {
                 self.worker.fetchCurrentWeather(completionHandler: {
                     (getWeatherResponse: GetWeatherResponse?, success: Bool) in
-                    
+                    self.interpretFetchCurrentWeatherResponse(getWeatherResponse: getWeatherResponse, success: success)
                 })
             }
         })
+    }
+    
+    func interpretFetchCurrentWeatherResponse(getWeatherResponse: GetWeatherResponse?, success: Bool) {
+        if let getWeatherResponse = getWeatherResponse, success {
+            let main = getWeatherResponse.main
+            let response = AssistantViewModels.Response(temperature: main.temp, pressure: main.pressure, humidity: main.humidity)
+            self.presenter?.presentWeatherMessage(response: response)
+        }
+        else {
+            
+        }
     }
 }
 
 // MARK: - AssistantInteractorIn
 extension AssistantInteractor: AssistantInteractorIn {
     func executeTasksWaitingViewToLoad() {
-        presenter?.playWelcomeMessage()
+        presenter?.presentWelcomeMessage()
         voiceListener.setupVoiceListening(completionHandler: {
             (isSuccessful: Bool) in
             if isSuccessful {

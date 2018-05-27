@@ -45,13 +45,13 @@ class AssistantPresenterTests: XCTestCase {
     }
     
     // MARK: - Tests
-    func testCallingPlayWelcomeMessage_CallsSpeakInSpeaker_WithCorrectData() {
+    func testCallingPresentWelcomeMessage_CallsSpeakInSpeaker_WithCorrectData() {
         // Given
         let speakerMock = SpeakerMock()
         sut.speaker = speakerMock
         
         // When
-        sut.playWelcomeMessage()
+        sut.presentWelcomeMessage()
         
         // Then
         XCTAssertTrue(speakerMock.speakCalled)

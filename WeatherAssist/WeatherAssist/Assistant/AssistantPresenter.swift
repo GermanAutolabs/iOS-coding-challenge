@@ -9,7 +9,8 @@
 import Foundation
 
 protocol AssistantPresenterIn {
-    func playWelcomeMessage()
+    func presentWelcomeMessage()
+    func presentWeatherMessage(response: AssistantViewModels.Response)
 }
 
 protocol AssistantPresenterOut {
@@ -24,7 +25,11 @@ class AssistantPresenter {
 
 // MARK: - AssistantPresenterIn
 extension AssistantPresenter: AssistantPresenterIn {
-    func playWelcomeMessage() {
+    func presentWelcomeMessage() {
         speaker.speak(message: "Hello, please express your demand")
+    }
+    
+    func presentWeatherMessage(response: AssistantViewModels.Response) {
+        
     }
 }
