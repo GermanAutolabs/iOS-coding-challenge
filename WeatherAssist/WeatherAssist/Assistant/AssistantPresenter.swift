@@ -11,6 +11,7 @@ import Foundation
 protocol AssistantPresenterIn {
     func presentWelcomeMessage()
     func presentWeatherMessage(response: AssistantViewModels.Response)
+    func presentErrorMessage()
 }
 
 protocol AssistantPresenterOut {
@@ -30,6 +31,10 @@ extension AssistantPresenter: AssistantPresenterIn {
     }
     
     func presentWeatherMessage(response: AssistantViewModels.Response) {
+        
+    }
+    
+    func presentErrorMessage() {
         
     }
 }

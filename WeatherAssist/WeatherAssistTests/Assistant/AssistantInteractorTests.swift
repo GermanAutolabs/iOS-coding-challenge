@@ -21,6 +21,8 @@ class AssistantInteractorTests: XCTestCase {
         var presentWeatherMessageCalled = false
         var presentWeatherMessageResponse: AssistantViewModels.Response?
         
+        var presentErrorMessageCalled = false
+        
         func presentWelcomeMessage() {
             presentWelcomeMessageCalled = true
         }
@@ -28,6 +30,10 @@ class AssistantInteractorTests: XCTestCase {
         func presentWeatherMessage(response: AssistantViewModels.Response) {
             presentWeatherMessageCalled = true
             presentWeatherMessageResponse = response
+        }
+        
+        func presentErrorMessage() {
+            presentErrorMessageCalled = true
         }
     }
     
@@ -154,5 +160,50 @@ class AssistantInteractorTests: XCTestCase {
         XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.temperature, 350)
         XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.pressure, 1000)
         XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.humidity, 50)
+    }
+    
+    func testCallingStartListeningToUserAndRecognizingWords_CallsPresentErrorMessageInPresenter_WhenResponseFromWorkerIsNotSuccess() {
+        // Given
+        let voiceListenerMock = VoiceListenerMock()
+        sut.voiceListener = voiceListenerMock
+        
+        let workerMock = WeatherWorkerMock()
+        sut.worker = workerMock
+        
+        let presenterMock = AssistantPresenterMock()
+        sut.presenter = presenterMock
+        
+        // When
+        let main = GetWeatherResponse.Main(temp: 350, pressure: 1000, humidity: 50)
+        workerMock.getWeatherResponseToBeReturned = GetWeatherResponse(main: main)
+        workerMock.successToBeReturned = false
+        
+        voiceListenerMock.recognizedWordToBeReturned = "Weather"
+        sut.startListeningToUserAndRecognizingWords()
+        
+        // Then
+        XCTAssertTrue(presenterMock.presentErrorMessageCalled)
+    }
+    
+    func testCallingStartListeningToUserAndRecognizingWords_CallsPresentErrorMessageInPresenter_WhenResponseFromWorkerIsSuccessAndIsNil() {
+        // Given
+        let voiceListenerMock = VoiceListenerMock()
+        sut.voiceListener = voiceListenerMock
+        
+        let workerMock = WeatherWorkerMock()
+        sut.worker = workerMock
+        
+        let presenterMock = AssistantPresenterMock()
+        sut.presenter = presenterMock
+        
+        // When
+        workerMock.getWeatherResponseToBeReturned = nil
+        workerMock.successToBeReturned = true
+        
+        voiceListenerMock.recognizedWordToBeReturned = "Weather"
+        sut.startListeningToUserAndRecognizingWords()
+        
+        // Then
+        XCTAssertTrue(presenterMock.presentErrorMessageCalled)
     }
 }

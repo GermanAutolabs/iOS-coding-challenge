@@ -15,6 +15,7 @@ protocol AssistantInteractorIn {
 protocol AssistantInteractorOut {
     func presentWelcomeMessage()
     func presentWeatherMessage(response: AssistantViewModels.Response)
+    func presentErrorMessage()
 }
 
 class AssistantInteractor {
@@ -45,7 +46,7 @@ class AssistantInteractor {
             self.presenter?.presentWeatherMessage(response: response)
         }
         else {
-            
+            self.presenter?.presentErrorMessage()
         }
     }
 }
