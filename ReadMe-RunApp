@@ -1,0 +1,9 @@
+A small notice for running the app :
+
+1 - Open the app and wait the welcome message to finish
+2 - Speak any phrase contaning the word "Weather"
+3 - Then the app will say the current weather in Berlin
+
+In case of any error that occurs on the weather server, the app will say an error message.
+
+The app needs an internet connection to be able to recognise the phrases, and to get the weather ofcourse !
