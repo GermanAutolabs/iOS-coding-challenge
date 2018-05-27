@@ -31,11 +31,11 @@ extension AssistantPresenter: AssistantPresenterIn {
     }
     
     func presentWeatherMessage(response: AssistantViewModels.Response) {
-        let weatherMessage = "Current temperature in Berlin is \(response.temperature) degrees celsius with pressure of \(response.pressure) Hectopascals and \(response.humidity) percent humidity"
+        let weatherMessage = "Current temperature in Berlin is \(response.temperature) degrees celsius with pressure of \(response.pressure) Hectopascals, and \(response.humidity) percent humidity"
         speaker.speak(message: weatherMessage)
     }
     
     func presentErrorMessage() {
-        
+        speaker.speak(message: "I am sorry an error occured, please try again later")
     }
 }

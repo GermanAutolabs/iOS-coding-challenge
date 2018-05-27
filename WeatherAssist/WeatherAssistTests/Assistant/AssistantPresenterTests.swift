@@ -69,6 +69,19 @@ class AssistantPresenterTests: XCTestCase {
         
         // Then
         XCTAssertTrue(speakerMock.speakCalled)
-        XCTAssertEqual(speakerMock.messagePassed, "Current temperature in Berlin is 25 degrees celsius with pressure of 1000 Hectopascals and 50 percent humidity")
+        XCTAssertEqual(speakerMock.messagePassed, "Current temperature in Berlin is 25 degrees celsius with pressure of 1000 Hectopascals, and 50 percent humidity")
+    }
+    
+    func testCallingPresentErrorMessage_CallsSpeakInSpeakerWithCorrectData() {
+        // Given
+        let speakerMock = SpeakerMock()
+        sut.speaker = speakerMock
+        
+        // When
+        sut.presentErrorMessage()
+        
+        // Then
+        XCTAssertTrue(speakerMock.speakCalled)
+        XCTAssertEqual(speakerMock.messagePassed, "I am sorry an error occured, please try again later")
     }
 }
