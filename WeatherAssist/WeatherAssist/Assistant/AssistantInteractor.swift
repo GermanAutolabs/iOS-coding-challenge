@@ -29,7 +29,10 @@ class AssistantInteractor {
             (recognizedWord: String) in
             //print(recognizedWord)
             if recognizedWord.lowercased() == "weather" {
-                self.worker.fetchCurrentWeather()
+                self.worker.fetchCurrentWeather(completionHandler: {
+                    (getWeatherResponse: GetWeatherResponse?, success: Bool) in
+                    
+                })
             }
         })
     }

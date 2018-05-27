@@ -44,7 +44,7 @@ class AssistantInteractorTests: XCTestCase {
     class WeatherWorkerMock: WeatherWorker {
         var fetchCurrentWeatherCalled = false
         
-        override func fetchCurrentWeather() {
+        override func fetchCurrentWeather(completionHandler: @escaping(_ getWeatherResponse: GetWeatherResponse?, _ success: Bool) -> Void) {
             fetchCurrentWeatherCalled = true
         }
     }

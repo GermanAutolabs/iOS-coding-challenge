@@ -8,12 +8,22 @@
 
 import Foundation
 
-struct GetWeatherResponse: Codable {
+struct GetWeatherResponse: Codable, Equatable {
     var main: Main
     
-    struct Main: Codable {
+    struct Main: Codable, Equatable {
         var temp: Float
         var pressure: Float
         var humidity: Float
     }
+}
+
+func ==(lhs: GetWeatherResponse, rhs: GetWeatherResponse) -> Bool {
+    return lhs.main == rhs.main
+}
+
+func ==(lhs: GetWeatherResponse.Main, rhs: GetWeatherResponse.Main) -> Bool {
+    return lhs.temp == rhs.temp
+        && lhs.pressure == rhs.pressure
+        && lhs.humidity == rhs.humidity
 }
