@@ -36,8 +36,8 @@ extension AssistantInteractor: AssistantInteractorIn {
     func executeTasksWaitingViewToLoad() {
         presenter?.playWelcomeMessage()
         voiceListener.setupVoiceListening(completionHandler: {
-            (isReady: Bool) in
-            if isReady {
+            (isSuccessful: Bool) in
+            if isSuccessful {
                 self.startListeningToUserAndRecognizingWords()
             }
         })

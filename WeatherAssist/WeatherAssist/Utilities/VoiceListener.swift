@@ -18,7 +18,7 @@ class VoiceListener {
     var recognitionTask: SFSpeechRecognitionTask?
     
     // MARK: - Methods
-    func setupVoiceListening(completionHandler: @escaping(_ isReady: Bool) -> Void) {
+    func setupVoiceListening(completionHandler: @escaping(_ isSuccessful: Bool) -> Void) {
         SFSpeechRecognizer.requestAuthorization {
             [unowned self] (authStatus) in
             switch authStatus {
