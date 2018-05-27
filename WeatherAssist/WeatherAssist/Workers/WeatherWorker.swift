@@ -11,10 +11,10 @@ import Foundation
 class WeatherWorker {
     
     // MARK: - Properties
-    var weatherService = WeatherService()
+    var service = WeatherService()
     
     // MARK: - Methods
     func fetchCurrentWeather() {
-        
+        service.getWeather()
     }
 }

@@ -10,6 +10,7 @@
 		5044CE0D20BAA65A00664B08 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3D920B9BA7C007E7207 /* Speaker.swift */; };
 		5044CE0F20BAB7F100664B08 /* WeatherWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044CE0E20BAB7F100664B08 /* WeatherWorker.swift */; };
 		5044CE1120BAB7FC00664B08 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044CE1020BAB7FC00664B08 /* WeatherService.swift */; };
+		504975A120BAD205008EE634 /* WeatherWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504975A020BAD205008EE634 /* WeatherWorkerTests.swift */; };
 		50B2A39520B9A0D2007E7207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A39420B9A0D2007E7207 /* AppDelegate.swift */; };
 		50B2A39A20B9A0D3007E7207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39820B9A0D3007E7207 /* Main.storyboard */; };
 		50B2A39C20B9A0D3007E7207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39B20B9A0D3007E7207 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		4F16F6E17D2ED675C6603238 /* Pods-WeatherAssistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAssistUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherAssistUITests/Pods-WeatherAssistUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5044CE0E20BAB7F100664B08 /* WeatherWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWorker.swift; sourceTree = "<group>"; };
 		5044CE1020BAB7FC00664B08 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		504975A020BAD205008EE634 /* WeatherWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWorkerTests.swift; sourceTree = "<group>"; };
 		50B2A39120B9A0D2007E7207 /* WeatherAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B2A39420B9A0D2007E7207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50B2A39920B9A0D3007E7207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		5044CE1220BABB1A00664B08 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
+				504975A020BAD205008EE634 /* WeatherWorkerTests.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				50B2A3AA20B9A0D3007E7207 /* AssistantViewControllerTests.swift in Sources */,
 				50B2A3E520B9C99B007E7207 /* AssistantPresenterTests.swift in Sources */,
 				50B2A3DE20B9BB46007E7207 /* AssistantInteractorTests.swift in Sources */,
+				504975A120BAD205008EE634 /* WeatherWorkerTests.swift in Sources */,
 				50B2A3E120B9C037007E7207 /* SpeakerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

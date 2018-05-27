@@ -10,4 +10,8 @@ import Foundation
 
 class WeatherService {
     
+    // MARK: - Methods
+    func getWeather() {
+        
+    }
 }
