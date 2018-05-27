@@ -8,6 +8,7 @@ target 'WeatherAssist' do
 
   target 'WeatherAssistTests' do
     inherit! :search_paths
+    pod 'Alamofire', '~> 4.6.0'
     pod 'GCDWebServer', '~> 3.4.2'
   end
 

@@ -18,7 +18,7 @@ class WeatherWorkerTests: XCTestCase {
     class WeatherServiceMock: WeatherService {
         var getWeatherCalled = false
         
-        override func getWeather() {
+        override func getWeather(completionHandler: @escaping(_ getWeatherResponse: GetWeatherResponse?, _ httpStatusCode: Int) -> Void) {
             getWeatherCalled = true
         }
     }

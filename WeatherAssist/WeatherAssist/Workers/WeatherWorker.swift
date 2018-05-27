@@ -15,6 +15,8 @@ class WeatherWorker {
     
     // MARK: - Methods
     func fetchCurrentWeather() {
-        service.getWeather()
+        service.getWeather(completionHandler: {
+            (getWeatherResponse: GetWeatherResponse?, httpStatusCode: Int) in
+        })
     }
 }

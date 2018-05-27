@@ -6,30 +6,52 @@
 //  Copyright © 2018 Bassel Ezzeddine. All rights reserved.
 //
 
+@testable import WeatherAssist
 import XCTest
 
 class WeatherServiceTests: XCTestCase {
     
+    // MARK: - Properties
+    var sut: WeatherService!
+    let mockServer = MockServer()
+    
+    // MARK: - XCTestCase
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        setupSUT()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        mockServer.stop()
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: - Setup
+    func setupSUT() {
+        sut = WeatherService()
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    // MARK: - Tests
+    func testCallingGetWeather_ReturnsCorrectData() {
+        // Given
+        mockServer.respondToGetWeather()
+        mockServer.start()
+        
+        // When
+        let expectation = self.expectation(description: "Wait server response")
+        sut.getWeather(completionHandler: {
+            (getWeatherResponse: GetWeatherResponse?, httpStatusCode: Int) in
+            
+            // Then
+            XCTAssertEqual(httpStatusCode, 200)
+            XCTAssertNotNil(getWeatherResponse)
+            XCTAssertEqual(getWeatherResponse?.main.temp, 350)
+            XCTAssertEqual(getWeatherResponse?.main.pressure, 1000)
+            XCTAssertEqual(getWeatherResponse?.main.humidity, 50)
+            
+            expectation.fulfill()
+        })
+        self.waitForExpectations(timeout: 3.0, handler: nil)
     }
-    
 }
