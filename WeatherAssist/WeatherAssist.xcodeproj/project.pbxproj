@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5044CE0D20BAA65A00664B08 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A3D920B9BA7C007E7207 /* Speaker.swift */; };
+		5044CE0F20BAB7F100664B08 /* WeatherWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044CE0E20BAB7F100664B08 /* WeatherWorker.swift */; };
+		5044CE1120BAB7FC00664B08 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044CE1020BAB7FC00664B08 /* WeatherService.swift */; };
 		50B2A39520B9A0D2007E7207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B2A39420B9A0D2007E7207 /* AppDelegate.swift */; };
 		50B2A39A20B9A0D3007E7207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39820B9A0D3007E7207 /* Main.storyboard */; };
 		50B2A39C20B9A0D3007E7207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B2A39B20B9A0D3007E7207 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5044CE0E20BAB7F100664B08 /* WeatherWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWorker.swift; sourceTree = "<group>"; };
+		5044CE1020BAB7FC00664B08 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		50B2A39120B9A0D2007E7207 /* WeatherAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B2A39420B9A0D2007E7207 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50B2A39920B9A0D3007E7207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		50B2A3D020B9A832007E7207 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5044CE1020BAB7FC00664B08 /* WeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 		50B2A3D120B9A837007E7207 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
+				5044CE0E20BAB7F100664B08 /* WeatherWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -356,8 +362,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5044CE1120BAB7FC00664B08 /* WeatherService.swift in Sources */,
 				50B2A3C620B9A5B5007E7207 /* AssistantInteractor.swift in Sources */,
 				50B2A3CC20B9A615007E7207 /* AssistantConfigurator.swift in Sources */,
+				5044CE0F20BAB7F100664B08 /* WeatherWorker.swift in Sources */,
 				50B2A3E720B9CAD4007E7207 /* VoiceListener.swift in Sources */,
 				50B2A3CA20B9A5FB007E7207 /* AssistantPresenter.swift in Sources */,
 				50B2A3D420B9A8FF007E7207 /* AssistantViewController.swift in Sources */,

@@ -21,12 +21,16 @@ class AssistantInteractor {
     // MARK: - Properties
     var presenter: AssistantInteractorOut?
     var voiceListener = VoiceListener()
+    var worker = WeatherWorker()
     
     // MARK: - Methods
     func startListeningToUserAndRecognizingWords() {
         self.voiceListener.startListening(completionHandler: {
             (recognizedWord: String) in
-            print(recognizedWord)
+            //print(recognizedWord)
+            if recognizedWord.lowercased() == "weather" {
+                self.worker.fetchCurrentWeather()
+            }
         })
     }
 }

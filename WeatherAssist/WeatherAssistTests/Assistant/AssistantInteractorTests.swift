@@ -25,15 +25,27 @@ class AssistantInteractorTests: XCTestCase {
     
     class VoiceListenerMock: VoiceListener {
         var setupVoiceListeningCalled = false
+        var isSuccessfulToBeReturned = false
+        
         var startListeningCalled = false
-        var isSuccessful = false
+        var recognizedWordToBeReturned = ""
         
         override func setupVoiceListening(completionHandler: @escaping(_ isSuccessful: Bool) -> Void) {
             setupVoiceListeningCalled = true
-            completionHandler(isSuccessful)
+            completionHandler(isSuccessfulToBeReturned)
         }
+        
         override func startListening(completionHandler: @escaping (_ recognizedWord: String) -> Void) {
             startListeningCalled = true
+            completionHandler(recognizedWordToBeReturned)
+        }
+    }
+    
+    class WeatherWorkerMock: WeatherWorker {
+        var fetchCurrentWeatherCalled = false
+        
+        override func fetchCurrentWeather() {
+            fetchCurrentWeatherCalled = true
         }
     }
     
@@ -84,10 +96,26 @@ class AssistantInteractorTests: XCTestCase {
         sut.voiceListener = voiceListenerMock
         
         // When
-        voiceListenerMock.isSuccessful = true
+        voiceListenerMock.isSuccessfulToBeReturned = true
         sut.executeTasksWaitingViewToLoad()
         
         // Then
         XCTAssertTrue(voiceListenerMock.startListeningCalled)
+    }
+    
+    func testCallingStartListeningToUserAndRecognizingWords_CallsFetchCurrentWeatherInWorker_WhenRecognizedWordIsWeather() {
+        // Given
+        let voiceListenerMock = VoiceListenerMock()
+        sut.voiceListener = voiceListenerMock
+        
+        let workerMock = WeatherWorkerMock()
+        sut.worker = workerMock
+        
+        // When
+        voiceListenerMock.recognizedWordToBeReturned = "Weather"
+        sut.startListeningToUserAndRecognizingWords()
+        
+        // Then
+        XCTAssertTrue(workerMock.fetchCurrentWeatherCalled)
     }
 }
