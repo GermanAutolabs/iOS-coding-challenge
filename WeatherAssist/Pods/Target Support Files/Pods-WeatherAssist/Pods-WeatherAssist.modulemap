@@ -1,0 +1,6 @@
+framework module Pods_WeatherAssist {
+  umbrella header "Pods-WeatherAssist-umbrella.h"
+
+  export *
+  module * { export * }
+}

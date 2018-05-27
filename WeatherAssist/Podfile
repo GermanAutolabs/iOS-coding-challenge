@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'WeatherAssist' do
+  use_frameworks!
+
+  # Pods for WeatherAssist
+  pod 'Alamofire', '~> 4.6.0'  
+
+  target 'WeatherAssistTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'WeatherAssistUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
