@@ -18,7 +18,7 @@ class WeatherService {
     func getWeather(completionHandler: @escaping(_ getWeatherResponse: GetWeatherResponse?, _ httpStatusCode: Int) -> Void) {
         
         let endpoint = Configuration.init().weatherEndpoint()
-        let url = "\(endpoint)/data/2.5/weather?q=berlin&type=accurate&appid=e1cdd7738b9db747857959666b599c83"
+        let url = "\(endpoint)/data/2.5/weather?q=berlin&type=accurate&units=metric&appid=e1cdd7738b9db747857959666b599c83"
         
         Alamofire.request(url, method: .get)
             .responseJSON { response in

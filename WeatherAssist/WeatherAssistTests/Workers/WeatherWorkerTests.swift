@@ -61,7 +61,7 @@ class WeatherWorkerTests: XCTestCase {
         sut.service = serviceMock
         
         // When
-        let main = GetWeatherResponse.Main(temp: 350, pressure: 1000, humidity: 50)
+        let main = GetWeatherResponse.Main(temp: 25, pressure: 1000, humidity: 50)
         serviceMock.getWeatherResponseToBeReturned = GetWeatherResponse(main: main)
         serviceMock.httpStatusCodeToBeReturned = 200
         

@@ -43,7 +43,7 @@ class SpeakerTests: XCTestCase {
     }
     
     // MARK: - Tests
-    func testCallingSpeakInSpeaker_CallsSpeakInSynthesizer_WithCorrectData() {
+    func testCallingSpeakInSpeaker_CallsSpeakInSynthesizerWithCorrectData() {
         // Given
         let synthesizerMock = SynthesizerMock()
         sut.synthesizer = synthesizerMock

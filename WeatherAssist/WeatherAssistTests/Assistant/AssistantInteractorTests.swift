@@ -148,7 +148,7 @@ class AssistantInteractorTests: XCTestCase {
         sut.presenter = presenterMock
         
         // When
-        let main = GetWeatherResponse.Main(temp: 350, pressure: 1000, humidity: 50)
+        let main = GetWeatherResponse.Main(temp: 25, pressure: 1000, humidity: 50)
         workerMock.getWeatherResponseToBeReturned = GetWeatherResponse(main: main)
         workerMock.successToBeReturned = true
         
@@ -157,7 +157,7 @@ class AssistantInteractorTests: XCTestCase {
         
         // Then
         XCTAssertTrue(presenterMock.presentWeatherMessageCalled)
-        XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.temperature, 350)
+        XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.temperature, 25)
         XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.pressure, 1000)
         XCTAssertEqual(presenterMock.presentWeatherMessageResponse?.humidity, 50)
     }
@@ -174,7 +174,7 @@ class AssistantInteractorTests: XCTestCase {
         sut.presenter = presenterMock
         
         // When
-        let main = GetWeatherResponse.Main(temp: 350, pressure: 1000, humidity: 50)
+        let main = GetWeatherResponse.Main(temp: 25, pressure: 1000, humidity: 50)
         workerMock.getWeatherResponseToBeReturned = GetWeatherResponse(main: main)
         workerMock.successToBeReturned = false
         

@@ -42,7 +42,7 @@ class AssistantInteractor {
     func interpretFetchCurrentWeatherResponse(getWeatherResponse: GetWeatherResponse?, success: Bool) {
         if let getWeatherResponse = getWeatherResponse, success {
             let main = getWeatherResponse.main
-            let response = AssistantViewModels.Response(temperature: main.temp, pressure: main.pressure, humidity: main.humidity)
+            let response = AssistantViewModels.Response(temperature: Int(main.temp), pressure: Int(main.pressure), humidity: Int(main.humidity))
             self.presenter?.presentWeatherMessage(response: response)
         }
         else {

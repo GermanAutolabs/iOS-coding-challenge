@@ -46,7 +46,7 @@ class WeatherServiceTests: XCTestCase {
             // Then
             XCTAssertEqual(httpStatusCode, 200)
             XCTAssertNotNil(getWeatherResponse)
-            XCTAssertEqual(getWeatherResponse?.main.temp, 350)
+            XCTAssertEqual(getWeatherResponse?.main.temp, 25)
             XCTAssertEqual(getWeatherResponse?.main.pressure, 1000)
             XCTAssertEqual(getWeatherResponse?.main.humidity, 50)
             
