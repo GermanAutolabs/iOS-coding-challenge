@@ -1,0 +1,769 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		340D8B3420930E8B0005E974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B3320930E8B0005E974 /* AppDelegate.swift */; };
+		340D8B3620930E8B0005E974 /* VoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B3520930E8B0005E974 /* VoiceViewController.swift */; };
+		340D8B3920930E8B0005E974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340D8B3720930E8B0005E974 /* Main.storyboard */; };
+		340D8B3C20930E8B0005E974 /* Poc_Mauro_Bianchelli.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B3A20930E8B0005E974 /* Poc_Mauro_Bianchelli.xcdatamodeld */; };
+		340D8B3E20930E8C0005E974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340D8B3D20930E8C0005E974 /* Assets.xcassets */; };
+		340D8B4120930E8C0005E974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340D8B3F20930E8C0005E974 /* LaunchScreen.storyboard */; };
+		340D8B4C20930E8C0005E974 /* Poc_Mauro_BianchelliTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B4B20930E8C0005E974 /* Poc_Mauro_BianchelliTests.swift */; };
+		340D8B5720930E8D0005E974 /* Poc_Mauro_BianchelliUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B5620930E8D0005E974 /* Poc_Mauro_BianchelliUITests.swift */; };
+		340D8B6720930FC80005E974 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B6620930FC80005E974 /* MainCoordinator.swift */; };
+		340D8B6C209315110005E974 /* VoiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B6B209315110005E974 /* VoiceCoordinator.swift */; };
+		340D8B74209320C60005E974 /* ResultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B73209320C60005E974 /* ResultCoordinator.swift */; };
+		340D8B76209320DD0005E974 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B75209320DD0005E974 /* ResultViewController.swift */; };
+		3468307820F0B5D2000B98C5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468307620F0B5D2000B98C5 /* Models.swift */; };
+		3468307920F0B5D2000B98C5 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468307720F0B5D2000B98C5 /* WeatherApi.swift */; };
+		34A400D620AB21C40033C2C0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A400D520AB21C40033C2C0 /* Observable.swift */; };
+		34AD476320A99FCF00159ACA /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD476220A99FCF00159ACA /* WeatherViewModel.swift */; };
+		D248A6B315147EEC78683DF4 /* Pods_Poc_Mauro_Bianchelli.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F44A7CCC10C1B7B74640630 /* Pods_Poc_Mauro_Bianchelli.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		340D8B4820930E8C0005E974 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 340D8B2820930E8B0005E974 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 340D8B2F20930E8B0005E974;
+			remoteInfo = Poc.Mauro.Bianchelli;
+		};
+		340D8B5320930E8D0005E974 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 340D8B2820930E8B0005E974 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 340D8B2F20930E8B0005E974;
+			remoteInfo = Poc.Mauro.Bianchelli;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		340D8B3020930E8B0005E974 /* Poc.Mauro.Bianchelli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poc.Mauro.Bianchelli.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		340D8B3320930E8B0005E974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		340D8B3520930E8B0005E974 /* VoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewController.swift; sourceTree = "<group>"; };
+		340D8B3820930E8B0005E974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		340D8B3B20930E8B0005E974 /* Poc_Mauro_Bianchelli.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Poc_Mauro_Bianchelli.xcdatamodel; sourceTree = "<group>"; };
+		340D8B3D20930E8C0005E974 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		340D8B4020930E8C0005E974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		340D8B4220930E8C0005E974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		340D8B4720930E8C0005E974 /* Poc.Mauro.BianchelliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Poc.Mauro.BianchelliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		340D8B4B20930E8C0005E974 /* Poc_Mauro_BianchelliTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poc_Mauro_BianchelliTests.swift; sourceTree = "<group>"; };
+		340D8B4D20930E8C0005E974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		340D8B5220930E8D0005E974 /* Poc.Mauro.BianchelliUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Poc.Mauro.BianchelliUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		340D8B5620930E8D0005E974 /* Poc_Mauro_BianchelliUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poc_Mauro_BianchelliUITests.swift; sourceTree = "<group>"; };
+		340D8B5820930E8D0005E974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		340D8B6620930FC80005E974 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		340D8B6B209315110005E974 /* VoiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCoordinator.swift; sourceTree = "<group>"; };
+		340D8B73209320C60005E974 /* ResultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCoordinator.swift; sourceTree = "<group>"; };
+		340D8B75209320DD0005E974 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		3468307620F0B5D2000B98C5 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		3468307720F0B5D2000B98C5 /* WeatherApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
+		34A400D520AB21C40033C2C0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		34AD476220A99FCF00159ACA /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		7C89E8E8E31308B676791D79 /* Pods-Poc.Mauro.Bianchelli.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poc.Mauro.Bianchelli.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poc.Mauro.Bianchelli/Pods-Poc.Mauro.Bianchelli.release.xcconfig"; sourceTree = "<group>"; };
+		7D780AEE72ADE29F6FA726C4 /* Pods-Poc.Mauro.Bianchelli.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poc.Mauro.Bianchelli.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poc.Mauro.Bianchelli/Pods-Poc.Mauro.Bianchelli.debug.xcconfig"; sourceTree = "<group>"; };
+		9F44A7CCC10C1B7B74640630 /* Pods_Poc_Mauro_Bianchelli.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poc_Mauro_Bianchelli.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		340D8B2D20930E8B0005E974 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D248A6B315147EEC78683DF4 /* Pods_Poc_Mauro_Bianchelli.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		340D8B4420930E8C0005E974 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		340D8B4F20930E8D0005E974 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		340D8B2720930E8B0005E974 = {
+			isa = PBXGroup;
+			children = (
+				340D8B3220930E8B0005E974 /* Poc.Mauro.Bianchelli */,
+				340D8B4A20930E8C0005E974 /* Poc.Mauro.BianchelliTests */,
+				340D8B5520930E8D0005E974 /* Poc.Mauro.BianchelliUITests */,
+				340D8B3120930E8B0005E974 /* Products */,
+				779F5C322BCCA3E2EBF4E765 /* Pods */,
+				C485B6593DFEC9F1AE8ADF2E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		340D8B3120930E8B0005E974 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				340D8B3020930E8B0005E974 /* Poc.Mauro.Bianchelli.app */,
+				340D8B4720930E8C0005E974 /* Poc.Mauro.BianchelliTests.xctest */,
+				340D8B5220930E8D0005E974 /* Poc.Mauro.BianchelliUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		340D8B3220930E8B0005E974 /* Poc.Mauro.Bianchelli */ = {
+			isa = PBXGroup;
+			children = (
+				34A400D420AB21A60033C2C0 /* Observable */,
+				34AD476120A99F7F00159ACA /* ViewModels */,
+				34BB20132099DC80008B3376 /* API */,
+				340D8B6820930FDB0005E974 /* Coordinators */,
+				340D8B6520930F750005E974 /* ViewControllers */,
+				340D8B3320930E8B0005E974 /* AppDelegate.swift */,
+				340D8B3720930E8B0005E974 /* Main.storyboard */,
+				340D8B3D20930E8C0005E974 /* Assets.xcassets */,
+				340D8B3F20930E8C0005E974 /* LaunchScreen.storyboard */,
+				340D8B4220930E8C0005E974 /* Info.plist */,
+				340D8B3A20930E8B0005E974 /* Poc_Mauro_Bianchelli.xcdatamodeld */,
+			);
+			path = Poc.Mauro.Bianchelli;
+			sourceTree = "<group>";
+		};
+		340D8B4A20930E8C0005E974 /* Poc.Mauro.BianchelliTests */ = {
+			isa = PBXGroup;
+			children = (
+				340D8B4B20930E8C0005E974 /* Poc_Mauro_BianchelliTests.swift */,
+				340D8B4D20930E8C0005E974 /* Info.plist */,
+			);
+			path = Poc.Mauro.BianchelliTests;
+			sourceTree = "<group>";
+		};
+		340D8B5520930E8D0005E974 /* Poc.Mauro.BianchelliUITests */ = {
+			isa = PBXGroup;
+			children = (
+				340D8B5620930E8D0005E974 /* Poc_Mauro_BianchelliUITests.swift */,
+				340D8B5820930E8D0005E974 /* Info.plist */,
+			);
+			path = Poc.Mauro.BianchelliUITests;
+			sourceTree = "<group>";
+		};
+		340D8B6520930F750005E974 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				340D8B75209320DD0005E974 /* ResultViewController.swift */,
+				340D8B3520930E8B0005E974 /* VoiceViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		340D8B6820930FDB0005E974 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				340D8B6B209315110005E974 /* VoiceCoordinator.swift */,
+				340D8B6620930FC80005E974 /* MainCoordinator.swift */,
+				340D8B73209320C60005E974 /* ResultCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		34A400D420AB21A60033C2C0 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				34A400D520AB21C40033C2C0 /* Observable.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		34AD476120A99F7F00159ACA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				34AD476220A99FCF00159ACA /* WeatherViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		34BB20132099DC80008B3376 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3468307620F0B5D2000B98C5 /* Models.swift */,
+				3468307720F0B5D2000B98C5 /* WeatherApi.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		779F5C322BCCA3E2EBF4E765 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D780AEE72ADE29F6FA726C4 /* Pods-Poc.Mauro.Bianchelli.debug.xcconfig */,
+				7C89E8E8E31308B676791D79 /* Pods-Poc.Mauro.Bianchelli.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C485B6593DFEC9F1AE8ADF2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F44A7CCC10C1B7B74640630 /* Pods_Poc_Mauro_Bianchelli.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		340D8B2F20930E8B0005E974 /* Poc.Mauro.Bianchelli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 340D8B5B20930E8D0005E974 /* Build configuration list for PBXNativeTarget "Poc.Mauro.Bianchelli" */;
+			buildPhases = (
+				7EA2C17D23105AF7D83C6EAD /* [CP] Check Pods Manifest.lock */,
+				340D8B2C20930E8B0005E974 /* Sources */,
+				340D8B2D20930E8B0005E974 /* Frameworks */,
+				340D8B2E20930E8B0005E974 /* Resources */,
+				683A270C5F3A009548690707 /* [CP] Embed Pods Frameworks */,
+				CEA2F775192C2CD97004142E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Poc.Mauro.Bianchelli;
+			productName = Poc.Mauro.Bianchelli;
+			productReference = 340D8B3020930E8B0005E974 /* Poc.Mauro.Bianchelli.app */;
+			productType = "com.apple.product-type.application";
+		};
+		340D8B4620930E8C0005E974 /* Poc.Mauro.BianchelliTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 340D8B5E20930E8D0005E974 /* Build configuration list for PBXNativeTarget "Poc.Mauro.BianchelliTests" */;
+			buildPhases = (
+				340D8B4320930E8C0005E974 /* Sources */,
+				340D8B4420930E8C0005E974 /* Frameworks */,
+				340D8B4520930E8C0005E974 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				340D8B4920930E8C0005E974 /* PBXTargetDependency */,
+			);
+			name = Poc.Mauro.BianchelliTests;
+			productName = Poc.Mauro.BianchelliTests;
+			productReference = 340D8B4720930E8C0005E974 /* Poc.Mauro.BianchelliTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		340D8B5120930E8D0005E974 /* Poc.Mauro.BianchelliUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 340D8B6120930E8D0005E974 /* Build configuration list for PBXNativeTarget "Poc.Mauro.BianchelliUITests" */;
+			buildPhases = (
+				340D8B4E20930E8D0005E974 /* Sources */,
+				340D8B4F20930E8D0005E974 /* Frameworks */,
+				340D8B5020930E8D0005E974 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				340D8B5420930E8D0005E974 /* PBXTargetDependency */,
+			);
+			name = Poc.Mauro.BianchelliUITests;
+			productName = Poc.Mauro.BianchelliUITests;
+			productReference = 340D8B5220930E8D0005E974 /* Poc.Mauro.BianchelliUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		340D8B2820930E8B0005E974 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Mauro;
+				TargetAttributes = {
+					340D8B2F20930E8B0005E974 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					340D8B4620930E8C0005E974 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 340D8B2F20930E8B0005E974;
+					};
+					340D8B5120930E8D0005E974 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 340D8B2F20930E8B0005E974;
+					};
+				};
+			};
+			buildConfigurationList = 340D8B2B20930E8B0005E974 /* Build configuration list for PBXProject "Poc.Mauro.Bianchelli" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 340D8B2720930E8B0005E974;
+			productRefGroup = 340D8B3120930E8B0005E974 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				340D8B2F20930E8B0005E974 /* Poc.Mauro.Bianchelli */,
+				340D8B4620930E8C0005E974 /* Poc.Mauro.BianchelliTests */,
+				340D8B5120930E8D0005E974 /* Poc.Mauro.BianchelliUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		340D8B2E20930E8B0005E974 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				340D8B4120930E8C0005E974 /* LaunchScreen.storyboard in Resources */,
+				340D8B3E20930E8C0005E974 /* Assets.xcassets in Resources */,
+				340D8B3920930E8B0005E974 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		340D8B4520930E8C0005E974 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		340D8B5020930E8D0005E974 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		683A270C5F3A009548690707 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Poc.Mauro.Bianchelli/Pods-Poc.Mauro.Bianchelli-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poc.Mauro.Bianchelli/Pods-Poc.Mauro.Bianchelli-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EA2C17D23105AF7D83C6EAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Poc.Mauro.Bianchelli-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEA2F775192C2CD97004142E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poc.Mauro.Bianchelli/Pods-Poc.Mauro.Bianchelli-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		340D8B2C20930E8B0005E974 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				340D8B76209320DD0005E974 /* ResultViewController.swift in Sources */,
+				340D8B3C20930E8B0005E974 /* Poc_Mauro_Bianchelli.xcdatamodeld in Sources */,
+				34AD476320A99FCF00159ACA /* WeatherViewModel.swift in Sources */,
+				340D8B74209320C60005E974 /* ResultCoordinator.swift in Sources */,
+				34A400D620AB21C40033C2C0 /* Observable.swift in Sources */,
+				3468307820F0B5D2000B98C5 /* Models.swift in Sources */,
+				340D8B6C209315110005E974 /* VoiceCoordinator.swift in Sources */,
+				340D8B6720930FC80005E974 /* MainCoordinator.swift in Sources */,
+				340D8B3620930E8B0005E974 /* VoiceViewController.swift in Sources */,
+				3468307920F0B5D2000B98C5 /* WeatherApi.swift in Sources */,
+				340D8B3420930E8B0005E974 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		340D8B4320930E8C0005E974 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				340D8B4C20930E8C0005E974 /* Poc_Mauro_BianchelliTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		340D8B4E20930E8D0005E974 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				340D8B5720930E8D0005E974 /* Poc_Mauro_BianchelliUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		340D8B4920930E8C0005E974 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 340D8B2F20930E8B0005E974 /* Poc.Mauro.Bianchelli */;
+			targetProxy = 340D8B4820930E8C0005E974 /* PBXContainerItemProxy */;
+		};
+		340D8B5420930E8D0005E974 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 340D8B2F20930E8B0005E974 /* Poc.Mauro.Bianchelli */;
+			targetProxy = 340D8B5320930E8D0005E974 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		340D8B3720930E8B0005E974 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				340D8B3820930E8B0005E974 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		340D8B3F20930E8C0005E974 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				340D8B4020930E8C0005E974 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		340D8B5920930E8D0005E974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		340D8B5A20930E8D0005E974 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		340D8B5C20930E8D0005E974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D780AEE72ADE29F6FA726C4 /* Pods-Poc.Mauro.Bianchelli.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVK84M25K4;
+				INFOPLIST_FILE = Poc.Mauro.Bianchelli/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "app.co.cha.Poc-Mauro-Bianchelli";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		340D8B5D20930E8D0005E974 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C89E8E8E31308B676791D79 /* Pods-Poc.Mauro.Bianchelli.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVK84M25K4;
+				INFOPLIST_FILE = Poc.Mauro.Bianchelli/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "app.co.cha.Poc-Mauro-Bianchelli";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		340D8B5F20930E8D0005E974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVK84M25K4;
+				INFOPLIST_FILE = Poc.Mauro.BianchelliTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "app.co.cha.Poc-Mauro-BianchelliTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Poc.Mauro.Bianchelli.app/Poc.Mauro.Bianchelli";
+			};
+			name = Debug;
+		};
+		340D8B6020930E8D0005E974 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVK84M25K4;
+				INFOPLIST_FILE = Poc.Mauro.BianchelliTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "app.co.cha.Poc-Mauro-BianchelliTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Poc.Mauro.Bianchelli.app/Poc.Mauro.Bianchelli";
+			};
+			name = Release;
+		};
+		340D8B6220930E8D0005E974 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVK84M25K4;
+				INFOPLIST_FILE = Poc.Mauro.BianchelliUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "app.co.cha.Poc-Mauro-BianchelliUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Poc.Mauro.Bianchelli;
+			};
+			name = Debug;
+		};
+		340D8B6320930E8D0005E974 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KVK84M25K4;
+				INFOPLIST_FILE = Poc.Mauro.BianchelliUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "app.co.cha.Poc-Mauro-BianchelliUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Poc.Mauro.Bianchelli;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		340D8B2B20930E8B0005E974 /* Build configuration list for PBXProject "Poc.Mauro.Bianchelli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				340D8B5920930E8D0005E974 /* Debug */,
+				340D8B5A20930E8D0005E974 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		340D8B5B20930E8D0005E974 /* Build configuration list for PBXNativeTarget "Poc.Mauro.Bianchelli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				340D8B5C20930E8D0005E974 /* Debug */,
+				340D8B5D20930E8D0005E974 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		340D8B5E20930E8D0005E974 /* Build configuration list for PBXNativeTarget "Poc.Mauro.BianchelliTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				340D8B5F20930E8D0005E974 /* Debug */,
+				340D8B6020930E8D0005E974 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		340D8B6120930E8D0005E974 /* Build configuration list for PBXNativeTarget "Poc.Mauro.BianchelliUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				340D8B6220930E8D0005E974 /* Debug */,
+				340D8B6320930E8D0005E974 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		340D8B3A20930E8B0005E974 /* Poc_Mauro_Bianchelli.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				340D8B3B20930E8B0005E974 /* Poc_Mauro_Bianchelli.xcdatamodel */,
+			);
+			currentVersion = 340D8B3B20930E8B0005E974 /* Poc_Mauro_Bianchelli.xcdatamodel */;
+			path = Poc_Mauro_Bianchelli.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 340D8B2820930E8B0005E974 /* Project object */;
+}
