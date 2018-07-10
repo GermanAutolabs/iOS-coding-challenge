@@ -11,7 +11,7 @@ import Speech
 
 
 protocol GoToResultProtocol: class {
-    func goToResult(withWeather: CityWeather)
+    func goToResult(withWeather: WeatherViewModel)
 }
 
 
@@ -131,9 +131,10 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
         Helper.stopAnimating()
         dictateBtn.setTitle("Search for 'BERLIN' word ", for: .normal)
         let viewModel = WeatherViewModel()
-        viewModel.getWeather( completion: { [weak self] (weather) in
-            guard let weather = weather else {return}
-            self?.delegate?.goToResult(withWeather: weather)
+        viewModel.getWeather( completion: { [weak self] (error) in
+            if error == nil{
+                self?.delegate?.goToResult(withWeather: viewModel)
+            }
         })
     }
    

@@ -11,11 +11,16 @@ import UIKit
 
 class ResultViewController: UIViewController{
     
-    var weather: CityWeather?
+    @IBOutlet weak var imageVIew: UIImageView!
+    var viewModel: WeatherViewModel?
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
-        label.text = weather?.name
+        label.text = viewModel?.getWeather()
+        DispatchQueue.main.async {
+            self.imageVIew.image = self.viewModel?.getIcon()
+        }
+        
     }
 }
 

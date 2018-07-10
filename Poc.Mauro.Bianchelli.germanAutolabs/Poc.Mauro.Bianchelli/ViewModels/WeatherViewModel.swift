@@ -10,25 +10,52 @@ import Foundation
 import Moya
 
 class WeatherViewModel {
-//    var weather: Observable<CityWeather?> = Observable(nil)
-    var weather: CityWeather?
-    var provider = MoyaProvider<WeatherApi>()
+    private var weather: CityWeather?
+    private let provider = MoyaProvider<WeatherApi>()
+    private var icon: UIImage?
     
-    func getWeather( completion: @escaping (_ weather: CityWeather?) -> Void)  {
+    func getWeather( completion: @escaping (_ error: Error?) -> Void)  {
         provider.request(.getWeather(cityName: "Berlin"), completion: { [weak self] (result) in
             switch result{
             case .success(let response):
                 do{
                     let weather = try JSONDecoder().decode(CityWeather.self, from: response.data)
                     self?.weather = weather
-                    completion(weather)
+                    completion(nil)
                 }catch{
-                    print("Error")
+                    completion(error)
                 }
             case .failure(let error):
+                completion(error)
                 print("Error")
             }
         })
+    }
+    
+    func getIconFromApi(){
+        guard let iconName = weather?.weather.first?.icon else {return}
+        self.provider.request(.getIcon(id: iconName), completion: { (result) in
+            switch result{
+            case .success(let response):
+                do{
+                    self.icon = UIImage(data: response.data) ?? UIImage()
+                }catch{
+                    self.icon = UIImage(named: "noIcon") ?? UIImage()
+                    print("Error")
+                }
+            case .failure(let error):
+                self.icon = UIImage(named: "noIcon") ?? UIImage()
+                print("Error")
+            }
+        })
+    }
+    
+    func getIcon()->UIImage{
+        return self.icon ?? UIImage(named: "noIcon") ?? UIImage()
+    }
+    
+    func getWeather()->String{
+        return weather?.weather.first?.description ?? "Unavailable"
     }
 
 }

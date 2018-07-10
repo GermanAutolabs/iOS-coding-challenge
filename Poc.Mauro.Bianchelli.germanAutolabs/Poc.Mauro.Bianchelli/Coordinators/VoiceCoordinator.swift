@@ -32,8 +32,9 @@ class VoiceCoordinator {
 
 
 extension VoiceCoordinator: GoToResultProtocol{
-    func goToResult(withWeather: CityWeather) {
-        let resultCoordinator = ResultCoordinator(presenter: self.presenter, data: withWeather )
+    func goToResult(withWeather: WeatherViewModel) {
+        withWeather.getIconFromApi()
+        let resultCoordinator = ResultCoordinator(presenter: self.presenter, data: withWeather  )
         resultCoordinator.start()
         
 
