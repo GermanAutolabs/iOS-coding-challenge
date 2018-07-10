@@ -57,17 +57,18 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBAction func hearAction(_ sender: Any) {
         if audioEngine.isRunning {
-            Helper.stopAnimating()
+            recognitionTask?.cancel()
             audioEngine.stop()
             recognitionRequest?.endAudio()
             dictateBtn.isEnabled = false
             dictateBtn.setTitle("Search for 'BERLIN' word ", for: .normal)
+            Helper.stopAnimating()
             
             
         }else{
             try! startRecording()
             Helper.startAnimating()
-            dictateBtn.setTitle("Stop", for: .normal)
+            dictateBtn.setTitle("Cancel", for: .normal)
         }
         
         
