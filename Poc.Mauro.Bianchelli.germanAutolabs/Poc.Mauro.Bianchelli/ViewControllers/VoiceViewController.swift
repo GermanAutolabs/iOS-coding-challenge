@@ -24,6 +24,7 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
     private let audioEngine = AVAudioEngine()
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
+    var cityFounded = false
     
     override public func viewDidLoad() {
         dictateBtn.isEnabled = false
@@ -59,17 +60,13 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             dictateBtn.isEnabled = false
-            
+            if cityFounded{
+                self.showResult()
+            }
         }else{
             try! startRecording()
             Helper.startAnimating()
         }
-        let viewModel = WeatherViewModel()
-        
-        //        viewModel.getWeather( completion: { [weak self] (weather) in
-        //            guard let weather = weather else {return}
-        //            self?.delegate?.goToResult(withWeather: weather)
-        //        })
         
     }
     
@@ -78,21 +75,24 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
             recognitionTask.cancel()
             self.recognitionTask = nil
         }
+        var recognizedText = ""
         let audioSession = AVAudioSession.sharedInstance()
         try audioSession.setCategory(AVAudioSessionCategoryRecord)
         try audioSession.setMode(AVAudioSessionModeMeasurement)
         try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
-        
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         let inputNode = audioEngine.inputNode
         guard let recognitionRequest = recognitionRequest else {fatalError("Unable to create object")}
         
-        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in var isFinal = false
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest, resultHandler: { [unowned self] (result, error) in var isFinal = false
             if let result = result{
-                print(result.bestTranscription.formattedString)
                 isFinal = result.isFinal
+                print(result.bestTranscription.formattedString)
+                if result.bestTranscription.formattedString.contains("Berlin"){
+                    self.cityFounded = true
+                }
             }
-            if error != nil || isFinal {
+            if error != nil || isFinal{
                 self.audioEngine.stop()
                 inputNode.removeTap(onBus: 0)
                 self.recognitionRequest = nil
@@ -103,12 +103,14 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
             
         })
         
+        
         let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer : AVAudioPCMBuffer, when:AVAudioTime) in
+        inputNode.installTap(onBus: 0, bufferSize: 10, format: recordingFormat) { (buffer : AVAudioPCMBuffer, when:AVAudioTime) in
             self.recognitionRequest?.append(buffer )
         }
         audioEngine.prepare()
         try audioEngine.start()
+        
         
     }
     
@@ -120,8 +122,19 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
     }
     
-    
+    func showResult(){
+        let viewModel = WeatherViewModel()
+        viewModel.getWeather( completion: { [weak self] (weather) in
+            guard let weather = weather else {return}
+            self?.delegate?.goToResult(withWeather: weather)
+        })
+    }
    
+    
+    public override func viewDidDisappear(_ animated: Bool) {
+        Helper.stopAnimating()
+        self.cityFounded = false
+    }
     
     
     
