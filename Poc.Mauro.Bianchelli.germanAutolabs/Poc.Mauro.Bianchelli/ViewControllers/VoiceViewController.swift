@@ -24,10 +24,11 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
     private let audioEngine = AVAudioEngine()
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
-    var cityFounded = false
+    
     
     override public func viewDidLoad() {
         dictateBtn.isEnabled = false
+        dictateBtn.setTitle("Search for 'BERLIN' word ", for: .normal)
 
     }
     
@@ -60,13 +61,15 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             dictateBtn.isEnabled = false
-            if cityFounded{
-                self.showResult()
-            }
+            dictateBtn.setTitle("Search for 'BERLIN' word ", for: .normal)
+            
+            
         }else{
             try! startRecording()
             Helper.startAnimating()
+            dictateBtn.setTitle("Stop", for: .normal)
         }
+        
         
     }
     
@@ -75,7 +78,6 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
             recognitionTask.cancel()
             self.recognitionTask = nil
         }
-        var recognizedText = ""
         let audioSession = AVAudioSession.sharedInstance()
         try audioSession.setCategory(AVAudioSessionCategoryRecord)
         try audioSession.setMode(AVAudioSessionModeMeasurement)
@@ -89,8 +91,11 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
                 isFinal = result.isFinal
                 print(result.bestTranscription.formattedString)
                 if result.bestTranscription.formattedString.contains("Berlin"){
-                    self.cityFounded = true
+                    self.recognitionTask?.cancel()
+                    self.showResult()
+                    
                 }
+                
             }
             if error != nil || isFinal{
                 self.audioEngine.stop()
@@ -123,6 +128,8 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     func showResult(){
+        Helper.stopAnimating()
+        dictateBtn.setTitle("Search for 'BERLIN' word ", for: .normal)
         let viewModel = WeatherViewModel()
         viewModel.getWeather( completion: { [weak self] (weather) in
             guard let weather = weather else {return}
@@ -131,10 +138,6 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
    
     
-    public override func viewDidDisappear(_ animated: Bool) {
-        Helper.stopAnimating()
-        self.cityFounded = false
-    }
     
     
     

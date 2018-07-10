@@ -21,9 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-XC-VsB">
                                 <rect key="frame" x="0.0" y="160" width="375" height="300"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-LY-Byw">
-                                <rect key="frame" x="72" y="242" width="230" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-LY-Byw">
+                                <rect key="frame" x="14" y="460" width="354" height="207"/>
                                 <state key="normal" title="button"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -40,8 +39,12 @@
                         <constraints>
                             <constraint firstItem="Mtd-XC-VsB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="61U-Md-UDg"/>
                             <constraint firstItem="Mtd-XC-VsB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8ao-Pf-vEg"/>
+                            <constraint firstItem="9yI-LY-Byw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="S38-tC-ufA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9yI-LY-Byw" secondAttribute="trailing" constant="7" id="bcH-L1-6TC"/>
                             <constraint firstItem="Mtd-XC-VsB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cAS-B9-Xxa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mtd-XC-VsB" secondAttribute="bottom" constant="207" id="eIu-Nm-fFq"/>
+                            <constraint firstItem="9yI-LY-Byw" firstAttribute="top" secondItem="Mtd-XC-VsB" secondAttribute="bottom" id="o6y-K6-8oQ"/>
+                            <constraint firstItem="9yI-LY-Byw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xCR-3H-FGv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
