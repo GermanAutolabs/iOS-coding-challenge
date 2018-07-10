@@ -19,6 +19,8 @@
 		340D8B6C209315110005E974 /* VoiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B6B209315110005E974 /* VoiceCoordinator.swift */; };
 		340D8B74209320C60005E974 /* ResultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B73209320C60005E974 /* ResultCoordinator.swift */; };
 		340D8B76209320DD0005E974 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B75209320DD0005E974 /* ResultViewController.swift */; };
+		3441353020F507F90056D358 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441352F20F507F90056D358 /* Helper.swift */; };
+		3441353320F5098D0056D358 /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3441353220F5098D0056D358 /* animation.json */; };
 		3468307820F0B5D2000B98C5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468307620F0B5D2000B98C5 /* Models.swift */; };
 		3468307920F0B5D2000B98C5 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468307720F0B5D2000B98C5 /* WeatherApi.swift */; };
 		34A400D620AB21C40033C2C0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A400D520AB21C40033C2C0 /* Observable.swift */; };
@@ -62,6 +64,8 @@
 		340D8B6B209315110005E974 /* VoiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCoordinator.swift; sourceTree = "<group>"; };
 		340D8B73209320C60005E974 /* ResultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCoordinator.swift; sourceTree = "<group>"; };
 		340D8B75209320DD0005E974 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		3441352F20F507F90056D358 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		3441353220F5098D0056D358 /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
 		3468307620F0B5D2000B98C5 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		3468307720F0B5D2000B98C5 /* WeatherApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
 		34A400D520AB21C40033C2C0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		340D8B3220930E8B0005E974 /* Poc.Mauro.Bianchelli */ = {
 			isa = PBXGroup;
 			children = (
+				3441353120F509700056D358 /* Resources */,
+				3441352E20F507EF0056D358 /* Helper */,
 				34A400D420AB21A60033C2C0 /* Observable */,
 				34AD476120A99F7F00159ACA /* ViewModels */,
 				34BB20132099DC80008B3376 /* API */,
@@ -172,6 +178,23 @@
 				340D8B73209320C60005E974 /* ResultCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		3441352E20F507EF0056D358 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3441352F20F507F90056D358 /* Helper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		3441353120F509700056D358 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3441353220F5098D0056D358 /* animation.json */,
+			);
+			name = Resources;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		34A400D420AB21A60033C2C0 /* Observable */ = {
@@ -326,6 +349,7 @@
 				340D8B4120930E8C0005E974 /* LaunchScreen.storyboard in Resources */,
 				340D8B3E20930E8C0005E974 /* Assets.xcassets in Resources */,
 				340D8B3920930E8B0005E974 /* Main.storyboard in Resources */,
+				3441353320F5098D0056D358 /* animation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +382,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -366,6 +391,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -423,6 +449,7 @@
 				340D8B3620930E8B0005E974 /* VoiceViewController.swift in Sources */,
 				3468307920F0B5D2000B98C5 /* WeatherApi.swift in Sources */,
 				340D8B3420930E8B0005E974 /* AppDelegate.swift in Sources */,
+				3441353020F507F90056D358 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

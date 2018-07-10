@@ -18,13 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-LY-Byw">
-                                <rect key="frame" x="138" y="302" width="98" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="98" id="mYE-es-Tz0"/>
-                                    <constraint firstAttribute="height" constant="62" id="xh9-5S-fhh"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-XC-VsB">
+                                <rect key="frame" x="0.0" y="160" width="375" height="300"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-LY-Byw">
+                                <rect key="frame" x="72" y="242" width="230" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="hearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3AQ-yY-Utq"/>
                                 </connections>
@@ -32,14 +38,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9yI-LY-Byw" secondAttribute="trailing" constant="139" id="8FX-vY-ecG"/>
-                            <constraint firstItem="9yI-LY-Byw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="EWo-8f-eTv"/>
-                            <constraint firstItem="9yI-LY-Byw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="282" id="hxH-SA-Xs7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9yI-LY-Byw" secondAttribute="bottom" constant="303" id="njS-SZ-pql"/>
+                            <constraint firstItem="Mtd-XC-VsB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="61U-Md-UDg"/>
+                            <constraint firstItem="Mtd-XC-VsB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8ao-Pf-vEg"/>
+                            <constraint firstItem="Mtd-XC-VsB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cAS-B9-Xxa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mtd-XC-VsB" secondAttribute="bottom" constant="207" id="eIu-Nm-fFq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="animationContainer" destination="Mtd-XC-VsB" id="I8e-rP-mqQ"/>
                         <outlet property="dictateBtn" destination="9yI-LY-Byw" id="JHU-x9-XS9"/>
                     </connections>
                 </viewController>

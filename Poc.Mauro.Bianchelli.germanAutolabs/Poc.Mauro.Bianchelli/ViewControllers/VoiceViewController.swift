@@ -9,15 +9,17 @@
 import UIKit
 import Speech
 
+
 protocol GoToResultProtocol: class {
     func goToResult(withWeather: CityWeather)
 }
 
 
 public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
+    
+    @IBOutlet weak var animationContainer: UIView!
     @IBOutlet weak var dictateBtn: UIButton!
     weak var delegate: GoToResultProtocol?
-    
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "de"))!
     private let audioEngine = AVAudioEngine()
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -25,6 +27,7 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     override public func viewDidLoad() {
         dictateBtn.isEnabled = false
+
     }
     
     override public func viewDidAppear(_ animated: Bool) {
@@ -44,20 +47,22 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
             }
         }
         
+    Helper.initAnimation(view: animationContainer)
+        
     }
     
     
     
     @IBAction func hearAction(_ sender: Any) {
         if audioEngine.isRunning {
-            self.dictateBtn.setTitle("STOP", for: .normal)
+            Helper.stopAnimating()
             audioEngine.stop()
             recognitionRequest?.endAudio()
             dictateBtn.isEnabled = false
             
         }else{
             try! startRecording()
-            self.dictateBtn.setTitle("TAP and say BERLIN", for: .normal)
+            Helper.startAnimating()
         }
         let viewModel = WeatherViewModel()
         
@@ -88,7 +93,6 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
                 isFinal = result.isFinal
             }
             if error != nil || isFinal {
-                self.dictateBtn.setTitle("TAP and say BERLIN", for: .normal)
                 self.audioEngine.stop()
                 inputNode.removeTap(onBus: 0)
                 self.recognitionRequest = nil
@@ -111,14 +115,13 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
     public func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         if available{
             dictateBtn.isEnabled = true
-            self.dictateBtn.setTitle("Ending...", for: .normal)
         }else{
             dictateBtn.isEnabled = false
-            self.dictateBtn.setTitle("TAP and say BERLIN", for: .normal)
         }
     }
     
     
+   
     
     
     
