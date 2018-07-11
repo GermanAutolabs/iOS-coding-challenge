@@ -21,8 +21,6 @@ class Helper{
         
         let size:CGFloat = 251
         let screenWidth = view.frame.size.width
-        
-        
         animation.contentMode = .scaleAspectFill
         animation.frame = CGRect(x: screenWidth / 2 - size / 2, y: 10 , width: size, height: size)
         view.addSubview(animation)

@@ -19,6 +19,7 @@
 		340D8B6C209315110005E974 /* VoiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B6B209315110005E974 /* VoiceCoordinator.swift */; };
 		340D8B74209320C60005E974 /* ResultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B73209320C60005E974 /* ResultCoordinator.swift */; };
 		340D8B76209320DD0005E974 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D8B75209320DD0005E974 /* ResultViewController.swift */; };
+		341FDF2A20F62E52004187ED /* WeatherViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341FDF2920F62E52004187ED /* WeatherViewModelTest.swift */; };
 		3441353020F507F90056D358 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441352F20F507F90056D358 /* Helper.swift */; };
 		3441353320F5098D0056D358 /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3441353220F5098D0056D358 /* animation.json */; };
 		3468307820F0B5D2000B98C5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468307620F0B5D2000B98C5 /* Models.swift */; };
@@ -64,6 +65,7 @@
 		340D8B6B209315110005E974 /* VoiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCoordinator.swift; sourceTree = "<group>"; };
 		340D8B73209320C60005E974 /* ResultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCoordinator.swift; sourceTree = "<group>"; };
 		340D8B75209320DD0005E974 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		341FDF2920F62E52004187ED /* WeatherViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModelTest.swift; sourceTree = "<group>"; };
 		3441352F20F507F90056D358 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		3441353220F5098D0056D358 /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
 		3468307620F0B5D2000B98C5 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		340D8B4A20930E8C0005E974 /* Poc.Mauro.BianchelliTests */ = {
 			isa = PBXGroup;
 			children = (
+				341FDF2920F62E52004187ED /* WeatherViewModelTest.swift */,
 				340D8B4B20930E8C0005E974 /* Poc_Mauro_BianchelliTests.swift */,
 				340D8B4D20930E8C0005E974 /* Info.plist */,
 			);
@@ -458,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				340D8B4C20930E8C0005E974 /* Poc_Mauro_BianchelliTests.swift in Sources */,
+				341FDF2A20F62E52004187ED /* WeatherViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
