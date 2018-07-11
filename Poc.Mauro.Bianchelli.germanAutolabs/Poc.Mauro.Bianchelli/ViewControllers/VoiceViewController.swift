@@ -63,14 +63,11 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
             dictateBtn.isEnabled = false
             dictateBtn.setTitle("Search for 'BERLIN' word ", for: .normal)
             Helper.stopAnimating()
-            
-            
         }else{
             try! startRecording()
             Helper.startAnimating()
             dictateBtn.setTitle("Cancel", for: .normal)
         }
-        
         
     }
     
@@ -140,6 +137,22 @@ public class VoiceViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
    
     
+    public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+    }
+    
+    
+    // called to hanbdle the device orientation and center the animation UIVIEW
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator){
+        coordinator.animate(alongsideTransition: { [unowned self] (UIViewControllerTransitionCoordinatorContext) -> Void in
+            Helper.initAnimation(view: self.animationContainer)
+        })
+    }
+    
+    
+    
+    
+  
     
     
     

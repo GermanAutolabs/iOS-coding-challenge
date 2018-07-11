@@ -24,7 +24,6 @@
 		3441353320F5098D0056D358 /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3441353220F5098D0056D358 /* animation.json */; };
 		3468307820F0B5D2000B98C5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468307620F0B5D2000B98C5 /* Models.swift */; };
 		3468307920F0B5D2000B98C5 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3468307720F0B5D2000B98C5 /* WeatherApi.swift */; };
-		34A400D620AB21C40033C2C0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A400D520AB21C40033C2C0 /* Observable.swift */; };
 		34AD476320A99FCF00159ACA /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD476220A99FCF00159ACA /* WeatherViewModel.swift */; };
 		D248A6B315147EEC78683DF4 /* Pods_Poc_Mauro_Bianchelli.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F44A7CCC10C1B7B74640630 /* Pods_Poc_Mauro_Bianchelli.framework */; };
 /* End PBXBuildFile section */
@@ -70,7 +69,6 @@
 		3441353220F5098D0056D358 /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
 		3468307620F0B5D2000B98C5 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		3468307720F0B5D2000B98C5 /* WeatherApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
-		34A400D520AB21C40033C2C0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		34AD476220A99FCF00159ACA /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		7C89E8E8E31308B676791D79 /* Pods-Poc.Mauro.Bianchelli.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poc.Mauro.Bianchelli.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poc.Mauro.Bianchelli/Pods-Poc.Mauro.Bianchelli.release.xcconfig"; sourceTree = "<group>"; };
 		7D780AEE72ADE29F6FA726C4 /* Pods-Poc.Mauro.Bianchelli.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poc.Mauro.Bianchelli.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poc.Mauro.Bianchelli/Pods-Poc.Mauro.Bianchelli.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 			children = (
 				3441353120F509700056D358 /* Resources */,
 				3441352E20F507EF0056D358 /* Helper */,
-				34A400D420AB21A60033C2C0 /* Observable */,
 				34AD476120A99F7F00159ACA /* ViewModels */,
 				34BB20132099DC80008B3376 /* API */,
 				340D8B6820930FDB0005E974 /* Coordinators */,
@@ -198,14 +195,6 @@
 			);
 			name = Resources;
 			path = "New Group";
-			sourceTree = "<group>";
-		};
-		34A400D420AB21A60033C2C0 /* Observable */ = {
-			isa = PBXGroup;
-			children = (
-				34A400D520AB21C40033C2C0 /* Observable.swift */,
-			);
-			path = Observable;
 			sourceTree = "<group>";
 		};
 		34AD476120A99F7F00159ACA /* ViewModels */ = {
@@ -445,7 +434,6 @@
 				340D8B3C20930E8B0005E974 /* Poc_Mauro_Bianchelli.xcdatamodeld in Sources */,
 				34AD476320A99FCF00159ACA /* WeatherViewModel.swift in Sources */,
 				340D8B74209320C60005E974 /* ResultCoordinator.swift in Sources */,
-				34A400D620AB21C40033C2C0 /* Observable.swift in Sources */,
 				3468307820F0B5D2000B98C5 /* Models.swift in Sources */,
 				340D8B6C209315110005E974 /* VoiceCoordinator.swift in Sources */,
 				340D8B6720930FC80005E974 /* MainCoordinator.swift in Sources */,
