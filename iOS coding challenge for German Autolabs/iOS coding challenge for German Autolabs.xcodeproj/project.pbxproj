@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		6CA8A7DE20FDC1C400BF1064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A7DD20FDC1C400BF1064 /* AppDelegate.swift */; };
-		6CA8A7E020FDC1C400BF1064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A7DF20FDC1C400BF1064 /* ViewController.swift */; };
 		6CA8A7E320FDC1C400BF1064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A7E120FDC1C400BF1064 /* Main.storyboard */; };
 		6CA8A7E620FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A7E420FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodeld */; };
 		6CA8A7E820FDC1C700BF1064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A7E720FDC1C700BF1064 /* Assets.xcassets */; };
 		6CA8A7EB20FDC1C700BF1064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A7E920FDC1C700BF1064 /* LaunchScreen.storyboard */; };
 		6CA8A7F620FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A7F520FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsTests.swift */; };
 		6CA8A80120FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A80020FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsUITests.swift */; };
+		6CA8A81220FDC3EF00BF1064 /* SpeechRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A81120FDC3EF00BF1064 /* SpeechRecognizerViewController.swift */; };
+		6CA8A81420FDC45B00BF1064 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A81320FDC45B00BF1064 /* Weather.swift */; };
+		6CA8A81620FDC46900BF1064 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A81520FDC46900BF1064 /* City.swift */; };
+		6CA8A81820FDC48C00BF1064 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A81720FDC48C00BF1064 /* cities.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		6CA8A7DA20FDC1C400BF1064 /* iOS coding challenge for German Autolabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS coding challenge for German Autolabs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA8A7DD20FDC1C400BF1064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6CA8A7DF20FDC1C400BF1064 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6CA8A7E220FDC1C400BF1064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CA8A7E520FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_coding_challenge_for_German_Autolabs.xcdatamodel; sourceTree = "<group>"; };
 		6CA8A7E720FDC1C700BF1064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		6CA8A7FC20FDC1C700BF1064 /* iOS coding challenge for German AutolabsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS coding challenge for German AutolabsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA8A80020FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_coding_challenge_for_German_AutolabsUITests.swift; sourceTree = "<group>"; };
 		6CA8A80220FDC1C700BF1064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CA8A81120FDC3EF00BF1064 /* SpeechRecognizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewController.swift; sourceTree = "<group>"; };
+		6CA8A81320FDC45B00BF1064 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		6CA8A81520FDC46900BF1064 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		6CA8A81720FDC48C00BF1064 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,10 @@
 		6CA8A7DC20FDC1C400BF1064 /* iOS coding challenge for German Autolabs */ = {
 			isa = PBXGroup;
 			children = (
+				6CA8A81020FDC34F00BF1064 /* Controllers */,
+				6CA8A80F20FDC29C00BF1064 /* Resources */,
+				6CA8A80E20FDC28F00BF1064 /* Model */,
 				6CA8A7DD20FDC1C400BF1064 /* AppDelegate.swift */,
-				6CA8A7DF20FDC1C400BF1064 /* ViewController.swift */,
 				6CA8A7E120FDC1C400BF1064 /* Main.storyboard */,
 				6CA8A7E720FDC1C700BF1064 /* Assets.xcassets */,
 				6CA8A7E920FDC1C700BF1064 /* LaunchScreen.storyboard */,
@@ -126,6 +134,31 @@
 				6CA8A80220FDC1C700BF1064 /* Info.plist */,
 			);
 			path = "iOS coding challenge for German AutolabsUITests";
+			sourceTree = "<group>";
+		};
+		6CA8A80E20FDC28F00BF1064 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A81320FDC45B00BF1064 /* Weather.swift */,
+				6CA8A81520FDC46900BF1064 /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CA8A80F20FDC29C00BF1064 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A81720FDC48C00BF1064 /* cities.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6CA8A81020FDC34F00BF1064 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A81120FDC3EF00BF1064 /* SpeechRecognizerViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA8A81820FDC48C00BF1064 /* cities.json in Resources */,
 				6CA8A7EB20FDC1C700BF1064 /* LaunchScreen.storyboard in Resources */,
 				6CA8A7E820FDC1C700BF1064 /* Assets.xcassets in Resources */,
 				6CA8A7E320FDC1C400BF1064 /* Main.storyboard in Resources */,
@@ -259,8 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA8A81420FDC45B00BF1064 /* Weather.swift in Sources */,
+				6CA8A81620FDC46900BF1064 /* City.swift in Sources */,
+				6CA8A81220FDC3EF00BF1064 /* SpeechRecognizerViewController.swift in Sources */,
 				6CA8A7E620FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodeld in Sources */,
-				6CA8A7E020FDC1C400BF1064 /* ViewController.swift in Sources */,
 				6CA8A7DE20FDC1C400BF1064 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
