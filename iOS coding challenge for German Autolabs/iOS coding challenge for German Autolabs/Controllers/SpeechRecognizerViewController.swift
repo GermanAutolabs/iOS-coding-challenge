@@ -62,10 +62,28 @@ class SpeechRecognizerViewController: UIViewController, SFSpeechRecognizerDelega
 
         recordingButton.layer.cornerRadius = 30
         activityIndicator.startAnimating()
+        parseJSON()
         requestSpeechAuthorization()
     }
     
     //MARK: - Private Methods
+    func parseJSON() {
+        
+        let path = Bundle.main.path(forResource: "cities", ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            guard let data = data else { return }
+            do {
+                let cities = try JSONDecoder().decode(Set<City>.self, from: data)
+                self.cities = cities
+                
+            } catch let jsonErr {
+                print("Error serializing json:", jsonErr)
+            }
+            }.resume()
+    }
+    
     func requestSpeechAuthorization() {
         SFSpeechRecognizer.requestAuthorization { authStatus in
             OperationQueue.main.addOperation {
