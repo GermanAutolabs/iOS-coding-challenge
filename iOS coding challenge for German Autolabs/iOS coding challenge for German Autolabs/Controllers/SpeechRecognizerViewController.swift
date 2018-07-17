@@ -24,7 +24,20 @@ class SpeechRecognizerViewController: UIViewController, SFSpeechRecognizerDelega
         case unavailable
     }
     
-    var status = SpeechStatus.ready
+    var status = SpeechStatus.ready {
+        didSet {
+            self.setUI(status: status)
+        }
+    }
+    
+    var location: String = ""
+    var currentWeather: [Weather] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.forecastLabel.text = (self.currentWeather.first?.summary)! + "\n" + "\(Int((self.currentWeather.first?.temperature)!)) ºF"
+            }
+        }
+    }
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -51,6 +64,34 @@ class SpeechRecognizerViewController: UIViewController, SFSpeechRecognizerDelega
                     self.status = .unavailable
                 }
             }
+        }
+    }
+    
+    func currentWeatherForLocation (location: String) {
+        CLGeocoder().geocodeAddressString(location) { (placemarks:[CLPlacemark]?, error:Error?) in
+            if error == nil {
+                if let location = placemarks?.first?.location {
+                    Weather.forecast(withLocation: location.coordinate, completion: { (results:[Weather]?) in
+                        
+                        if let weatherData = results {
+                            self.currentWeather = weatherData
+                        }
+                    })
+                }
+            } else {
+                print(error!)
+            }
+        }
+    }
+    
+    func setUI(status: SpeechStatus) {
+        switch status {
+        case .ready:
+            recordingButton.backgroundColor = UIColor.red
+        case .recognizing:
+            recordingButton.backgroundColor = UIColor.darkGray
+        case .unavailable:
+            recordingButton.backgroundColor = UIColor.darkGray
         }
     }
     
