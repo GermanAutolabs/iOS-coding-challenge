@@ -38,6 +38,9 @@
                                     <constraint firstAttribute="width" constant="60" id="7is-L7-9uD"/>
                                     <constraint firstAttribute="height" constant="60" id="by7-QB-j6P"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="recordingButtonTapped:" destination="jEt-D4-2Gn" eventType="touchUpInside" id="CAm-Fs-fT7"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYQ-Lj-2TU">
                                 <rect key="frame" x="8" y="164" width="359" height="363"/>
@@ -71,6 +74,13 @@
                         <viewLayoutGuide key="safeArea" id="dbb-Wc-Mms"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ogq-yO-qao"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Goe-s9-Qoc" id="Mn1-IW-arj"/>
+                        <outlet property="forecastImage" destination="e4w-tX-ohc" id="qbY-r0-vxv"/>
+                        <outlet property="forecastLabel" destination="V3R-kK-221" id="sKu-gX-ZZd"/>
+                        <outlet property="recordingButton" destination="ycg-7x-YaF" id="0Nk-TP-mJz"/>
+                        <outlet property="textView" destination="FYQ-Lj-2TU" id="FGD-VL-9W1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCt-oB-j11" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,11 +10,22 @@ import UIKit
 
 class SpeechRecognizerViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var forecastImage: UIImageView!
+    @IBOutlet weak var forecastLabel: UILabel!
+    @IBOutlet weak var recordingButton: UIButton!
+    @IBOutlet weak var textView: UITextView!
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
     }
-
+    
+    //MARK: - Action Methods
+    @IBAction func recordingButtonTapped(_ sender: UIButton) {
+        
+    }
+    
 
 }
