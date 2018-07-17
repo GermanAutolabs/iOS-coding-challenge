@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct City: Decodable, Hashable {
+    var name: String = ""
+}
