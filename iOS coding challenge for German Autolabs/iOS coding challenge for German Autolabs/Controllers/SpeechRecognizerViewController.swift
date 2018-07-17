@@ -18,6 +18,13 @@ class SpeechRecognizerViewController: UIViewController, SFSpeechRecognizerDelega
     @IBOutlet weak var recordingButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     
+    let audioEngine = AVAudioEngine()
+    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
+    let request = SFSpeechAudioBufferRecognitionRequest()
+    var recognitionTask: SFSpeechRecognitionTask?
+    
+    var city = City()
+    
     enum SpeechStatus {
         case ready
         case recognizing
@@ -35,6 +42,7 @@ class SpeechRecognizerViewController: UIViewController, SFSpeechRecognizerDelega
         didSet {
             DispatchQueue.main.async {
                 self.forecastLabel.text = (self.currentWeather.first?.summary)! + "\n" + "\(Int((self.currentWeather.first?.temperature)!)) ºF"
+                self.title = self.city.name
             }
         }
     }
@@ -82,6 +90,54 @@ class SpeechRecognizerViewController: UIViewController, SFSpeechRecognizerDelega
                 print(error!)
             }
         }
+    }
+    
+    func startRecording() {
+        // Setup audio engine and speech recognizer
+        let node = audioEngine.inputNode
+        let recordingFormat = node.outputFormat(forBus: 0)
+        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+            self.request.append(buffer)
+        }
+        
+        // Prepare and start recording
+        audioEngine.prepare()
+        do {
+            try audioEngine.start()
+            self.status = .recognizing
+        } catch {
+            return print(error)
+        }
+        
+        // Analyze the speech
+        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
+            if let result = result {
+                let bestString = result.bestTranscription.formattedString
+                self.textView.text = result.bestTranscription.formattedString
+                
+                var lastString: String = ""
+                for segment in result.bestTranscription.segments {
+                    let indexTo = bestString.index(bestString.startIndex, offsetBy: segment.substringRange.location)
+                    lastString = bestString.substring(from: indexTo)
+                }
+                
+                self.city.name = lastString
+                if CharacterSet.uppercaseLetters.contains(lastString.unicodeScalars.first!) && self.cities.contains(self.city) {
+                    
+                    self.currentWeatherForLocation(location: self.city.name)
+                }
+                
+            } else if let error = error {
+                print(error)
+            }
+        })
+    }
+    
+    func cancelRecording() {
+        audioEngine.stop()
+        let node = audioEngine.inputNode
+        node.removeTap(onBus: 0)
+        recognitionTask?.cancel()
     }
     
     func setUI(status: SpeechStatus) {
