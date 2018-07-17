@@ -23,6 +23,15 @@ class SpeechRecognizerViewController: UIViewController, SFSpeechRecognizerDelega
     let request = SFSpeechAudioBufferRecognitionRequest()
     var recognitionTask: SFSpeechRecognitionTask?
     
+    var cities: Set<City> = Set() {
+        didSet {
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+            }
+        }
+    }
+    
     var city = City()
     
     enum SpeechStatus {
