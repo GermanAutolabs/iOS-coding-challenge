@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Weather {
+    let summary:String
+    let icon:String
+    let temperature:Double
+}
