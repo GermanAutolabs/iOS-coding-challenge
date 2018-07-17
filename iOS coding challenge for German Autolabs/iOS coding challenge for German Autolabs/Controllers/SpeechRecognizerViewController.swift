@@ -180,8 +180,23 @@ class SpeechRecognizerViewController: UIViewController, SFSpeechRecognizerDelega
     
     //MARK: - Action Methods
     @IBAction func recordingButtonTapped(_ sender: UIButton) {
-        
+        switch status {
+        case .ready:
+            startRecording()
+            status = .recognizing
+        case .recognizing:
+            cancelRecording()
+            status = .ready
+        case .unavailable:
+            requestSpeechAuthorization()
+            break
+        }
     }
+    
+    //TODO: Weather Icons
+    //TODO: Unit Testing
+    //TODO: Separate Speech Recognition from Controller
+    //TODO: Mic auth cases
     
 
 }
