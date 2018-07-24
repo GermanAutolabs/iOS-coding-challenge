@@ -13,6 +13,10 @@
 		144E15BB210753DE0012884A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 144E15BA210753DE0012884A /* Assets.xcassets */; };
 		144E15BE210753DE0012884A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144E15BC210753DE0012884A /* LaunchScreen.storyboard */; };
 		144E15C9210753DE0012884A /* AutolabsTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15C8210753DE0012884A /* AutolabsTaskTests.swift */; };
+		144E15D4210754F10012884A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15D3210754F10012884A /* Error.swift */; };
+		144E15D7210755220012884A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15D6210755220012884A /* Weather.swift */; };
+		144E15DA2107553F0012884A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15D92107553F0012884A /* Result.swift */; };
+		144E15DD210755730012884A /* NetworkingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15DC210755730012884A /* NetworkingModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		144E15C4210753DE0012884A /* AutolabsTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolabsTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		144E15C8210753DE0012884A /* AutolabsTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolabsTaskTests.swift; sourceTree = "<group>"; };
 		144E15CA210753DE0012884A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		144E15D3210754F10012884A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		144E15D6210755220012884A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		144E15D92107553F0012884A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		144E15DC210755730012884A /* NetworkingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,10 @@
 			children = (
 				144E15B3210753DB0012884A /* AppDelegate.swift */,
 				144E15B5210753DB0012884A /* ViewController.swift */,
+				144E15D3210754F10012884A /* Error.swift */,
+				144E15D8210755320012884A /* Result */,
+				144E15D5210755170012884A /* Models */,
+				144E15DB210755550012884A /* Networking */,
 				144E15B7210753DB0012884A /* Main.storyboard */,
 				144E15BA210753DE0012884A /* Assets.xcassets */,
 				144E15BC210753DE0012884A /* LaunchScreen.storyboard */,
@@ -94,6 +106,30 @@
 				144E15CA210753DE0012884A /* Info.plist */,
 			);
 			path = AutolabsTaskTests;
+			sourceTree = "<group>";
+		};
+		144E15D5210755170012884A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				144E15D6210755220012884A /* Weather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		144E15D8210755320012884A /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				144E15D92107553F0012884A /* Result.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		144E15DB210755550012884A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				144E15DC210755730012884A /* NetworkingModels.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +233,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144E15D7210755220012884A /* Weather.swift in Sources */,
+				144E15DA2107553F0012884A /* Result.swift in Sources */,
 				144E15B6210753DB0012884A /* ViewController.swift in Sources */,
+				144E15D4210754F10012884A /* Error.swift in Sources */,
 				144E15B4210753DB0012884A /* AppDelegate.swift in Sources */,
+				144E15DD210755730012884A /* NetworkingModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
