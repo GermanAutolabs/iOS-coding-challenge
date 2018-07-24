@@ -24,6 +24,8 @@
 		144E15E7210758C80012884A /* ConfigExample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 144E15E6210758C80012884A /* ConfigExample.plist */; };
 		144E15E9210759280012884A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15E8210759280012884A /* Config.swift */; };
 		144E15F621076FFA0012884A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15F521076FFA0012884A /* WebService.swift */; };
+		144E15FA210772B40012884A /* SpeechProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15F9210772B40012884A /* SpeechProcessor.swift */; };
+		144E15FC210773170012884A /* UserSpeechProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15FB210773170012884A /* UserSpeechProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		144E15E6210758C80012884A /* ConfigExample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigExample.plist; sourceTree = "<group>"; };
 		144E15E8210759280012884A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		144E15F521076FFA0012884A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		144E15F9210772B40012884A /* SpeechProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechProcessor.swift; sourceTree = "<group>"; };
+		144E15FB210773170012884A /* UserSpeechProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSpeechProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				144E15B5210753DB0012884A /* ViewController.swift */,
 				144E15D3210754F10012884A /* Error.swift */,
 				144E15D92107553F0012884A /* Result.swift */,
+				144E15FB210773170012884A /* UserSpeechProcessor.swift */,
 				144E15F421076FD30012884A /* Protocols */,
 				144E15D5210755170012884A /* Models */,
 				144E15DB210755550012884A /* Networking */,
@@ -149,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				144E15F521076FFA0012884A /* WebService.swift */,
+				144E15F9210772B40012884A /* SpeechProcessor.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 				144E15E3210758400012884A /* OpenWeatherMapWebService.swift in Sources */,
 				144E15D7210755220012884A /* Weather.swift in Sources */,
 				144E15DA2107553F0012884A /* Result.swift in Sources */,
+				144E15FA210772B40012884A /* SpeechProcessor.swift in Sources */,
 				144E15B6210753DB0012884A /* ViewController.swift in Sources */,
+				144E15FC210773170012884A /* UserSpeechProcessor.swift in Sources */,
 				144E15D4210754F10012884A /* Error.swift in Sources */,
 				144E15DF210758010012884A /* WeatherByCoordinate.swift in Sources */,
 				144E15B4210753DB0012884A /* AppDelegate.swift in Sources */,

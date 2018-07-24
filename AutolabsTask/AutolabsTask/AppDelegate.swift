@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let speechProcessor = UserSpeechProcessor()
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         let config: Config
@@ -25,18 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let webService = OpenWeatherMapWebService(apiKey: config.apiKey)
 
-        
-
         return true
 
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-
+//        speechProcessor.stopSpeechRecognition()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-
+//        speechProcessor.startSpeechRecognition()
     }
 
 
