@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		144E15B4210753DB0012884A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15B3210753DB0012884A /* AppDelegate.swift */; };
+		144E15B6210753DB0012884A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15B5210753DB0012884A /* ViewController.swift */; };
+		144E15B9210753DB0012884A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144E15B7210753DB0012884A /* Main.storyboard */; };
+		144E15BB210753DE0012884A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 144E15BA210753DE0012884A /* Assets.xcassets */; };
+		144E15BE210753DE0012884A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144E15BC210753DE0012884A /* LaunchScreen.storyboard */; };
+		144E15C9210753DE0012884A /* AutolabsTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15C8210753DE0012884A /* AutolabsTaskTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		144E15C5210753DE0012884A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 144E15A8210753DB0012884A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 144E15AF210753DB0012884A;
+			remoteInfo = AutolabsTask;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		144E15B0210753DB0012884A /* AutolabsTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutolabsTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		144E15B3210753DB0012884A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		144E15B5210753DB0012884A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		144E15B8210753DB0012884A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		144E15BA210753DE0012884A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		144E15BD210753DE0012884A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		144E15BF210753DE0012884A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		144E15C4210753DE0012884A /* AutolabsTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolabsTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		144E15C8210753DE0012884A /* AutolabsTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolabsTaskTests.swift; sourceTree = "<group>"; };
+		144E15CA210753DE0012884A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		144E15AD210753DB0012884A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		144E15C1210753DE0012884A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		144E15A7210753DB0012884A = {
+			isa = PBXGroup;
+			children = (
+				144E15B2210753DB0012884A /* AutolabsTask */,
+				144E15C7210753DE0012884A /* AutolabsTaskTests */,
+				144E15B1210753DB0012884A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		144E15B1210753DB0012884A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				144E15B0210753DB0012884A /* AutolabsTask.app */,
+				144E15C4210753DE0012884A /* AutolabsTaskTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		144E15B2210753DB0012884A /* AutolabsTask */ = {
+			isa = PBXGroup;
+			children = (
+				144E15B3210753DB0012884A /* AppDelegate.swift */,
+				144E15B5210753DB0012884A /* ViewController.swift */,
+				144E15B7210753DB0012884A /* Main.storyboard */,
+				144E15BA210753DE0012884A /* Assets.xcassets */,
+				144E15BC210753DE0012884A /* LaunchScreen.storyboard */,
+				144E15BF210753DE0012884A /* Info.plist */,
+			);
+			path = AutolabsTask;
+			sourceTree = "<group>";
+		};
+		144E15C7210753DE0012884A /* AutolabsTaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				144E15C8210753DE0012884A /* AutolabsTaskTests.swift */,
+				144E15CA210753DE0012884A /* Info.plist */,
+			);
+			path = AutolabsTaskTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		144E15AF210753DB0012884A /* AutolabsTask */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 144E15CD210753DE0012884A /* Build configuration list for PBXNativeTarget "AutolabsTask" */;
+			buildPhases = (
+				144E15AC210753DB0012884A /* Sources */,
+				144E15AD210753DB0012884A /* Frameworks */,
+				144E15AE210753DB0012884A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutolabsTask;
+			productName = AutolabsTask;
+			productReference = 144E15B0210753DB0012884A /* AutolabsTask.app */;
+			productType = "com.apple.product-type.application";
+		};
+		144E15C3210753DE0012884A /* AutolabsTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 144E15D0210753DE0012884A /* Build configuration list for PBXNativeTarget "AutolabsTaskTests" */;
+			buildPhases = (
+				144E15C0210753DE0012884A /* Sources */,
+				144E15C1210753DE0012884A /* Frameworks */,
+				144E15C2210753DE0012884A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				144E15C6210753DE0012884A /* PBXTargetDependency */,
+			);
+			name = AutolabsTaskTests;
+			productName = AutolabsTaskTests;
+			productReference = 144E15C4210753DE0012884A /* AutolabsTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		144E15A8210753DB0012884A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Rab Gábor";
+				TargetAttributes = {
+					144E15AF210753DB0012884A = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					144E15C3210753DE0012884A = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 144E15AF210753DB0012884A;
+					};
+				};
+			};
+			buildConfigurationList = 144E15AB210753DB0012884A /* Build configuration list for PBXProject "AutolabsTask" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 144E15A7210753DB0012884A;
+			productRefGroup = 144E15B1210753DB0012884A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				144E15AF210753DB0012884A /* AutolabsTask */,
+				144E15C3210753DE0012884A /* AutolabsTaskTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		144E15AE210753DB0012884A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144E15BE210753DE0012884A /* LaunchScreen.storyboard in Resources */,
+				144E15BB210753DE0012884A /* Assets.xcassets in Resources */,
+				144E15B9210753DB0012884A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		144E15C2210753DE0012884A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		144E15AC210753DB0012884A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144E15B6210753DB0012884A /* ViewController.swift in Sources */,
+				144E15B4210753DB0012884A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		144E15C0210753DE0012884A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144E15C9210753DE0012884A /* AutolabsTaskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		144E15C6210753DE0012884A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 144E15AF210753DB0012884A /* AutolabsTask */;
+			targetProxy = 144E15C5210753DE0012884A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		144E15B7210753DB0012884A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				144E15B8210753DB0012884A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		144E15BC210753DE0012884A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				144E15BD210753DE0012884A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		144E15CB210753DE0012884A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		144E15CC210753DE0012884A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		144E15CE210753DE0012884A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y8ZHVBUF4Q;
+				INFOPLIST_FILE = AutolabsTask/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rabgabor.AutolabsTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		144E15CF210753DE0012884A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y8ZHVBUF4Q;
+				INFOPLIST_FILE = AutolabsTask/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rabgabor.AutolabsTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		144E15D1210753DE0012884A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y8ZHVBUF4Q;
+				INFOPLIST_FILE = AutolabsTaskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rabgabor.AutolabsTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutolabsTask.app/AutolabsTask";
+			};
+			name = Debug;
+		};
+		144E15D2210753DE0012884A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y8ZHVBUF4Q;
+				INFOPLIST_FILE = AutolabsTaskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rabgabor.AutolabsTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutolabsTask.app/AutolabsTask";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		144E15AB210753DB0012884A /* Build configuration list for PBXProject "AutolabsTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				144E15CB210753DE0012884A /* Debug */,
+				144E15CC210753DE0012884A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		144E15CD210753DE0012884A /* Build configuration list for PBXNativeTarget "AutolabsTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				144E15CE210753DE0012884A /* Debug */,
+				144E15CF210753DE0012884A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		144E15D0210753DE0012884A /* Build configuration list for PBXNativeTarget "AutolabsTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				144E15D1210753DE0012884A /* Debug */,
+				144E15D2210753DE0012884A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 144E15A8210753DB0012884A /* Project object */;
+}
