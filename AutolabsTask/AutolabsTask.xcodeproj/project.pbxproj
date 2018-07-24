@@ -17,6 +17,13 @@
 		144E15D7210755220012884A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15D6210755220012884A /* Weather.swift */; };
 		144E15DA2107553F0012884A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15D92107553F0012884A /* Result.swift */; };
 		144E15DD210755730012884A /* NetworkingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15DC210755730012884A /* NetworkingModels.swift */; };
+		144E15DF210758010012884A /* WeatherByCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15DE210758010012884A /* WeatherByCoordinate.swift */; };
+		144E15E1210758150012884A /* WeatherByCityName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15E0210758150012884A /* WeatherByCityName.swift */; };
+		144E15E3210758400012884A /* OpenWeatherMapWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15E2210758400012884A /* OpenWeatherMapWebService.swift */; };
+		144E15E5210758BC0012884A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 144E15E4210758BC0012884A /* Config.plist */; };
+		144E15E7210758C80012884A /* ConfigExample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 144E15E6210758C80012884A /* ConfigExample.plist */; };
+		144E15E9210759280012884A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15E8210759280012884A /* Config.swift */; };
+		144E15F621076FFA0012884A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15F521076FFA0012884A /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		144E15D6210755220012884A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		144E15D92107553F0012884A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		144E15DC210755730012884A /* NetworkingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingModels.swift; sourceTree = "<group>"; };
+		144E15DE210758010012884A /* WeatherByCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherByCoordinate.swift; sourceTree = "<group>"; };
+		144E15E0210758150012884A /* WeatherByCityName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherByCityName.swift; sourceTree = "<group>"; };
+		144E15E2210758400012884A /* OpenWeatherMapWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapWebService.swift; sourceTree = "<group>"; };
+		144E15E4210758BC0012884A /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		144E15E6210758C80012884A /* ConfigExample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigExample.plist; sourceTree = "<group>"; };
+		144E15E8210759280012884A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		144E15F521076FFA0012884A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +99,14 @@
 		144E15B2210753DB0012884A /* AutolabsTask */ = {
 			isa = PBXGroup;
 			children = (
+				144E15E4210758BC0012884A /* Config.plist */,
+				144E15E6210758C80012884A /* ConfigExample.plist */,
+				144E15E8210759280012884A /* Config.swift */,
 				144E15B3210753DB0012884A /* AppDelegate.swift */,
 				144E15B5210753DB0012884A /* ViewController.swift */,
 				144E15D3210754F10012884A /* Error.swift */,
-				144E15D8210755320012884A /* Result */,
+				144E15D92107553F0012884A /* Result.swift */,
+				144E15F421076FD30012884A /* Protocols */,
 				144E15D5210755170012884A /* Models */,
 				144E15DB210755550012884A /* Networking */,
 				144E15B7210753DB0012884A /* Main.storyboard */,
@@ -116,20 +134,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		144E15D8210755320012884A /* Result */ = {
-			isa = PBXGroup;
-			children = (
-				144E15D92107553F0012884A /* Result.swift */,
-			);
-			path = Result;
-			sourceTree = "<group>";
-		};
 		144E15DB210755550012884A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				144E15E2210758400012884A /* OpenWeatherMapWebService.swift */,
 				144E15DC210755730012884A /* NetworkingModels.swift */,
+				144E15DE210758010012884A /* WeatherByCoordinate.swift */,
+				144E15E0210758150012884A /* WeatherByCityName.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		144E15F421076FD30012884A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				144E15F521076FFA0012884A /* WebService.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +234,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144E15E5210758BC0012884A /* Config.plist in Resources */,
 				144E15BE210753DE0012884A /* LaunchScreen.storyboard in Resources */,
+				144E15E7210758C80012884A /* ConfigExample.plist in Resources */,
 				144E15BB210753DE0012884A /* Assets.xcassets in Resources */,
 				144E15B9210753DB0012884A /* Main.storyboard in Resources */,
 			);
@@ -233,12 +256,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144E15F621076FFA0012884A /* WebService.swift in Sources */,
+				144E15E3210758400012884A /* OpenWeatherMapWebService.swift in Sources */,
 				144E15D7210755220012884A /* Weather.swift in Sources */,
 				144E15DA2107553F0012884A /* Result.swift in Sources */,
 				144E15B6210753DB0012884A /* ViewController.swift in Sources */,
 				144E15D4210754F10012884A /* Error.swift in Sources */,
+				144E15DF210758010012884A /* WeatherByCoordinate.swift in Sources */,
 				144E15B4210753DB0012884A /* AppDelegate.swift in Sources */,
+				144E15E9210759280012884A /* Config.swift in Sources */,
 				144E15DD210755730012884A /* NetworkingModels.swift in Sources */,
+				144E15E1210758150012884A /* WeatherByCityName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

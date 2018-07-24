@@ -33,4 +33,6 @@ enum ErrorCode: Int {
     case invalidURL = 1
     case invalidJSON = 2
     case httpError = 3
+    case configFileNotFound = 4
+    case apiKeyNotFoundInConfigFile = 5
 }
