@@ -11,6 +11,7 @@ import Foundation
 protocol SpeechProcessor {
     var requestRecognized: ((String?) -> Void)? { get set }
     var accessProblem: ((String) -> Void)? { get set }
+    var speechRecognitionStarted: (() -> Void)? { get set }
 
     func startSpeechRecognition()
     func stopSpeechRecognition()

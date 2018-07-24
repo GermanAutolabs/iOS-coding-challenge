@@ -25,23 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             preconditionFailure(error.localizedDescription)
         }
 
-        let webService = OpenWeatherMapWebService(apiKey: config.apiKey)
-
-        locationProvider.refresh()
+        _ = WeatherUseCase(webService: OpenWeatherMapWebService(apiKey: config.apiKey),
+                           speechProcessor: speechProcessor,
+                           locationProvider: locationProvider)
 
         return true
-
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-//        speechProcessor.stopSpeechRecognition()
+        speechProcessor.stopSpeechRecognition()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-//        speechProcessor.startSpeechRecognition()
+        speechProcessor.startSpeechRecognition()
         locationProvider.refresh()
     }
-
-
 }
-

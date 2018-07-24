@@ -14,11 +14,12 @@ class UserSpeechProcessor: NSObject, SpeechProcessor {
 
     private let audioEngine = AVAudioEngine()
     private let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
-    private let request = SFSpeechAudioBufferRecognitionRequest()
+    private var request: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
 
     var requestRecognized: ((String?) -> Void)?
     var accessProblem: ((String) -> Void)?
+    var speechRecognitionStarted: (() -> Void)?
 
     let matchers: [(NSRegularExpression, (NSTextCheckingResult) -> [NSRange])] = [
         (try! NSRegularExpression(pattern: "weather like in (\\w+)"), { [$0.range(at: 1)] }),
@@ -30,12 +31,16 @@ class UserSpeechProcessor: NSObject, SpeechProcessor {
 
     func startSpeechRecognition() {
 
+        request = SFSpeechAudioBufferRecognitionRequest()
+
+        speechRecognitionStarted?()
+
         requestAuthorizations()
 
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
         node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
-            self.request.append(buffer)
+            self.request?.append(buffer)
         }
 
         audioEngine.prepare()
@@ -52,40 +57,48 @@ class UserSpeechProcessor: NSObject, SpeechProcessor {
         }
 
         if !recognizer.isAvailable {
-            print("Recognizer not available!")
+            print("Recognizer not available")
             return
         }
 
-        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
-            if let result = result {
-                DispatchQueue.main.async() {
-                    let bestString = result.bestTranscription.formattedString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-                    let nsBestString = bestString as NSString
+        if let request = request {
+            recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
+                if let result = result {
+                    DispatchQueue.main.async() {
+                        if !self.audioEngine.isRunning {
+                            return
+                        }
+                        let bestString = result.bestTranscription.formattedString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+                        let nsBestString = bestString as NSString
 
-                    for (regex, action) in self.matchers {
-                        regex.enumerateMatches(in: bestString, options: [], range: NSRange(location: 0, length: nsBestString.length)) { result, _, _ in
-                            guard let r = result else { return }
-                            let ranges = action(r)
-                            let texts = ranges.map { nsBestString.substring(with: $0) }
-                            let cityName = texts.first
+                        for (regex, action) in self.matchers {
+                            regex.enumerateMatches(in: bestString, options: [], range: NSRange(location: 0, length: nsBestString.length)) { result, _, _ in
+                                guard let r = result else { return }
+                                let ranges = action(r)
+                                let texts = ranges.map { nsBestString.substring(with: $0) }
+                                let cityName = texts.first
 
-                            self.stopSpeechRecognition()
-
-                            self.requestRecognized?(cityName)
+                                self.stopSpeechRecognition()
+                                self.requestRecognized?(cityName)
+                            }
                         }
                     }
+                } else if let error = error {
+                    print(error)
                 }
-            } else if let error = error {
-                print(error)
-            }
-        })
+            })
+        }
     }
 
     func stopSpeechRecognition() {
         if audioEngine.isRunning {
-            recognitionTask?.cancel()
+            request?.endAudio()
             audioEngine.inputNode.removeTap(onBus: 0)
+            audioEngine.inputNode.reset()
             audioEngine.stop()
+            recognitionTask?.cancel()
+            recognitionTask = nil
+            request = nil
         }
     }
 
@@ -118,12 +131,5 @@ class UserSpeechProcessor: NSObject, SpeechProcessor {
                 }
             })
         }
-    }
-}
-
-extension UserSpeechProcessor: SFSpeechRecognitionTaskDelegate {
-    func speechRecognitionTaskFinishedReadingAudio(_ task: SFSpeechRecognitionTask) {
-        stopSpeechRecognition()
-        startSpeechRecognition()
     }
 }
