@@ -26,6 +26,8 @@
 		144E15F621076FFA0012884A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15F521076FFA0012884A /* WebService.swift */; };
 		144E15FA210772B40012884A /* SpeechProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15F9210772B40012884A /* SpeechProcessor.swift */; };
 		144E15FC210773170012884A /* UserSpeechProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15FB210773170012884A /* UserSpeechProcessor.swift */; };
+		144E1600210798990012884A /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E15FF210798990012884A /* LocationProvider.swift */; };
+		144E1602210798E20012884A /* UserLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144E1601210798E20012884A /* UserLocationProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		144E15F521076FFA0012884A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		144E15F9210772B40012884A /* SpeechProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechProcessor.swift; sourceTree = "<group>"; };
 		144E15FB210773170012884A /* UserSpeechProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSpeechProcessor.swift; sourceTree = "<group>"; };
+		144E15FF210798990012884A /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		144E1601210798E20012884A /* UserLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				144E15D3210754F10012884A /* Error.swift */,
 				144E15D92107553F0012884A /* Result.swift */,
 				144E15FB210773170012884A /* UserSpeechProcessor.swift */,
+				144E1601210798E20012884A /* UserLocationProvider.swift */,
 				144E15F421076FD30012884A /* Protocols */,
 				144E15D5210755170012884A /* Models */,
 				144E15DB210755550012884A /* Networking */,
@@ -155,6 +160,7 @@
 			children = (
 				144E15F521076FFA0012884A /* WebService.swift */,
 				144E15F9210772B40012884A /* SpeechProcessor.swift */,
+				144E15FF210798990012884A /* LocationProvider.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 				144E15F621076FFA0012884A /* WebService.swift in Sources */,
 				144E15E3210758400012884A /* OpenWeatherMapWebService.swift in Sources */,
 				144E15D7210755220012884A /* Weather.swift in Sources */,
+				144E1602210798E20012884A /* UserLocationProvider.swift in Sources */,
 				144E15DA2107553F0012884A /* Result.swift in Sources */,
 				144E15FA210772B40012884A /* SpeechProcessor.swift in Sources */,
 				144E15B6210753DB0012884A /* ViewController.swift in Sources */,
@@ -275,6 +282,7 @@
 				144E15E9210759280012884A /* Config.swift in Sources */,
 				144E15DD210755730012884A /* NetworkingModels.swift in Sources */,
 				144E15E1210758150012884A /* WeatherByCityName.swift in Sources */,
+				144E1600210798990012884A /* LocationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

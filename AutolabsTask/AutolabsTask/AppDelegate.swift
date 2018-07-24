@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     let speechProcessor = UserSpeechProcessor()
+    let locationProvider = UserLocationProvider()
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         let config: Config
@@ -26,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let webService = OpenWeatherMapWebService(apiKey: config.apiKey)
 
+        locationProvider.refresh()
+
         return true
 
     }
@@ -36,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
 //        speechProcessor.startSpeechRecognition()
+        locationProvider.refresh()
     }
 
 

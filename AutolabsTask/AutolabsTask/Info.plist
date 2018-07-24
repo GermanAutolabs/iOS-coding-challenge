@@ -45,5 +45,7 @@
 	<string>Lost in translation</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Sorry, can&apos;t hear you!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To be able to provide your local weather information</string>
 </dict>
 </plist>
