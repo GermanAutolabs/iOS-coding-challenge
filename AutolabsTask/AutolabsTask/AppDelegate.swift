@@ -25,9 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             preconditionFailure(error.localizedDescription)
         }
 
-        _ = WeatherUseCase(webService: OpenWeatherMapWebService(apiKey: config.apiKey),
+        let weatherViewController = WeatherViewController()
+
+        _ = WeatherUseCase(viewController: weatherViewController,
+                           webService: OpenWeatherMapWebService(apiKey: config.apiKey),
                            speechProcessor: speechProcessor,
                            locationProvider: locationProvider)
+
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = weatherViewController
+        self.window?.makeKeyAndVisible()
 
         return true
     }
