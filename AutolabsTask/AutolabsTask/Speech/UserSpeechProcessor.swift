@@ -47,6 +47,21 @@ class UserSpeechProcessor: NSObject, SpeechProcessor {
         }
     }
 
+    func evaluateRegex(_ bestString: String) {
+        let nsBestString = bestString as NSString
+        for (regex, action) in self.matchers {
+            regex.enumerateMatches(in: bestString, options: [], range: NSRange(location: 0, length: nsBestString.length)) { result, _, _ in
+                guard let r = result else { return }
+                let ranges = action(r)
+                let texts = ranges.map { nsBestString.substring(with: $0) }
+                let cityName = texts.first
+
+                self.stopSpeechRecognition()
+                self.requestRecognized?(cityName)
+            }
+        }
+    }
+
     private func requestAuthorizationsAndStartRecognition() {
         SFSpeechRecognizer.requestAuthorization { authStatus in
             OperationQueue.main.addOperation {
@@ -114,19 +129,8 @@ class UserSpeechProcessor: NSObject, SpeechProcessor {
                             return
                         }
                         let bestString = result.bestTranscription.formattedString.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-                        let nsBestString = bestString as NSString
 
-                        for (regex, action) in self.matchers {
-                            regex.enumerateMatches(in: bestString, options: [], range: NSRange(location: 0, length: nsBestString.length)) { result, _, _ in
-                                guard let r = result else { return }
-                                let ranges = action(r)
-                                let texts = ranges.map { nsBestString.substring(with: $0) }
-                                let cityName = texts.first
-
-                                self.stopSpeechRecognition()
-                                self.requestRecognized?(cityName)
-                            }
-                        }
+                        self.evaluateRegex(bestString)
                     }
                 } else if let error = error {
                     print(error)

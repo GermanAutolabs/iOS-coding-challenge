@@ -15,7 +15,7 @@ class WeatherUseCase {
     private var locationProvider: LocationProvider
     private var viewController: WeatherViewController
 
-    private var userMessage = "" {
+    public var userMessage = "" {
         didSet {
             viewController.userMessageLabel.text = userMessage
         }
@@ -87,7 +87,7 @@ class WeatherUseCase {
                                                     }
                                                 case .failure(let error):
                                                     print(error)
-                                                    self.userMessage = "Something went wrong"
+                                                    self.userMessage = "Couldn't understand the location"
                                                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)) {
                                                         speechProcessor.startSpeechRecognition()
                                                     }
