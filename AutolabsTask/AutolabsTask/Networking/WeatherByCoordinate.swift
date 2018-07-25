@@ -8,6 +8,16 @@
 
 import Foundation
 
+struct WeatherByCoordinateRequest: Codable {
+    let latitude: String
+    let longitude: String
+}
+
+struct WeatherByCoordinateResponse: Codable {
+    let weather: [Weather]
+    let name: String
+}
+
 extension WeatherByCoordinateRequest: Request {
     typealias Resp = WeatherByCoordinateResponse
 

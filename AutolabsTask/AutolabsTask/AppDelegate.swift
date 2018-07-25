@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let speechProcessor = UserSpeechProcessor()
     let locationProvider = UserLocationProvider()
+    var weatherUseCase: WeatherUseCase! // To prevent ARC from releasing it
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         let config: Config
@@ -27,10 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let weatherViewController = WeatherViewController()
 
-        _ = WeatherUseCase(viewController: weatherViewController,
-                           webService: OpenWeatherMapWebService(apiKey: config.apiKey),
-                           speechProcessor: speechProcessor,
-                           locationProvider: locationProvider)
+        weatherUseCase = WeatherUseCase(viewController: weatherViewController,
+                                        webService: OpenWeatherMapWebService(apiKey: config.apiKey),
+                                        speechProcessor: speechProcessor,
+                                        locationProvider: locationProvider)
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = weatherViewController

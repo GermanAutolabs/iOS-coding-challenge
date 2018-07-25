@@ -8,6 +8,15 @@
 
 import Foundation
 
+struct WeatherByCityNameRequest: Codable {
+    let cityName: String
+}
+
+struct WeatherByCityNameResponse: Codable {
+    let weather: [Weather]
+    let name: String
+}
+
 extension WeatherByCityNameRequest: Request {
     typealias Resp = WeatherByCityNameResponse
 

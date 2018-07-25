@@ -87,7 +87,7 @@ class WeatherUseCase {
                                                     }
                                                 case .failure(let error):
                                                     print(error)
-                                                    self.userMessage = "Couldn't understand the location"
+                                                    self.userMessage = "Couldn't understand the location or something went wrong"
                                                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)) {
                                                         speechProcessor.startSpeechRecognition()
                                                     }
@@ -116,7 +116,7 @@ class WeatherUseCase {
                                                     }
                                                 case .failure(let error):
                                                     print(error)
-                                                    self.userMessage = "Something went wrong"
+                                                    self.userMessage = "Sorry, something went wrong"
                                                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)) {
                                                         speechProcessor.startSpeechRecognition()
                                                     }

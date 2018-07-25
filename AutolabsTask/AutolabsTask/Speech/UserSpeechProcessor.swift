@@ -24,7 +24,7 @@ class UserSpeechProcessor: NSObject, SpeechProcessor {
     let matchers: [(NSRegularExpression, (NSTextCheckingResult) -> [NSRange])] = [
         (try! NSRegularExpression(pattern: "weather like in (\\w+)"), { [$0.range(at: 1)] }),
         (try! NSRegularExpression(pattern: "weather in (\\w+)"), { [$0.range(at: 1)] }),
-        (try! NSRegularExpression(pattern: "weather like today"), { [$0.range(at: 1)] }),
+        (try! NSRegularExpression(pattern: "weather like today"), { _ in [] }),
         (try! NSRegularExpression(pattern: "weather like here"), { _ in [] }),
         (try! NSRegularExpression(pattern: "weather here"), { _ in [] }),
         (try! NSRegularExpression(pattern: "local weather"), { _ in [] }),
@@ -50,11 +50,13 @@ class UserSpeechProcessor: NSObject, SpeechProcessor {
     func evaluateRegex(_ bestString: String) {
         let nsBestString = bestString as NSString
         for (regex, action) in self.matchers {
-            regex.enumerateMatches(in: bestString, options: [], range: NSRange(location: 0, length: nsBestString.length)) { result, _, _ in
+            regex.enumerateMatches(in: bestString, options: [], range: NSRange(location: 0, length: nsBestString.length)) { result, _, stop in
                 guard let r = result else { return }
                 let ranges = action(r)
                 let texts = ranges.map { nsBestString.substring(with: $0) }
                 let cityName = texts.first
+
+                stop.pointee = true
 
                 self.stopSpeechRecognition()
                 self.requestRecognized?(cityName)
