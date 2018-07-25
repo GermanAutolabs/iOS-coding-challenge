@@ -12,7 +12,7 @@ class WeatherUseCase {
 
     private var webService: WebService
     private var speechProcessor: SpeechProcessor
-    private var locationProvider: LocationProvider
+    var locationProvider: LocationProvider
     var viewController: WeatherViewController
 
     public var userMessage = "" {

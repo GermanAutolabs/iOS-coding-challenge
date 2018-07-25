@@ -11,25 +11,31 @@ import CoreLocation
 @testable import AutolabsTask
 
 class MockUserSpeechProcessor: UserSpeechProcessor {
-    override func startSpeechRecognition() {
+    override func startSpeechRecognition() { }
+
+    func startSpeechRecognition(_ text: String) {
         self.speechRecognitionStarted?()
-        self.evaluateRegex("What's the weather in London")
+        self.evaluateRegex(text)
     }
 }
 
 class MockUserLocationProvider: UserLocationProvider {
     override func refresh() {
-        self.currentLocation = CLLocationCoordinate2D(latitude: 51.509865, longitude: -0.118092)
+        self.currentLocation = CLLocationCoordinate2D(latitude: 47.49801, longitude: 19.03991)
     }
 }
 
 class UseCaseSpy: WeatherUseCase {
     var londonExpactation: XCTestExpectation?
+    var budapestExpactation: XCTestExpectation?
 
     override var userMessage: String {
         didSet {
             if userMessage.hasSuffix(" in London") {
                 londonExpactation?.fulfill()
+            }
+            else if userMessage.hasSuffix(" in Budapest") {
+                budapestExpactation?.fulfill()
             }
             self.viewController.userMessageLabel.text = userMessage
         }
@@ -71,16 +77,25 @@ class AutolabsTaskTests: XCTestCase {
         webService = nil
         mockLocationProvider = nil
         viewController = nil
-
         useCase = nil
+
         super.tearDown()
     }
     
-    func testExample() {
+    func testCityBasedWeatherFetch() {
         let expectation = self.expectation(description: "London weather displayed")
         useCase.londonExpactation = expectation
 
-        mockSpeechProcessor.startSpeechRecognition()
+        mockSpeechProcessor.startSpeechRecognition("What's the weather in London")
+
+        wait(for: [expectation], timeout: 1.5)
+    }
+
+    func testLocalWeatherFetch() {
+        let expectation = self.expectation(description: "Budapest weather displayed")
+        useCase.budapestExpactation = expectation
+
+        mockSpeechProcessor.startSpeechRecognition("What's the weather here")
 
         wait(for: [expectation], timeout: 1.5)
     }
