@@ -1,3 +1,34 @@
+# German Autolabs iOS coding challenge
+
+## Overview
+The whole original challenge readme is incorporated as reference below.
+
+I created a nice application with simplicity and usability in mind. The interface uses parallax effect, so if you can, please try it on a device to experience it in full glory.
+
+The application listens when it displays "Ask the current weather...".
+
+You can ask for the local weather like "What's the weather here", or weather in a city like "What's the weather like in London".
+
+Have fun!
+
+## Usage
+
+**! IMPORTANT !**
+
+To run the application, you must create Config.plist (or any other property list) file in the project, with your OpenWeatherMap API key as value for key "apiKey". ConfigExample.plist is provided as reference.
+If you want to name you property list file differently, you can do that by initiating Config() with your file name.
+Not having a proper property list file leads to a juicy preconditionFailure, with description of the problem and how to solve it. Config.plist is git ignored.
+
+## Shortcomings, future plans
+The speech engine stops after one minute, this shortcoming is NOT handled yet.
+
+The application supports different weather based displays, but the images for different weather situations are not included yet.
+
+
+
+# Original readme
+
+
 # iOS Coding Challenge
 We want to know how you write **code** - we don't care about coding challenges where you have to reimplement the HTTP protocol by using the bare basics, we want to know how you can use the existing libraries to solve the problems that we have to solve.
 
@@ -18,3 +49,5 @@ After sending the challenge we'll wait 2 weeks to hear back from you. Feel free 
 ## Process
 When you're ready, please fork this repository and start writing code in your fork. You'll get extra points for committing often in small chunks, so we'll see the process of how you created the application.
 
+# Process
+When you're ready, please fork this repository and start writing code in your fork. You'll get extra points for committing often in small chunks, so we'll see the process of how you created the application.
