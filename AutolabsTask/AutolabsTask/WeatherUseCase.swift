@@ -13,7 +13,7 @@ class WeatherUseCase {
     private var webService: WebService
     private var speechProcessor: SpeechProcessor
     private var locationProvider: LocationProvider
-    private var viewController: WeatherViewController
+    var viewController: WeatherViewController
 
     public var userMessage = "" {
         didSet {

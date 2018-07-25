@@ -23,8 +23,7 @@ class MockUserLocationProvider: UserLocationProvider {
     }
 }
 
-class MockUseCase: WeatherUseCase {
-
+class UseCaseSpy: WeatherUseCase {
     var londonExpactation: XCTestExpectation?
 
     override var userMessage: String {
@@ -32,6 +31,7 @@ class MockUseCase: WeatherUseCase {
             if userMessage.hasSuffix(" in London") {
                 londonExpactation?.fulfill()
             }
+            self.viewController.userMessageLabel.text = userMessage
         }
     }
 }
@@ -41,7 +41,7 @@ class AutolabsTaskTests: XCTestCase {
     var mockSpeechProcessor: MockUserSpeechProcessor!
     var webService: OpenWeatherMapWebService!
     var mockLocationProvider: MockUserLocationProvider!
-    var useCase: MockUseCase!
+    var useCase: UseCaseSpy!
     var viewController: WeatherViewController!
 
     override func setUp() {
@@ -60,7 +60,7 @@ class AutolabsTaskTests: XCTestCase {
         mockLocationProvider = MockUserLocationProvider()
         viewController = WeatherViewController()
 
-        useCase = MockUseCase(viewController: viewController,
+        useCase = UseCaseSpy(viewController: viewController,
                               webService: webService,
                               speechProcessor: mockSpeechProcessor,
                               locationProvider: mockLocationProvider)
