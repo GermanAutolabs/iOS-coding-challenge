@@ -19,9 +19,9 @@ class ConnectionManager: Connection {
     func getWeatherInfo(location: String, date: String, completion: @escaping (Weather?) -> Void) {
 
         let params = ["format": "json",
-            "q": "48.834,2.394", //"berlin",
+            "q": location,
             "key": apiKey,
-            "date": "today"]
+            "date": date]
 
         Alamofire.request("\(baseUrl)/premium/v1/weather.ashx", parameters: params).responseJSON { response in
             response.result.ifSuccess {

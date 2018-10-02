@@ -10,8 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let connectionManager: Connection = ConnectionManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        connectionManager.getWeatherInfo(location: "Berlin", date: "today") { (weather) in
+            debugPrint(weather)
+        }
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
