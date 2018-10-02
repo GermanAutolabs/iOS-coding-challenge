@@ -56,5 +56,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This will allow you to aks for the current weather.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>This will allow you to aks for the current weather.</string>
 </dict>
 </plist>
