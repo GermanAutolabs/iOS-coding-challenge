@@ -22,34 +22,54 @@ class ViewController: UIViewController {
 
     let connectionManager: Connection = ConnectionManager()
     let voiceManager: VoiceManager = VoiceManager()
-    
+
     var recognized = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         voiceManager.delegate = { text in
             self.askLabel.text = text
             self.recognized = text
         }
+
     }
 
     @IBAction func micButtoPressed(_ sender: Any) {
         voiceManager.startRecording()
+        self.askLabel.text = ""
+        
+        (sender as! UIButton).layer.borderColor = UIColor.red.cgColor
+        (sender as! UIButton).layer.borderWidth = 2.0
+        
     }
 
     @IBAction func micButtonUp(_ sender: Any) {
         voiceManager.stopRecording()
         
+        (sender as! UIButton).layer.borderWidth = 0
+
         if self.recognized.contains("weather") || self.recognized.contains("wetter") {
-            askLabel.isHidden = true
-            connectionManager.getWeatherInfo(location: "Berlin", date: "today") { (weather) in
+
+            let location = getLocationFrom(input: self.recognized)
+            
+            connectionManager.getWeatherInfo(location: location, date: "today") { (weather) in
                 if weather != nil {
                     self.fillViewWithWeather(weather: weather!)
                 }
             }
         }
     }
-    
+
+    func getLocationFrom (input: String) -> String {
+        if let range = input.range(of: "in ") {
+            let city = input[range.upperBound...]
+            return String(city)
+        }
+
+        return "Berlin"
+    }
+
     func fillViewWithWeather (weather: Weather) {
         self.weatherTemperatur.isHidden = false
         self.weatherTemperatur.text = "\(String(describing: weather.tempC)) °C"
