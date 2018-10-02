@@ -32,26 +32,32 @@ class ViewController: UIViewController {
         askLabel.isHidden = true
 
         connectionManager.getWeatherInfo(location: "Berlin", date: "today") { (weather) in
-
             if weather != nil {
-                self.weatherTemperatur.isHidden = false
-                self.weatherTemperatur.text = "\(String(describing: weather!.tempC)) °C"
-
-                self.weatherDescription.isHidden = false
-                self.weatherDescription.text = weather!.desc
-
-                self.weatherTempFeel.isHidden = false
-                self.weatherTempFeel.text = "\(String(describing: weather!.tempFeelsC)) °C"
-
-                self.weatherWindSpeed.isHidden = false
-                self.weatherWindSpeed.text = "\(String(describing: weather!.windspeedKmph)) kmph"
-
-                self.weatherHumidity.isHidden = false
-                self.weatherHumidity.text = "\(String(describing: weather!.humidity)) %"
+                self.fillViewWithWeather(weather: weather!)
             }
-
         }
+    }
 
+    func fillViewWithWeather (weather: Weather) {
+        self.weatherTemperatur.isHidden = false
+        self.weatherTemperatur.text = "\(String(describing: weather.tempC)) °C"
+
+        self.weatherDescription.isHidden = false
+        self.weatherDescription.text = weather.desc
+
+        self.weatherTempFeel.isHidden = false
+        self.weatherTempFeel.text = "\(String(describing: weather.tempFeelsC)) °C"
+
+        self.weatherWindSpeed.isHidden = false
+        self.weatherWindSpeed.text = "\(String(describing: weather.windspeedKmph)) kmph"
+
+        self.weatherHumidity.isHidden = false
+        self.weatherHumidity.text = "\(String(describing: weather.humidity)) %"
+
+        self.weatherImage.isHidden = false
+        connectionManager.getIconForWeather(iconUrl: weather.icon) { (icon) in
+            self.weatherImage.image = icon
+        }
     }
 
 }
