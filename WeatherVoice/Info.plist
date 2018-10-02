@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This will allow you to ask for the current weather.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -57,8 +59,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>This will allow you to aks for the current weather.</string>
+	<string>This will allow you to ask for the current weather.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>This will allow you to aks for the current weather.</string>
+	<string>This will allow you to ask for the current weather.</string>
 </dict>
 </plist>

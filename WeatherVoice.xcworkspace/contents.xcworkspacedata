@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/ednegro/Library/Mobile Documents/com~apple~CloudDocs/Development/iOS-coding-challenge/WeatherVoice/manager/VoiceManager.swift">
-   </FileRef>
-   <FileRef
       location = "group:WeatherVoice.xcodeproj">
    </FileRef>
    <FileRef

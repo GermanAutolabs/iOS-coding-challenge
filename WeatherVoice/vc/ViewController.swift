@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
 
     let connectionManager: Connection = ConnectionManager()
     let voiceManager: VoiceManager = VoiceManager()
+    let locationManager: LocationManager = LocationManager()
 
     var recognized = ""
 
@@ -38,21 +40,21 @@ class ViewController: UIViewController {
     @IBAction func micButtoPressed(_ sender: Any) {
         voiceManager.startRecording()
         self.askLabel.text = ""
-        
+
         (sender as! UIButton).layer.borderColor = UIColor.red.cgColor
         (sender as! UIButton).layer.borderWidth = 2.0
-        
+
     }
 
     @IBAction func micButtonUp(_ sender: Any) {
         voiceManager.stopRecording()
-        
+
         (sender as! UIButton).layer.borderWidth = 0
 
         if self.recognized.contains("weather") || self.recognized.contains("wetter") {
 
             let location = getLocationFrom(input: self.recognized)
-            
+
             connectionManager.getWeatherInfo(location: location, date: "today") { (weather) in
                 if weather != nil {
                     self.fillViewWithWeather(weather: weather!)
@@ -67,7 +69,7 @@ class ViewController: UIViewController {
             return String(city)
         }
 
-        return "Berlin"
+        return self.locationManager.location
     }
 
     func fillViewWithWeather (weather: Weather) {
