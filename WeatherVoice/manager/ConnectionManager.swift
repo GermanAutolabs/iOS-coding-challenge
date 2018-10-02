@@ -7,12 +7,15 @@
 //
 
 import Alamofire
+import AlamofireImage
 
 protocol Connection {
     func getWeatherInfo(location: String, date: String, completion: @escaping (Weather?) -> Void)
+    func getIconForWeather(iconUrl: String, completion: @escaping (UIImage?) -> Void)
 }
 
 class ConnectionManager: Connection {
+
     let baseUrl = "https://api.worldweatheronline.com"
     let apiKey = "b1928ca6bdec4310953195111180110"
 
@@ -62,5 +65,13 @@ class ConnectionManager: Connection {
         }
 
         return weather
+    }
+
+    func getIconForWeather(iconUrl: String, completion: @escaping (UIImage?) -> Void) {
+        Alamofire.request(iconUrl).responseImage { response in
+            if let image = response.result.value {
+                completion(image)
+            }
+        }
     }
 }
