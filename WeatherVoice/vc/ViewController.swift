@@ -21,23 +21,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var askLabel: UILabel!
 
     let connectionManager: Connection = ConnectionManager()
-
+    let voiceManager: VoiceManager = VoiceManager()
+    
+    var recognized = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    @IBAction func micButtoPressed(_ sender: Any) {
-        askLabel.isHidden = true
-
-        connectionManager.getWeatherInfo(location: "Berlin", date: "today") { (weather) in
-            if weather != nil {
-                self.fillViewWithWeather(weather: weather!)
-            }
+        voiceManager.delegate = { text in
+            self.askLabel.text = text
+            self.recognized = text
         }
     }
 
+    @IBAction func micButtoPressed(_ sender: Any) {
+        voiceManager.startRecording()
+    }
+
+    @IBAction func micButtonUp(_ sender: Any) {
+        voiceManager.stopRecording()
+        
+        if self.recognized.contains("weather") || self.recognized.contains("wetter") {
+            askLabel.isHidden = true
+            connectionManager.getWeatherInfo(location: "Berlin", date: "today") { (weather) in
+                if weather != nil {
+                    self.fillViewWithWeather(weather: weather!)
+                }
+            }
+        }
+    }
+    
     func fillViewWithWeather (weather: Weather) {
         self.weatherTemperatur.isHidden = false
         self.weatherTemperatur.text = "\(String(describing: weather.tempC)) °C"
