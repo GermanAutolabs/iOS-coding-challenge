@@ -36,7 +36,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func micButtoPressed(_ sender: Any) {
-        voiceManager.startRecording()
+        voiceManager.startRecording { error in
+            self.showError(title: "Error", message: error)
+        }
+
         self.askLabel.text = ""
 
         (sender as! UIButton).layer.borderColor = UIColor.red.cgColor
@@ -53,41 +56,48 @@ class ViewController: UIViewController {
 
             if let loc = self.locationManager.getLocationFrom(input: self.recognized) {
                 connectionManager.getWeatherInfoForName(name: loc) { (weather) in
-                    if weather != nil {
-                        self.fillViewWithWeather(weather: weather!)
-                    }
+                    self.fillViewWithWeather(weather: weather)
                 }
 
             } else if let loc = locationManager.location {
                 connectionManager.getWeatherInfoForLocation(lat: "\(loc.latitude)", lon: "\(loc.longitude)") { (weather) in
-                    if weather != nil {
-                        self.fillViewWithWeather(weather: weather!)
-                    }
+                    self.fillViewWithWeather(weather: weather)
                 }
             } else {
-                // TODO - Not able to find location
+                // Not able to find location
+                showError(title: "Location", message: "Can not detemin location for weather request")
             }
         }
     }
 
-    func fillViewWithWeather (weather: Weather) {
+    func fillViewWithWeather (weather: Weather?) {
+        guard weather != nil else {
+            showError(title: "Weather", message: "Could not find weather informations")
+            return
+        }
         self.weatherTemperatur.isHidden = false
-        self.weatherTemperatur.text = "\(String(describing: weather.tempC)) °C"
+        self.weatherTemperatur.text = "\(String(describing: weather!.tempC)) °C"
 
         self.weatherDescription.isHidden = false
-        self.weatherDescription.text = "\(weather.desc) in \(weather.name)"
+        self.weatherDescription.text = "\(weather!.desc) in \(weather!.name)"
 
         self.weatherWindSpeed.isHidden = false
-        self.weatherWindSpeed.text = "Wind:\n\(String(describing: weather.windspeedMps)) mps"
+        self.weatherWindSpeed.text = "Wind:\n\(String(describing: weather!.windspeedMps)) mps"
 
         self.weatherHumidity.isHidden = false
-        self.weatherHumidity.text = "Humidity:\n\(String(describing: weather.humidity)) %"
+        self.weatherHumidity.text = "Humidity:\n\(String(describing: weather!.humidity)) %"
 
         self.weatherImage.isHidden = false
-        connectionManager.getIconForWeather(iconUrl: weather.icon) { (icon) in
+        connectionManager.getIconForWeather(iconUrl: weather!.icon) { (icon) in
             self.weatherImage.image = icon
         }
     }
 
+    func showError(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 

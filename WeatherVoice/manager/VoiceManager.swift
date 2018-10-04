@@ -24,9 +24,9 @@ class VoiceManager {
         askSpeechPermission()
     }
 
-    func startRecording() {
+    func startRecording(errorMessage : @escaping (String) -> Void) {
         guard status == .authorized else {
-            // TODO - Show error for user
+            errorMessage("Speech recognition is not authorized")
             return
         }
         
@@ -44,6 +44,7 @@ class VoiceManager {
         do {
             try audioEngine.start()
         } catch {
+            errorMessage("Something went wrong during recording")
             return print(error)
         }
 
@@ -52,6 +53,7 @@ class VoiceManager {
                 self.delegate(result.bestTranscription.formattedString)
 
             } else if let error = error {
+                errorMessage("Speech recognition not able to process")
                 print(error)
             }
         })
@@ -59,6 +61,7 @@ class VoiceManager {
     }
 
     func stopRecording() {
+        request.endAudio()
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
         recognitionTask?.cancel()
