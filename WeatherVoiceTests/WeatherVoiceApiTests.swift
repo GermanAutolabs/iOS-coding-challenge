@@ -9,7 +9,7 @@
 import XCTest
 @testable import WeatherVoice
 
-class WeatherVoiceTests: XCTestCase {
+class WeatherVoiceApiTests: XCTestCase {
 
     var connection = ConnectionManager()
     var reponseJson: Dictionary<String, AnyObject>!
