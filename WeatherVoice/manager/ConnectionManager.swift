@@ -38,7 +38,9 @@ class ConnectionManager: Connection {
     }
 
     func getWeatherInfo(params: [String: Any], completion: @escaping (Weather?) -> Void) {
-        Alamofire.request(baseUrl, parameters: params).responseJSON { response in
+        Alamofire.request(baseUrl, parameters: params)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
             response.result.ifSuccess {
                 completion(self.createWeather(_from: response.result.value as! Dictionary<String, Any>))
             }
