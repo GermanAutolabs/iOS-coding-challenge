@@ -18,7 +18,7 @@ protocol Connection {
 class ConnectionManager: Connection {
 
     let baseUrl = "https://api.openweathermap.org/data/2.5/weather"
-    let apiKey = "628ffd33d46e3f03eb35aabb6680a923"
+    let apiKey = ""
 
     func getWeatherInfoForName(name: String, completion: @escaping (Weather?) -> Void) {
         let params = ["units": "metric",
