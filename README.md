@@ -1,3 +1,16 @@
+# Usage
+To use the app to ask it for the weather you have to enter an **API-Key** from [api.openweathermap.org][1] in the ConnectionManager.swift
+Then you can run the application on your phone. Hold down the microphone button as long as you speak. 
+
+So you can ask for different location:
+- “What is the weather in Berlin”
+- “What is the temperature in New York”
+
+# Future
+- Create UI test. Currently there are just Unittests
+- Better error handling and notification for the user about errors
+- Handling stuff like “tomorrow” or specific dates that the user asked for
+
 # iOS Coding Challenge
 We want to know how you write **code** - we don't care about coding challenges where you have to reimplement the HTTP protocol by using the bare basics, we want to know how you can use the existing libraries to solve the problems that we have to solve.
 
@@ -18,3 +31,4 @@ After sending the challenge we'll wait 2 weeks to hear back from you. Feel free 
 ## Process
 When you're ready, please fork this repository and start writing code in your fork. You'll get extra points for committing often in small chunks, so we'll see the process of how you created the application.
 
+[1]:	api.openweathermap.org "OpenWeatherMap"
