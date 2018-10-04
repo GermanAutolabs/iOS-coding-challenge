@@ -8,20 +8,6 @@
 import Foundation
 import Speech
 
-/*
- public enum SFSpeechRecognizerAuthorizationStatus : Int {
- 
- 
- case notDetermined
- 
- case denied
- 
- case restricted
- 
- case authorized
- }
- 
- */
 class VoiceManager {
     var status: SFSpeechRecognizerAuthorizationStatus {
         return SFSpeechRecognizer.authorizationStatus()
@@ -29,26 +15,26 @@ class VoiceManager {
 
     let audioEngine = AVAudioEngine()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
-    let request = SFSpeechAudioBufferRecognitionRequest()
+    var request :SFSpeechAudioBufferRecognitionRequest!
     var recognitionTask: SFSpeechRecognitionTask?
     
     var delegate : ((String) -> Void)!
 
-    func startRecording () {
-        switch status {
-        case .notDetermined:
-            askSpeechPermission()
-            return
-        case .authorized:
-            record()
-        case .denied, .restricted:
-            // TODO - show error
-            break
-        }
+    init() {
+        askSpeechPermission()
     }
 
-    func record() {
+    func startRecording() {
+        guard status == .authorized else {
+            // TODO - Show error for user
+            return
+        }
+        
+        request = SFSpeechAudioBufferRecognitionRequest()
+        
         let node = audioEngine.inputNode
+        node.removeTap(onBus: 0)
+        
         let recordingFormat = node.outputFormat(forBus: 0)
         node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
             self.request.append(buffer)
