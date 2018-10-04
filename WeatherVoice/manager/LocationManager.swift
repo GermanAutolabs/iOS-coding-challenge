@@ -31,4 +31,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         self.location = "\(locValue.latitude) \(locValue.longitude)"
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
+
+    func getLocationFrom (input: String) -> String {
+        if let range = input.range(of: "in ") {
+            let city = input[range.upperBound...]
+            return String(city)
+        }
+
+        return self.location
+    }
 }

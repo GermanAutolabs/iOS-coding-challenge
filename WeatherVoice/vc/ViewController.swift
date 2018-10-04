@@ -53,7 +53,7 @@ class ViewController: UIViewController {
 
         if self.recognized.contains("weather") || self.recognized.contains("wetter") {
 
-            let location = getLocationFrom(input: self.recognized)
+            let location = self.locationManager.getLocationFrom(input: self.recognized)
 
             connectionManager.getWeatherInfo(location: location, date: "today") { (weather) in
                 if weather != nil {
@@ -61,15 +61,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-    }
-
-    func getLocationFrom (input: String) -> String {
-        if let range = input.range(of: "in ") {
-            let city = input[range.upperBound...]
-            return String(city)
-        }
-
-        return self.locationManager.location
     }
 
     func fillViewWithWeather (weather: Weather) {
