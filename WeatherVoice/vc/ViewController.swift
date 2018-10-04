@@ -52,7 +52,7 @@ class ViewController: UIViewController {
 
         (sender as! UIButton).layer.borderWidth = 0
 
-        if self.recognized.contains("weather") || self.recognized.contains("wetter") {
+        if self.recognized.contains("weather") || self.recognized.contains("temperatur") {
 
             if let loc = self.locationManager.getLocationFrom(input: self.recognized) {
                 connectionManager.getWeatherInfoForName(name: loc) { (weather) in
