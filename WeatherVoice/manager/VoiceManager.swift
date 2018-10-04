@@ -53,7 +53,7 @@ class VoiceManager {
                 self.delegate(result.bestTranscription.formattedString)
 
             } else if let error = error {
-                errorMessage("Speech recognition not able to process")
+                //errorMessage("Speech recognition not able to process")
                 print(error)
             }
         })
