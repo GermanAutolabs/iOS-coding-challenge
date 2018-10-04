@@ -78,10 +78,10 @@ class ViewController: UIViewController {
         self.weatherDescription.text = "\(weather.desc) in \(weather.name)"
 
         self.weatherWindSpeed.isHidden = false
-        self.weatherWindSpeed.text = "\(String(describing: weather.windspeedMps)) mps"
+        self.weatherWindSpeed.text = "Wind:\n\(String(describing: weather.windspeedMps)) mps"
 
         self.weatherHumidity.isHidden = false
-        self.weatherHumidity.text = "\(String(describing: weather.humidity)) %"
+        self.weatherHumidity.text = "Humidity:\n\(String(describing: weather.humidity)) %"
 
         self.weatherImage.isHidden = false
         connectionManager.getIconForWeather(iconUrl: weather.icon) { (icon) in
