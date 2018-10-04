@@ -11,7 +11,7 @@ import CoreLocation
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
-    var location = "Berlin"
+    var location: CLLocationCoordinate2D? = nil
 
     override init() {
         super.init()
@@ -28,16 +28,16 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        self.location = "\(locValue.latitude) \(locValue.longitude)"
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        self.location = locValue
+        print("locations = \(locValue.latitude),\(locValue.longitude)")
     }
 
-    func getLocationFrom (input: String) -> String {
+    func getLocationFrom (input: String) -> String? {
         if let range = input.range(of: "in ") {
             let city = input[range.upperBound...]
             return String(city)
         }
 
-        return self.location
+        return nil
     }
 }

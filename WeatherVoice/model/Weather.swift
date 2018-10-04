@@ -7,9 +7,11 @@
 //
 struct Weather {
     var tempC = 0
-    var tempFeelsC = 0
     var humidity = 0
+    var type = ""
     var desc = ""
+    var windspeedMps = 0
+    var name = ""
     var icon = ""
-    var windspeedKmph = 0
+
 }

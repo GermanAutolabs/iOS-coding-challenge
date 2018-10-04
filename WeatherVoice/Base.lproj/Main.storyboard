@@ -57,7 +57,7 @@
                                 <subviews>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xxJ-MA-uAF">
                                         <rect key="frame" x="8" y="8" width="50" height="50"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="928-2k-aSc"/>
                                             <constraint firstAttribute="height" constant="50" id="ses-02-iJS"/>
@@ -72,12 +72,6 @@
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90 °C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3I-vY-cgA">
                                         <rect key="frame" x="108.5" y="70" width="126" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 °C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNo-93-OhW">
-                                        <rect key="frame" x="145.5" y="171" width="52" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -103,8 +97,6 @@
                                     <constraint firstAttribute="trailing" secondItem="32Y-Xe-Zq0" secondAttribute="trailing" constant="8" id="EIP-Kk-peY"/>
                                     <constraint firstAttribute="bottom" secondItem="BHN-XY-hdP" secondAttribute="bottom" constant="8" id="IPE-et-G3C"/>
                                     <constraint firstAttribute="trailing" secondItem="HqL-Pr-yMi" secondAttribute="trailing" constant="8" id="PF6-eL-ASC"/>
-                                    <constraint firstAttribute="bottom" secondItem="uNo-93-OhW" secondAttribute="bottom" constant="8" id="Pvh-rJ-s6I"/>
-                                    <constraint firstItem="uNo-93-OhW" firstAttribute="centerX" secondItem="anR-lU-mdc" secondAttribute="centerX" id="RKS-Dg-6zx"/>
                                     <constraint firstItem="g3I-vY-cgA" firstAttribute="centerY" secondItem="anR-lU-mdc" secondAttribute="centerY" id="TcO-fR-plT"/>
                                     <constraint firstAttribute="bottom" secondItem="32Y-Xe-Zq0" secondAttribute="bottom" constant="8" id="ZSI-Jo-rUz"/>
                                     <constraint firstAttribute="height" constant="200" id="iEW-qq-swv"/>
@@ -138,7 +130,6 @@
                         <outlet property="weatherDescription" destination="HqL-Pr-yMi" id="Q4A-MW-FRq"/>
                         <outlet property="weatherHumidity" destination="BHN-XY-hdP" id="Pkc-W5-mBJ"/>
                         <outlet property="weatherImage" destination="xxJ-MA-uAF" id="V6l-Bw-PQ2"/>
-                        <outlet property="weatherTempFeel" destination="uNo-93-OhW" id="0hZ-21-XXW"/>
                         <outlet property="weatherTemperatur" destination="g3I-vY-cgA" id="fGv-Qk-gSG"/>
                         <outlet property="weatherWindSpeed" destination="32Y-Xe-Zq0" id="iqY-Xz-4vL"/>
                     </connections>

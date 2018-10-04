@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherDescription: UILabel!
     @IBOutlet weak var weatherTemperatur: UILabel!
 
-    @IBOutlet weak var weatherTempFeel: UILabel!
     @IBOutlet weak var weatherWindSpeed: UILabel!
     @IBOutlet weak var weatherHumidity: UILabel!
 
@@ -34,7 +33,6 @@ class ViewController: UIViewController {
             self.askLabel.text = text
             self.recognized = text
         }
-
     }
 
     @IBAction func micButtoPressed(_ sender: Any) {
@@ -53,12 +51,21 @@ class ViewController: UIViewController {
 
         if self.recognized.contains("weather") || self.recognized.contains("wetter") {
 
-            let location = self.locationManager.getLocationFrom(input: self.recognized)
-
-            connectionManager.getWeatherInfo(location: location, date: "today") { (weather) in
-                if weather != nil {
-                    self.fillViewWithWeather(weather: weather!)
+            if let loc = self.locationManager.getLocationFrom(input: self.recognized) {
+                connectionManager.getWeatherInfoForName(name: loc) { (weather) in
+                    if weather != nil {
+                        self.fillViewWithWeather(weather: weather!)
+                    }
                 }
+
+            } else if let loc = locationManager.location {
+                connectionManager.getWeatherInfoForLocation(lat: "\(loc.latitude)", lon: "\(loc.latitude)") { (weather) in
+                    if weather != nil {
+                        self.fillViewWithWeather(weather: weather!)
+                    }
+                }
+            } else {
+                // TODO - Not able to find location
             }
         }
     }
@@ -68,13 +75,10 @@ class ViewController: UIViewController {
         self.weatherTemperatur.text = "\(String(describing: weather.tempC)) °C"
 
         self.weatherDescription.isHidden = false
-        self.weatherDescription.text = weather.desc
-
-        self.weatherTempFeel.isHidden = false
-        self.weatherTempFeel.text = "\(String(describing: weather.tempFeelsC)) °C"
+        self.weatherDescription.text = "\(weather.desc) in \(weather.name)"
 
         self.weatherWindSpeed.isHidden = false
-        self.weatherWindSpeed.text = "\(String(describing: weather.windspeedKmph)) kmph"
+        self.weatherWindSpeed.text = "\(String(describing: weather.windspeedMps)) mps"
 
         self.weatherHumidity.isHidden = false
         self.weatherHumidity.text = "\(String(describing: weather.humidity)) %"

@@ -36,7 +36,7 @@
 		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>cdn.worldweatheronline.net</key>
+			<key>openweathermap.org</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
