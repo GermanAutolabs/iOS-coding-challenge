@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                 }
 
             } else if let loc = locationManager.location {
-                connectionManager.getWeatherInfoForLocation(lat: "\(loc.latitude)", lon: "\(loc.latitude)") { (weather) in
+                connectionManager.getWeatherInfoForLocation(lat: "\(loc.latitude)", lon: "\(loc.longitude)") { (weather) in
                     if weather != nil {
                         self.fillViewWithWeather(weather: weather!)
                     }
