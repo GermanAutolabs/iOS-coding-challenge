@@ -65,17 +65,7 @@ class VoiceManager {
     }
 
     func askSpeechPermission() {
-        SFSpeechRecognizer.requestAuthorization { status in
-            OperationQueue.main.addOperation {
-                switch status {
-                case .authorized:
-                    self.startRecording()
-                default:
-                    // TODO - show error
-                    break
-                }
-            }
-        }
+        SFSpeechRecognizer.requestAuthorization { status in }
     }
 
 }
