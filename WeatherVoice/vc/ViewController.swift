@@ -24,15 +24,11 @@ class ViewController: UIViewController {
     let voiceManager: VoiceManager = VoiceManager()
     let locationManager: LocationManager = LocationManager()
 
-    var recognized = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        voiceManager.delegate = { text in
-            self.askLabel.text = text
-            self.recognized = text
-        }
+        voiceManager.delegate = self
     }
 
     @IBAction func micButtoPressed(_ sender: Any) {
@@ -49,25 +45,7 @@ class ViewController: UIViewController {
 
     @IBAction func micButtonUp(_ sender: Any) {
         voiceManager.stopRecording()
-
         (sender as! UIButton).layer.borderWidth = 0
-
-        if self.recognized.contains("weather") || self.recognized.contains("temperatur") {
-
-            if let loc = self.locationManager.getLocationFrom(input: self.recognized) {
-                connectionManager.getWeatherInfoForName(name: loc) { (weather) in
-                    self.fillViewWithWeather(weather: weather)
-                }
-
-            } else if let loc = locationManager.location {
-                connectionManager.getWeatherInfoForLocation(lat: "\(loc.latitude)", lon: "\(loc.longitude)") { (weather) in
-                    self.fillViewWithWeather(weather: weather)
-                }
-            } else {
-                // Not able to find location
-                showError(title: "Location", message: "Can not detemin location for weather request")
-            }
-        }
     }
 
     func fillViewWithWeather (weather: Weather?) {
@@ -99,5 +77,35 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+}
+
+extension ViewController: VoiceManagerDelegate {
+
+    func voiceManager(_ manager: VoiceManager, didRecognizeVoice result: String) {
+        self.askLabel.text = result
+
+        if result.contains("weather") || result.contains("temperatur") {
+
+            if let loc = self.locationManager.getLocationFrom(input: result) {
+                connectionManager.getWeatherInfoForName(name: loc) { (weather) in
+                    self.fillViewWithWeather(weather: weather)
+                }
+
+            } else if let loc = locationManager.location {
+                connectionManager.getWeatherInfoForLocation(lat: "\(loc.latitude)", lon: "\(loc.longitude)") { (weather) in
+                    self.fillViewWithWeather(weather: weather)
+                }
+            } else {
+                // Not able to find location
+                showError(title: "Location", message: "Can not detemin location for weather request")
+            }
+        }
+
+    }
+
+    func voiceManager(_ manager: VoiceManager, recognisingVoice result: String) {
+        self.askLabel.text = result
+    }
+
 }
 
