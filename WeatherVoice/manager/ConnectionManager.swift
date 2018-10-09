@@ -11,7 +11,7 @@ import AlamofireImage
 
 protocol Connection {
     func getWeatherInfoForName(name: String, completion: @escaping (Weather?) -> Void)
-    func getWeatherInfoForLocation(lat: String, lon: String, completion: @escaping (Weather?) -> Void)
+    func getWeatherInfoForLocation(lat: Double, lon: Double, completion: @escaping (Weather?) -> Void)
     func getIconForWeather(iconUrl: String, completion: @escaping (UIImage?) -> Void)
 }
 
@@ -28,10 +28,10 @@ class ConnectionManager: Connection {
         getWeatherInfo(params: params, completion: completion)
     }
 
-    func getWeatherInfoForLocation(lat: String, lon: String, completion: @escaping (Weather?) -> Void) {
+    func getWeatherInfoForLocation(lat: Double, lon: Double, completion: @escaping (Weather?) -> Void) {
         let params = ["units": "metric",
-            "lat": lat,
-            "lon": lon,
+            "lat": String(lat),
+            "lon": String(lon),
             "APPID": apiKey]
 
         getWeatherInfo(params: params, completion: completion)

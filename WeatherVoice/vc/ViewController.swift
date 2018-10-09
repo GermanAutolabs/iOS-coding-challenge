@@ -92,7 +92,7 @@ extension ViewController: VoiceManagerDelegate {
                 }
 
             } else if let loc = locationManager.location {
-                connectionManager.getWeatherInfoForLocation(lat: "\(loc.latitude)", lon: "\(loc.longitude)") { (weather) in
+                connectionManager.getWeatherInfoForLocation(lat: loc.latitude, lon: loc.longitude) { (weather) in
                     self.fillViewWithWeather(weather: weather)
                 }
             } else {
