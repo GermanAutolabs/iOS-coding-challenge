@@ -41,44 +41,33 @@ class ConnectionManager: Connection {
         Alamofire.request(baseUrl, parameters: params)
             .validate(statusCode: 200..<300)
             .responseJSON { response in
-            response.result.ifSuccess {
-                completion(self.createWeather(_from: response.result.value as! Dictionary<String, Any>))
-            }
+                response.result.ifSuccess {
 
-            response.result.ifFailure {
-                completion(nil)
-                debugPrint("failed")
-            }
+                    if let data = response.data {
+                        do {
+                            let weather = try JSONDecoder().decode(Weather.self, from: data)
+                            completion(weather)
+                        } catch {
+                            completion(nil)
+                            debugPrint("json parsing failed")
+                        }
+                    }
+                }
+
+                response.result.ifFailure {
+                    completion(nil)
+                    debugPrint("failed")
+                }
         }
-    }
-
-    func createWeather (_from data: Dictionary<String, Any>) -> Weather {
-        var weather = Weather()
-
-        if let desc = data["weather"] as? [[String: Any]] {
-            let weatherInfo = desc[0]
-            weather.type = weatherInfo["main"] as! String
-            weather.desc = weatherInfo["description"] as! String
-            weather.icon = weatherInfo["icon"] as! String
-        }
-
-        let mainInfo = data["main"] as! Dictionary<String, Any>
-        let windInfo = data["wind"] as! Dictionary<String, Any>
-
-        weather.tempC = Int(truncating: mainInfo["temp"] as! NSNumber)
-        weather.humidity = Int(truncating: mainInfo["humidity"] as! NSNumber)
-        weather.windspeedMps = Int(truncating: windInfo["speed"] as! NSNumber)
-
-        weather.name = data["name"] as! String
-
-        return weather
     }
 
     func getIconForWeather(iconUrl: String, completion: @escaping (UIImage?) -> Void) {
-        Alamofire.request("http://openweathermap.org/img/w/\(iconUrl).png").responseImage { response in
-            if let image = response.result.value {
-                completion(image)
-            }
+        Alamofire.request("http://openweathermap.org/img/w/\(iconUrl).png")
+            .validate(statusCode: 200..<300)
+            .responseImage { response in
+                if let image = response.result.value {
+                    completion(image)
+                }
         }
     }
 }
