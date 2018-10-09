@@ -29,7 +29,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         self.location = locValue
-        print("locations = \(locValue.latitude),\(locValue.longitude)")
     }
 
     func getLocationFrom (input: String) -> String? {
@@ -39,5 +38,18 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
 
         return nil
+    }
+
+    func locationServiceEnabled () -> Bool {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                return false
+            case .authorizedAlways, .authorizedWhenInUse:
+                return true
+            }
+        } else {
+            return false
+        }
     }
 }

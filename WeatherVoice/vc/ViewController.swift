@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     let voiceManager: VoiceManager = VoiceManager()
     let locationManager: LocationManager = LocationManager()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -96,8 +95,13 @@ extension ViewController: VoiceManagerDelegate {
                     self.fillViewWithWeather(weather: weather)
                 }
             } else {
-                // Not able to find location
-                showError(title: "Location", message: "Can not detemin location for weather request")
+                if !self.locationManager.locationServiceEnabled() {
+                    showError(title: "Location",
+                        message: "Please authorize the location service `while using the app` in your system settings")
+                } else {
+                    showError(title: "Location",
+                        message: "Can not detemin location for weather request")
+                }
             }
         }
 
