@@ -18,9 +18,6 @@
 		93A2311C2163456000133E4A /* WeatherVoiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A2311B2163456000133E4A /* WeatherVoiceUITests.swift */; };
 		93A2312C21634AEE00133E4A /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A2312B21634AEE00133E4A /* ConnectionManager.swift */; };
 		93A2312F21634BF500133E4A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A2312E21634BF500133E4A /* Weather.swift */; };
-		93A2313121635EE900133E4A /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A2313021635EE900133E4A /* weather.json */; };
-		93A2313221635EE900133E4A /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A2313021635EE900133E4A /* weather.json */; };
-		93A2313321635EE900133E4A /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 93A2313021635EE900133E4A /* weather.json */; };
 		93A2314E2163BA4600133E4A /* VoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A2314D2163BA4600133E4A /* VoiceManager.swift */; };
 		93A231532163CCED00133E4A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A231522163CCED00133E4A /* CoreLocation.framework */; };
 		93A231552163CEC100133E4A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A231542163CEC100133E4A /* LocationManager.swift */; };
@@ -66,7 +63,6 @@
 		93A2311D2163456100133E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A2312B21634AEE00133E4A /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		93A2312E21634BF500133E4A /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		93A2313021635EE900133E4A /* weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weather.json; sourceTree = "<group>"; };
 		93A2314D2163BA4600133E4A /* VoiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VoiceManager.swift; path = "/Users/ednegro/Library/Mobile Documents/com~apple~CloudDocs/Development/iOS-coding-challenge/WeatherVoice/manager/VoiceManager.swift"; sourceTree = "<absolute>"; };
 		93A231522163CCED00133E4A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		93A231542163CEC100133E4A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -158,7 +154,6 @@
 		93A2310F2163456000133E4A /* WeatherVoiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				93A2313021635EE900133E4A /* weather.json */,
 				93A231102163456000133E4A /* WeatherVoiceApiTests.swift */,
 				93A231572165FA2400133E4A /* WeatherVoiceLocationTests.swift */,
 				93A231122163456000133E4A /* Info.plist */,
@@ -322,7 +317,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A2313121635EE900133E4A /* weather.json in Resources */,
 				93A231062163456000133E4A /* LaunchScreen.storyboard in Resources */,
 				93A231032163456000133E4A /* Assets.xcassets in Resources */,
 				93A231012163455E00133E4A /* Main.storyboard in Resources */,
@@ -333,7 +327,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A2313221635EE900133E4A /* weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +334,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A2313321635EE900133E4A /* weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
