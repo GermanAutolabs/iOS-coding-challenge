@@ -97,16 +97,18 @@ extension ViewController: VoiceManagerDelegate {
         self.askLabel.text = result
     }
 
+    func voiceManager(_ manager: VoiceManager, anErrorAppeared error: String) {
+        self.showError(title: "Error", message: error)
+    }
+
 }
 
 extension ViewController: MicButtonDelegate {
 
     func didTouchInside() {
-        voiceManager.startRecording { error in
-            self.showError(title: "Error", message: error)
-        }
-
+        voiceManager.startRecording()
     }
+
     func didTouchUpInside() {
         voiceManager.stopRecording()
     }

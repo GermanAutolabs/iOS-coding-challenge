@@ -11,6 +11,7 @@ import Speech
 protocol VoiceManagerDelegate {
     func voiceManager(_ manager: VoiceManager, recognisingVoice result: String)
     func voiceManager(_ manager: VoiceManager, didRecognizeVoice result: String)
+    func voiceManager(_ manager: VoiceManager, anErrorAppeared error: String)
 }
 
 class VoiceManager {
@@ -29,9 +30,10 @@ class VoiceManager {
         self.askSpeechPermission()
     }
 
-    func startRecording(errorMessage: @escaping (String) -> Void) {
+    func startRecording() {
         guard status == .authorized else {
-            errorMessage("Speech recognition is not authorized")
+            delegate?.voiceManager(self,
+                                   anErrorAppeared: "Speech recognition is not authorized")
             return
         }
 
@@ -49,7 +51,8 @@ class VoiceManager {
         do {
             try audioEngine.start()
         } catch {
-            errorMessage("Something went wrong during recording")
+            delegate?.voiceManager(self,
+                                   anErrorAppeared: "Something went wrong during recording")
             return print(error)
         }
 
