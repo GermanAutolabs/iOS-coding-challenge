@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherVoice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherVoice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anR-lU-mdc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anR-lU-mdc" customClass="WeatherView" customModule="WeatherVoice" customModuleProvider="target">
                                 <rect key="frame" x="16" y="116" width="343" height="200"/>
                                 <subviews>
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xxJ-MA-uAF">
@@ -100,6 +100,13 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="weatherDescription" destination="HqL-Pr-yMi" id="UBY-f7-jSi"/>
+                                    <outlet property="weatherHumidity" destination="BHN-XY-hdP" id="QXK-e3-zvy"/>
+                                    <outlet property="weatherImage" destination="xxJ-MA-uAF" id="8FH-Hh-K53"/>
+                                    <outlet property="weatherTemperatur" destination="g3I-vY-cgA" id="SPg-em-hm3"/>
+                                    <outlet property="weatherWindSpeed" destination="32Y-Xe-Zq0" id="APo-k1-xCu"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,11 +126,7 @@
                     <connections>
                         <outlet property="askLabel" destination="5pR-EP-qWt" id="Yb1-3M-TnZ"/>
                         <outlet property="micButton" destination="Z1t-8i-6vD" id="Dni-9o-heP"/>
-                        <outlet property="weatherDescription" destination="HqL-Pr-yMi" id="Q4A-MW-FRq"/>
-                        <outlet property="weatherHumidity" destination="BHN-XY-hdP" id="Pkc-W5-mBJ"/>
-                        <outlet property="weatherImage" destination="xxJ-MA-uAF" id="V6l-Bw-PQ2"/>
-                        <outlet property="weatherTemperatur" destination="g3I-vY-cgA" id="fGv-Qk-gSG"/>
-                        <outlet property="weatherWindSpeed" destination="32Y-Xe-Zq0" id="iqY-Xz-4vL"/>
+                        <outlet property="weatherView" destination="anR-lU-mdc" id="KQr-ye-QIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

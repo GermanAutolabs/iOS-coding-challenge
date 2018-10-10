@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		08829D0997E17685D766A3DA /* Pods_WeatherVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC7931DD4A4E408988D7706 /* Pods_WeatherVoice.framework */; };
 		0F7AE0D3B88F7E1240ECDB26 /* Pods_WeatherVoiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBECCCC25FD129FD388FF307 /* Pods_WeatherVoiceTests.framework */; };
+		931CB2D8216CF8B60021A2BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A230FD2163455E00133E4A /* ViewController.swift */; };
+		931CB2D9216CF9280021A2BC /* VoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A2314D2163BA4600133E4A /* VoiceManager.swift */; };
+		931CB2DA216CF92E0021A2BC /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A2312B21634AEE00133E4A /* ConnectionManager.swift */; };
+		931CB2DB216CF9330021A2BC /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A2312E21634BF500133E4A /* Weather.swift */; };
+		931CB2DE216CFB6C0021A2BC /* MockVoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931CB2DD216CFB6C0021A2BC /* MockVoiceManager.swift */; };
+		931CB2E3216DF0E30021A2BC /* MicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931CB2E2216DF0E30021A2BC /* MicButton.swift */; };
+		931CB2E4216DF0E30021A2BC /* MicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931CB2E2216DF0E30021A2BC /* MicButton.swift */; };
+		931CB2E6216E30720021A2BC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931CB2E5216E30720021A2BC /* WeatherView.swift */; };
+		931CB2E7216E30720021A2BC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931CB2E5216E30720021A2BC /* WeatherView.swift */; };
+		93754019216CF81800DAB1F0 /* WeatherVoiceCompleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93754018216CF81800DAB1F0 /* WeatherVoiceCompleteTests.swift */; };
+		939346C9216E3DD000054452 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939346C8216E3DD000054452 /* ViewManager.swift */; };
+		939346CA216E3DD000054452 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939346C8216E3DD000054452 /* ViewManager.swift */; };
+		939346CE216E609A00054452 /* MockViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939346CC216E609A00054452 /* MockViewManager.swift */; };
 		93A230FC2163455E00133E4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A230FB2163455E00133E4A /* AppDelegate.swift */; };
 		93A230FE2163455E00133E4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A230FD2163455E00133E4A /* ViewController.swift */; };
 		93A231012163455E00133E4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93A230FF2163455E00133E4A /* Main.storyboard */; };
@@ -48,6 +61,12 @@
 		4E6A7B41FF91A463DAA46DDA /* Pods_WeatherVoiceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherVoiceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FC7931DD4A4E408988D7706 /* Pods_WeatherVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherVoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F3CBCAFD017A30D4AEFA900 /* Pods-WeatherVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherVoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherVoice/Pods-WeatherVoice.release.xcconfig"; sourceTree = "<group>"; };
+		931CB2DD216CFB6C0021A2BC /* MockVoiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVoiceManager.swift; sourceTree = "<group>"; };
+		931CB2E2216DF0E30021A2BC /* MicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicButton.swift; sourceTree = "<group>"; };
+		931CB2E5216E30720021A2BC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		93754018216CF81800DAB1F0 /* WeatherVoiceCompleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVoiceCompleteTests.swift; sourceTree = "<group>"; };
+		939346C8216E3DD000054452 /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
+		939346CC216E609A00054452 /* MockViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewManager.swift; sourceTree = "<group>"; };
 		93A230F82163455E00133E4A /* WeatherVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A230FB2163455E00133E4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93A230FD2163455E00133E4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +133,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		931CB2DC216CFB530021A2BC /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				931CB2DD216CFB6C0021A2BC /* MockVoiceManager.swift */,
+				939346CC216E609A00054452 /* MockViewManager.swift */,
+			);
+			path = mocks;
+			sourceTree = "<group>";
+		};
+		931CB2E1216DF0BC0021A2BC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				931CB2E2216DF0E30021A2BC /* MicButton.swift */,
+				931CB2E5216E30720021A2BC /* WeatherView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		93A230EF2163455E00133E4A = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +176,7 @@
 		93A230FA2163455E00133E4A /* WeatherVoice */ = {
 			isa = PBXGroup;
 			children = (
+				931CB2E1216DF0BC0021A2BC /* view */,
 				93A2312D21634BDE00133E4A /* model */,
 				93A2312A21634A7A00133E4A /* manager */,
 				93A2312921634A6A00133E4A /* vc */,
@@ -154,6 +192,8 @@
 		93A2310F2163456000133E4A /* WeatherVoiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				931CB2DC216CFB530021A2BC /* mocks */,
+				93754018216CF81800DAB1F0 /* WeatherVoiceCompleteTests.swift */,
 				93A231102163456000133E4A /* WeatherVoiceApiTests.swift */,
 				93A231572165FA2400133E4A /* WeatherVoiceLocationTests.swift */,
 				93A231122163456000133E4A /* Info.plist */,
@@ -184,6 +224,7 @@
 				93A2314D2163BA4600133E4A /* VoiceManager.swift */,
 				93A2312B21634AEE00133E4A /* ConnectionManager.swift */,
 				93A231542163CEC100133E4A /* LocationManager.swift */,
+				939346C8216E3DD000054452 /* ViewManager.swift */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -421,12 +462,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939346C9216E3DD000054452 /* ViewManager.swift in Sources */,
 				93A2312F21634BF500133E4A /* Weather.swift in Sources */,
 				93A230FE2163455E00133E4A /* ViewController.swift in Sources */,
 				93A231552163CEC100133E4A /* LocationManager.swift in Sources */,
 				93A2312C21634AEE00133E4A /* ConnectionManager.swift in Sources */,
 				93A2314E2163BA4600133E4A /* VoiceManager.swift in Sources */,
 				93A230FC2163455E00133E4A /* AppDelegate.swift in Sources */,
+				931CB2E3216DF0E30021A2BC /* MicButton.swift in Sources */,
+				931CB2E6216E30720021A2BC /* WeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,8 +478,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931CB2DB216CF9330021A2BC /* Weather.swift in Sources */,
+				931CB2D9216CF9280021A2BC /* VoiceManager.swift in Sources */,
+				939346CE216E609A00054452 /* MockViewManager.swift in Sources */,
+				931CB2D8216CF8B60021A2BC /* ViewController.swift in Sources */,
+				931CB2E7216E30720021A2BC /* WeatherView.swift in Sources */,
+				931CB2E4216DF0E30021A2BC /* MicButton.swift in Sources */,
+				93754019216CF81800DAB1F0 /* WeatherVoiceCompleteTests.swift in Sources */,
+				939346CA216E3DD000054452 /* ViewManager.swift in Sources */,
+				931CB2DA216CF92E0021A2BC /* ConnectionManager.swift in Sources */,
 				93A231562163CEC100133E4A /* LocationManager.swift in Sources */,
 				93A231582165FA2400133E4A /* WeatherVoiceLocationTests.swift in Sources */,
+				931CB2DE216CFB6C0021A2BC /* MockVoiceManager.swift in Sources */,
 				93A231112163456000133E4A /* WeatherVoiceApiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

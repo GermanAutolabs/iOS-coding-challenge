@@ -11,26 +11,23 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var weatherImage: UIImageView!
-    @IBOutlet weak var weatherDescription: UILabel!
-    @IBOutlet weak var weatherTemperatur: UILabel!
-
-    @IBOutlet weak var weatherWindSpeed: UILabel!
-    @IBOutlet weak var weatherHumidity: UILabel!
-
     @IBOutlet weak var askLabel: UILabel!
-
+    @IBOutlet weak var weatherView: WeatherView!
     @IBOutlet weak var micButton: MicButton!
 
     var connectionManager: Connection = ConnectionManager()
     var voiceManager: VoiceManager = VoiceManager()
     var locationManager: LocationManager = LocationManager()
+    var viewManager: ViewManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         voiceManager.delegate = self
         micButton.touchDelegate = self
+        
+        viewManager = ViewManager(askLabel: self.askLabel,
+                          weatherView: self.weatherView)
     }
 
     func fillViewWithWeather (weather: Weather?) {
@@ -38,21 +35,10 @@ class ViewController: UIViewController {
             showError(title: "Weather", message: "Could not find weather informations")
             return
         }
-        self.weatherTemperatur.isHidden = false
-        self.weatherTemperatur.text = "\(String(describing: weather!.tempC)) °C"
 
-        self.weatherDescription.isHidden = false
-        self.weatherDescription.text = "\(weather!.desc) in \(weather!.name)"
-
-        self.weatherWindSpeed.isHidden = false
-        self.weatherWindSpeed.text = "Wind:\n\(String(describing: weather!.windspeedMps)) mps"
-
-        self.weatherHumidity.isHidden = false
-        self.weatherHumidity.text = "Humidity:\n\(String(describing: weather!.humidity)) %"
-
-        self.weatherImage.isHidden = false
+        viewManager.weather = weather
         connectionManager.getIconForWeather(iconUrl: weather!.icon) { (icon) in
-            self.weatherImage.image = icon
+            self.viewManager.weatherIcon = icon
         }
     }
 
@@ -67,7 +53,7 @@ class ViewController: UIViewController {
 extension ViewController: VoiceManagerDelegate {
 
     func voiceManager(_ manager: VoiceManager, didRecognizeVoice result: String) {
-        self.askLabel.text = result
+        self.viewManager.recognizedString = result
 
         if result.contains("weather") || result.contains("temperatur") {
 
@@ -94,7 +80,7 @@ extension ViewController: VoiceManagerDelegate {
     }
 
     func voiceManager(_ manager: VoiceManager, recognisingVoice result: String) {
-        self.askLabel.text = result
+        self.viewManager.recognizedString = result
     }
 
     func voiceManager(_ manager: VoiceManager, anErrorAppeared error: String) {
