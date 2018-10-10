@@ -20,31 +20,17 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var askLabel: UILabel!
 
-    let connectionManager: Connection = ConnectionManager()
-    let voiceManager: VoiceManager = VoiceManager()
-    let locationManager: LocationManager = LocationManager()
+    @IBOutlet weak var micButton: MicButton!
+
+    var connectionManager: Connection = ConnectionManager()
+    var voiceManager: VoiceManager = VoiceManager()
+    var locationManager: LocationManager = LocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         voiceManager.delegate = self
-    }
-
-    @IBAction func micButtoPressed(_ sender: Any) {
-        voiceManager.startRecording { error in
-            self.showError(title: "Error", message: error)
-        }
-
-        self.askLabel.text = ""
-
-        (sender as! UIButton).layer.borderColor = UIColor.red.cgColor
-        (sender as! UIButton).layer.borderWidth = 2.0
-
-    }
-
-    @IBAction func micButtonUp(_ sender: Any) {
-        voiceManager.stopRecording()
-        (sender as! UIButton).layer.borderWidth = 0
+        micButton.touchDelegate = self
     }
 
     func fillViewWithWeather (weather: Weather?) {
@@ -113,3 +99,15 @@ extension ViewController: VoiceManagerDelegate {
 
 }
 
+extension ViewController: MicButtonDelegate {
+
+    func didTouchInside() {
+        voiceManager.startRecording { error in
+            self.showError(title: "Error", message: error)
+        }
+
+    }
+    func didTouchUpInside() {
+        voiceManager.stopRecording()
+    }
+}
