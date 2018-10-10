@@ -6,11 +6,20 @@ So you can ask for different locations:
 - “What is the weather in Berlin”
 - “What is the temperature in New York”
 
+
+###  ! Update !
+The updated version includes:
+- Much clearer delegate methods
+- The voice recognition now finishes even if the mic button is already lifted
+- The `struct Weather` is now a `Codable` and will be decoded from the server response
+- An error is shown if the user not accepted ‘using location’
+- A complete test of a whole flow of fetching weather data
+
 # Future
 - Create UI tests. Currently, there are just Unittests
 - Better error handling and notification for the user about errors
 - Handling stuff like “tomorrow” or specific dates that the user asked for
-- 
+
 # iOS Coding Challenge
 We want to know how you write **code** - we don't care about coding challenges where you have to reimplement the HTTP protocol by using the bare basics, we want to know how you can use the existing libraries to solve the problems that we have to solve.
 
