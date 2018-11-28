@@ -1,0 +1,90 @@
+//
+//  VoiceManager.swift
+//
+//
+//  Created by Ed Negro on 02.10.18.
+//
+
+import Foundation
+import Speech
+
+protocol VoiceManagerDelegate {
+    func voiceManager(_ manager: VoiceManager, recognisingVoice result: String)
+    func voiceManager(_ manager: VoiceManager, didRecognizeVoice result: String)
+    func voiceManager(_ manager: VoiceManager, anErrorAppeared error: String)
+}
+
+class VoiceManager {
+    var status: SFSpeechRecognizerAuthorizationStatus {
+        return SFSpeechRecognizer.authorizationStatus()
+    }
+
+    let audioEngine = AVAudioEngine()
+    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
+    var request: SFSpeechAudioBufferRecognitionRequest!
+    var recognitionTask: SFSpeechRecognitionTask?
+
+    var delegate: VoiceManagerDelegate?
+
+    init() {
+        self.askSpeechPermission()
+    }
+
+    func startRecording() {
+        guard status == .authorized else {
+            delegate?.voiceManager(self,
+                                   anErrorAppeared: "Speech recognition is not authorized")
+            return
+        }
+
+        request = SFSpeechAudioBufferRecognitionRequest()
+
+        let node = audioEngine.inputNode
+        node.removeTap(onBus: 0)
+
+        let recordingFormat = node.outputFormat(forBus: 0)
+        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+            self.request.append(buffer)
+        }
+
+        audioEngine.prepare()
+        do {
+            try audioEngine.start()
+        } catch {
+            delegate?.voiceManager(self,
+                                   anErrorAppeared: "Something went wrong during recording")
+            return print(error)
+        }
+
+        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
+
+            if let result = result?.bestTranscription.formattedString {
+
+                if self.recognitionTask?.state == .completed {
+                    self.delegate?.voiceManager(self, didRecognizeVoice: result)
+                }
+
+                if self.recognitionTask?.state == .running {
+                    self.delegate?.voiceManager(self, recognisingVoice: result)
+                }
+
+            } else if let error = error {
+                //errorMessage("Speech recognition not able to process")
+                print(error)
+            }
+        })
+
+
+    }
+
+    func stopRecording() {
+        request.endAudio()
+        audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: 0)
+    }
+
+    func askSpeechPermission() {
+        SFSpeechRecognizer.requestAuthorization { status in }
+    }
+
+}
