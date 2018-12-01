@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6CA8A7DE20FDC1C400BF1064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A7DD20FDC1C400BF1064 /* AppDelegate.swift */; };
+		6CA8A7E320FDC1C400BF1064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A7E120FDC1C400BF1064 /* Main.storyboard */; };
+		6CA8A7E620FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A7E420FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodeld */; };
+		6CA8A7E820FDC1C700BF1064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A7E720FDC1C700BF1064 /* Assets.xcassets */; };
+		6CA8A7EB20FDC1C700BF1064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A7E920FDC1C700BF1064 /* LaunchScreen.storyboard */; };
+		6CA8A7F620FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A7F520FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsTests.swift */; };
+		6CA8A80120FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A80020FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsUITests.swift */; };
+		6CA8A81220FDC3EF00BF1064 /* SpeechRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A81120FDC3EF00BF1064 /* SpeechRecognizerViewController.swift */; };
+		6CA8A81420FDC45B00BF1064 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A81320FDC45B00BF1064 /* Weather.swift */; };
+		6CA8A81620FDC46900BF1064 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8A81520FDC46900BF1064 /* City.swift */; };
+		6CA8A81820FDC48C00BF1064 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A81720FDC48C00BF1064 /* cities.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6CA8A7F220FDC1C700BF1064 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CA8A7D220FDC1C300BF1064 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CA8A7D920FDC1C400BF1064;
+			remoteInfo = "iOS coding challenge for German Autolabs";
+		};
+		6CA8A7FD20FDC1C700BF1064 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CA8A7D220FDC1C300BF1064 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CA8A7D920FDC1C400BF1064;
+			remoteInfo = "iOS coding challenge for German Autolabs";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6CA8A7DA20FDC1C400BF1064 /* iOS coding challenge for German Autolabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS coding challenge for German Autolabs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CA8A7DD20FDC1C400BF1064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6CA8A7E220FDC1C400BF1064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6CA8A7E520FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_coding_challenge_for_German_Autolabs.xcdatamodel; sourceTree = "<group>"; };
+		6CA8A7E720FDC1C700BF1064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6CA8A7EA20FDC1C700BF1064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6CA8A7EC20FDC1C700BF1064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CA8A7F120FDC1C700BF1064 /* iOS coding challenge for German AutolabsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS coding challenge for German AutolabsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CA8A7F520FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_coding_challenge_for_German_AutolabsTests.swift; sourceTree = "<group>"; };
+		6CA8A7F720FDC1C700BF1064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CA8A7FC20FDC1C700BF1064 /* iOS coding challenge for German AutolabsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS coding challenge for German AutolabsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CA8A80020FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_coding_challenge_for_German_AutolabsUITests.swift; sourceTree = "<group>"; };
+		6CA8A80220FDC1C700BF1064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CA8A81120FDC3EF00BF1064 /* SpeechRecognizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewController.swift; sourceTree = "<group>"; };
+		6CA8A81320FDC45B00BF1064 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		6CA8A81520FDC46900BF1064 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		6CA8A81720FDC48C00BF1064 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6CA8A7D720FDC1C400BF1064 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CA8A7EE20FDC1C700BF1064 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CA8A7F920FDC1C700BF1064 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6CA8A7D120FDC1C300BF1064 = {
+			isa = PBXGroup;
+			children = (
+				6CA8A7DC20FDC1C400BF1064 /* iOS coding challenge for German Autolabs */,
+				6CA8A7F420FDC1C700BF1064 /* iOS coding challenge for German AutolabsTests */,
+				6CA8A7FF20FDC1C700BF1064 /* iOS coding challenge for German AutolabsUITests */,
+				6CA8A7DB20FDC1C400BF1064 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6CA8A7DB20FDC1C400BF1064 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A7DA20FDC1C400BF1064 /* iOS coding challenge for German Autolabs.app */,
+				6CA8A7F120FDC1C700BF1064 /* iOS coding challenge for German AutolabsTests.xctest */,
+				6CA8A7FC20FDC1C700BF1064 /* iOS coding challenge for German AutolabsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CA8A7DC20FDC1C400BF1064 /* iOS coding challenge for German Autolabs */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A81020FDC34F00BF1064 /* Controllers */,
+				6CA8A80F20FDC29C00BF1064 /* Resources */,
+				6CA8A80E20FDC28F00BF1064 /* Model */,
+				6CA8A7DD20FDC1C400BF1064 /* AppDelegate.swift */,
+				6CA8A7E120FDC1C400BF1064 /* Main.storyboard */,
+				6CA8A7E720FDC1C700BF1064 /* Assets.xcassets */,
+				6CA8A7E920FDC1C700BF1064 /* LaunchScreen.storyboard */,
+				6CA8A7EC20FDC1C700BF1064 /* Info.plist */,
+				6CA8A7E420FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodeld */,
+			);
+			path = "iOS coding challenge for German Autolabs";
+			sourceTree = "<group>";
+		};
+		6CA8A7F420FDC1C700BF1064 /* iOS coding challenge for German AutolabsTests */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A7F520FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsTests.swift */,
+				6CA8A7F720FDC1C700BF1064 /* Info.plist */,
+			);
+			path = "iOS coding challenge for German AutolabsTests";
+			sourceTree = "<group>";
+		};
+		6CA8A7FF20FDC1C700BF1064 /* iOS coding challenge for German AutolabsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A80020FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsUITests.swift */,
+				6CA8A80220FDC1C700BF1064 /* Info.plist */,
+			);
+			path = "iOS coding challenge for German AutolabsUITests";
+			sourceTree = "<group>";
+		};
+		6CA8A80E20FDC28F00BF1064 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A81320FDC45B00BF1064 /* Weather.swift */,
+				6CA8A81520FDC46900BF1064 /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CA8A80F20FDC29C00BF1064 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A81720FDC48C00BF1064 /* cities.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6CA8A81020FDC34F00BF1064 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6CA8A81120FDC3EF00BF1064 /* SpeechRecognizerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6CA8A7D920FDC1C400BF1064 /* iOS coding challenge for German Autolabs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CA8A80520FDC1C700BF1064 /* Build configuration list for PBXNativeTarget "iOS coding challenge for German Autolabs" */;
+			buildPhases = (
+				6CA8A7D620FDC1C400BF1064 /* Sources */,
+				6CA8A7D720FDC1C400BF1064 /* Frameworks */,
+				6CA8A7D820FDC1C400BF1064 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS coding challenge for German Autolabs";
+			productName = "iOS coding challenge for German Autolabs";
+			productReference = 6CA8A7DA20FDC1C400BF1064 /* iOS coding challenge for German Autolabs.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6CA8A7F020FDC1C700BF1064 /* iOS coding challenge for German AutolabsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CA8A80820FDC1C700BF1064 /* Build configuration list for PBXNativeTarget "iOS coding challenge for German AutolabsTests" */;
+			buildPhases = (
+				6CA8A7ED20FDC1C700BF1064 /* Sources */,
+				6CA8A7EE20FDC1C700BF1064 /* Frameworks */,
+				6CA8A7EF20FDC1C700BF1064 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CA8A7F320FDC1C700BF1064 /* PBXTargetDependency */,
+			);
+			name = "iOS coding challenge for German AutolabsTests";
+			productName = "iOS coding challenge for German AutolabsTests";
+			productReference = 6CA8A7F120FDC1C700BF1064 /* iOS coding challenge for German AutolabsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6CA8A7FB20FDC1C700BF1064 /* iOS coding challenge for German AutolabsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CA8A80B20FDC1C700BF1064 /* Build configuration list for PBXNativeTarget "iOS coding challenge for German AutolabsUITests" */;
+			buildPhases = (
+				6CA8A7F820FDC1C700BF1064 /* Sources */,
+				6CA8A7F920FDC1C700BF1064 /* Frameworks */,
+				6CA8A7FA20FDC1C700BF1064 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CA8A7FE20FDC1C700BF1064 /* PBXTargetDependency */,
+			);
+			name = "iOS coding challenge for German AutolabsUITests";
+			productName = "iOS coding challenge for German AutolabsUITests";
+			productReference = 6CA8A7FC20FDC1C700BF1064 /* iOS coding challenge for German AutolabsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6CA8A7D220FDC1C300BF1064 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Antonio De Mingo Navarro";
+				TargetAttributes = {
+					6CA8A7D920FDC1C400BF1064 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					6CA8A7F020FDC1C700BF1064 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 6CA8A7D920FDC1C400BF1064;
+					};
+					6CA8A7FB20FDC1C700BF1064 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 6CA8A7D920FDC1C400BF1064;
+					};
+				};
+			};
+			buildConfigurationList = 6CA8A7D520FDC1C300BF1064 /* Build configuration list for PBXProject "iOS coding challenge for German Autolabs" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6CA8A7D120FDC1C300BF1064;
+			productRefGroup = 6CA8A7DB20FDC1C400BF1064 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6CA8A7D920FDC1C400BF1064 /* iOS coding challenge for German Autolabs */,
+				6CA8A7F020FDC1C700BF1064 /* iOS coding challenge for German AutolabsTests */,
+				6CA8A7FB20FDC1C700BF1064 /* iOS coding challenge for German AutolabsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6CA8A7D820FDC1C400BF1064 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA8A81820FDC48C00BF1064 /* cities.json in Resources */,
+				6CA8A7EB20FDC1C700BF1064 /* LaunchScreen.storyboard in Resources */,
+				6CA8A7E820FDC1C700BF1064 /* Assets.xcassets in Resources */,
+				6CA8A7E320FDC1C400BF1064 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CA8A7EF20FDC1C700BF1064 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CA8A7FA20FDC1C700BF1064 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6CA8A7D620FDC1C400BF1064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA8A81420FDC45B00BF1064 /* Weather.swift in Sources */,
+				6CA8A81620FDC46900BF1064 /* City.swift in Sources */,
+				6CA8A81220FDC3EF00BF1064 /* SpeechRecognizerViewController.swift in Sources */,
+				6CA8A7E620FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodeld in Sources */,
+				6CA8A7DE20FDC1C400BF1064 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CA8A7ED20FDC1C700BF1064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA8A7F620FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CA8A7F820FDC1C700BF1064 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA8A80120FDC1C700BF1064 /* iOS_coding_challenge_for_German_AutolabsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6CA8A7F320FDC1C700BF1064 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CA8A7D920FDC1C400BF1064 /* iOS coding challenge for German Autolabs */;
+			targetProxy = 6CA8A7F220FDC1C700BF1064 /* PBXContainerItemProxy */;
+		};
+		6CA8A7FE20FDC1C700BF1064 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CA8A7D920FDC1C400BF1064 /* iOS coding challenge for German Autolabs */;
+			targetProxy = 6CA8A7FD20FDC1C700BF1064 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6CA8A7E120FDC1C400BF1064 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CA8A7E220FDC1C400BF1064 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6CA8A7E920FDC1C700BF1064 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CA8A7EA20FDC1C700BF1064 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6CA8A80320FDC1C700BF1064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6CA8A80420FDC1C700BF1064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6CA8A80620FDC1C700BF1064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZRGF6M963Z;
+				INFOPLIST_FILE = "iOS coding challenge for German Autolabs/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tonidemingo.iOS-coding-challenge-for-German-Autolabs";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6CA8A80720FDC1C700BF1064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZRGF6M963Z;
+				INFOPLIST_FILE = "iOS coding challenge for German Autolabs/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tonidemingo.iOS-coding-challenge-for-German-Autolabs";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6CA8A80920FDC1C700BF1064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZRGF6M963Z;
+				INFOPLIST_FILE = "iOS coding challenge for German AutolabsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tonidemingo.iOS-coding-challenge-for-German-AutolabsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS coding challenge for German Autolabs.app/iOS coding challenge for German Autolabs";
+			};
+			name = Debug;
+		};
+		6CA8A80A20FDC1C700BF1064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZRGF6M963Z;
+				INFOPLIST_FILE = "iOS coding challenge for German AutolabsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tonidemingo.iOS-coding-challenge-for-German-AutolabsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS coding challenge for German Autolabs.app/iOS coding challenge for German Autolabs";
+			};
+			name = Release;
+		};
+		6CA8A80C20FDC1C700BF1064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZRGF6M963Z;
+				INFOPLIST_FILE = "iOS coding challenge for German AutolabsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tonidemingo.iOS-coding-challenge-for-German-AutolabsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iOS coding challenge for German Autolabs";
+			};
+			name = Debug;
+		};
+		6CA8A80D20FDC1C700BF1064 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZRGF6M963Z;
+				INFOPLIST_FILE = "iOS coding challenge for German AutolabsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tonidemingo.iOS-coding-challenge-for-German-AutolabsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "iOS coding challenge for German Autolabs";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CA8A7D520FDC1C300BF1064 /* Build configuration list for PBXProject "iOS coding challenge for German Autolabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA8A80320FDC1C700BF1064 /* Debug */,
+				6CA8A80420FDC1C700BF1064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CA8A80520FDC1C700BF1064 /* Build configuration list for PBXNativeTarget "iOS coding challenge for German Autolabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA8A80620FDC1C700BF1064 /* Debug */,
+				6CA8A80720FDC1C700BF1064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CA8A80820FDC1C700BF1064 /* Build configuration list for PBXNativeTarget "iOS coding challenge for German AutolabsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA8A80920FDC1C700BF1064 /* Debug */,
+				6CA8A80A20FDC1C700BF1064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CA8A80B20FDC1C700BF1064 /* Build configuration list for PBXNativeTarget "iOS coding challenge for German AutolabsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA8A80C20FDC1C700BF1064 /* Debug */,
+				6CA8A80D20FDC1C700BF1064 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6CA8A7E420FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6CA8A7E520FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodel */,
+			);
+			currentVersion = 6CA8A7E520FDC1C400BF1064 /* iOS_coding_challenge_for_German_Autolabs.xcdatamodel */;
+			path = iOS_coding_challenge_for_German_Autolabs.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6CA8A7D220FDC1C300BF1064 /* Project object */;
+}
